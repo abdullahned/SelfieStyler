@@ -5,8 +5,8 @@
     <classes>
       <class name="mm.UnauthenticatedHomePage">
         <methods>
+          <include name="Shop"/>
           <include name="teardown"/>
-          <include name="Contactus"/>
           <include name="setup"/>
         </methods>
       </class> <!-- mm.UnauthenticatedHomePage -->
