@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Testng Automation Suite"  >
+
+  <test name="Nopackage" >
+  
+    <classes>
+    
+       <class name="mm.SignUp" />
+       
+    </classes>
+  </test>
+ 
+</suite>
+ 
