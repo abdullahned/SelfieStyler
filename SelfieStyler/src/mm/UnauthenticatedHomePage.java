@@ -24,7 +24,7 @@ public class UnauthenticatedHomePage {
 	 
 	 String firstname = "QA"+r.nextInt(100);
 	   String lastname = "test"+r.nextInt(1000);
-	   String email = "QAtest3"+r.nextInt(100)+"@mailinator.com";
+	   String email = "QA"+r.nextInt(1000)+"@mailinator.com";
 	
   @BeforeMethod
   
@@ -44,11 +44,13 @@ public class UnauthenticatedHomePage {
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
 	 driver.get("https://www.selfiestyler.com/");
+	 
+	 //driver.get("http://qa-na.selfiestyler.com/");
 	  
   }
 
   
-  @Test (priority =0, enabled=false)
+  @Test (priority =4,enabled=false)
   
   public void cancel() throws InterruptedException 
   {
@@ -85,7 +87,7 @@ public class UnauthenticatedHomePage {
  
   
   
- @Test(priority =1, enabled=false)
+ @Test(priority =1,enabled=false)
   
   public void Men() throws InterruptedException  {
 	  
@@ -130,7 +132,7 @@ public class UnauthenticatedHomePage {
   }
  
   
- @Test(priority = 2, enabled=false)
+ @Test(priority = 0,enabled=false)
  
  public void women() throws InterruptedException  {
 	  
@@ -203,7 +205,7 @@ public class UnauthenticatedHomePage {
  
  
  
- @Test (priority =3, enabled=false)
+ @Test (priority =3,enabled=false)
  
  public void Signin() throws InterruptedException 
  {
@@ -222,9 +224,10 @@ public class UnauthenticatedHomePage {
      driver.findElement(By.id("customer_login")).click();
 	 
 	 Thread.sleep(10000);
+	 
  }
  
-@Test (priority =4, enabled=false)
+@Test (priority =2,enabled=false)
  
  public void ForgotPassword() throws InterruptedException 
  {
@@ -303,7 +306,7 @@ public class UnauthenticatedHomePage {
 	
  }
 	 
-	@Test (priority =5)
+	@Test (priority =5,enabled=false)
 	
 	public void Contactus () throws InterruptedException
 	
@@ -343,6 +346,60 @@ public class UnauthenticatedHomePage {
 		 driver.findElement(By.xpath("//button[@id='contact_submit']")).click();
 		 
 		 Thread.sleep(2000);
+			 
+		 }
+		 
+	 @Test (priority =6) 
+	 
+	 public void Shop() throws InterruptedException 
+	 {
+		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 
+		 Thread.sleep(5000);
+		 
+		 driver.findElement(By.id("email")).sendKeys("rikotest@mailinator.com");
+		 
+		 Thread.sleep(1000);
+		 
+		 driver.findElement(By.id("password")).sendKeys("Sindhi0!");
+		 
+		 Thread.sleep(1000);
+		 
+	     driver.findElement(By.id("customer_login")).click();
+		 
+		 Thread.sleep(10000);
+		 
+		// driver.findElement(By.xpath("//a[text()='Shop']")).click();
+		 
+		// driver.findElement(By.xpath("//a[@href='https://shop.selfiestyler.com/collections/shop-all']//*[text()='Shop']")).click();
+		 
+		 driver.findElement(By.linkText("Shop")).click();
+		 Thread.sleep(10000);
+		 
+		
+		 driver.findElement(By.xpath("//a[@class='product-grid-image']")).click();
+			
+		 Thread.sleep(3000);
+		 
+		 driver.findElement(By.xpath("//input[@id='product-add-to-cart']")).click(); 
+		 
+		 Thread.sleep(3000);
+		 
+		 driver.findElement(By.xpath("//button[@class='btn-secondary btn-go-to-cart']")).click(); 
+		 
+		 Thread.sleep(5000);
+		 
+		 driver.findElement(By.xpath("//input[@name='checkout']")).click(); 
+		 
+		 Thread.sleep(5000);
+		 
+		 driver.findElement(By.xpath("//input[@id='checkout_shipping_address_address1']")).sendKeys("Test"); 
+		 
+		 Thread.sleep(1000);
+		 
+		 
+		 driver.findElement(By.xpath("//input[@id='checkout_shipping_address_city']")).sendKeys("Karachi");
+		 
 		 
 		 
 	}
@@ -356,7 +413,7 @@ public class UnauthenticatedHomePage {
   public void teardown() 
   {
 	  
-	//  driver.quit();
+	 //driver.quit();
   }
 
   
