@@ -18,7 +18,7 @@ import org.testng.annotations.AfterMethod;
 
 public class UnauthenticatedHomePage {
 	
-	WebDriver driver;
+	public static WebDriver driver;
 
 	 Random r = new Random();
 	 
@@ -26,6 +26,7 @@ public class UnauthenticatedHomePage {
 	   String lastname = "test"+r.nextInt(1000);
 	   String email = "QA"+r.nextInt(1000)+"@mailinator.com";
 	
+	   
   @BeforeMethod
   
   public void setup() 
@@ -43,9 +44,9 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-	 driver.get("https://www.selfiestyler.com/");
+    //driver.get("https://www.selfiestyler.com/");
 	 
-	 //driver.get("http://qa-na.selfiestyler.com/");
+	 driver.get("http://qa-na.selfiestyler.com/");
 	  
   }
 
@@ -353,25 +354,10 @@ public class UnauthenticatedHomePage {
 	 
 	 public void Shop() throws InterruptedException 
 	 {
-		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
-		 
-		 Thread.sleep(5000);
-		 
-		 driver.findElement(By.id("email")).sendKeys("rikotest@mailinator.com");
-		 
-		 Thread.sleep(1000);
-		 
-		 driver.findElement(By.id("password")).sendKeys("Sindhi0!");
-		 
-		 Thread.sleep(1000);
-		 
-	     driver.findElement(By.id("customer_login")).click();
-		 
-		 Thread.sleep(10000);
-		 
-		// driver.findElement(By.xpath("//a[text()='Shop']")).click();
 		 
 		// driver.findElement(By.xpath("//a[@href='https://shop.selfiestyler.com/collections/shop-all']//*[text()='Shop']")).click();
+		 
+		 Signin();
 		 
 		 driver.findElement(By.linkText("Shop")).click();
 		 Thread.sleep(10000);
@@ -400,14 +386,31 @@ public class UnauthenticatedHomePage {
 		 
 		 driver.findElement(By.xpath("//input[@id='checkout_shipping_address_city']")).sendKeys("Karachi");
 		 
+		 Thread.sleep(1000);
+		 
+		 driver.findElement(By.xpath("//input[@id='checkout_shipping_address_zip']")).sendKeys("12345");
+		 
+		 Thread.sleep(5000);
+		 
+		 WebElement element4= driver.findElement(By.xpath("//*[contains(text(),'Continue to shipping method')]"));
+		 
+		 Actions actions = new Actions(driver);
+
+		 actions.moveToElement(element4).click().perform();
+		 
+		 Thread.sleep(5000);
+		 
+		 WebElement element5= driver.findElement(By.xpath("//*[contains(text(),'Continue to payment method')]"));
+
+		 actions.moveToElement(element5).click().perform();
+		 
+		 Thread.sleep(5000);
 		 
 		 
 	}
 	
       
 
- 
- 
   
   @AfterMethod
   public void teardown() 
