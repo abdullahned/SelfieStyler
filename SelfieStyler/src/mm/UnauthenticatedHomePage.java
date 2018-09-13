@@ -381,7 +381,7 @@ public class UnauthenticatedHomePage {
 		 
 		 Thread.sleep(3000);
 		 
-		 driver.findElement(By.xpath("//button[@class='tn-secondary btn-go-to-cart']")).click(); 
+		 driver.findElement(By.xpath("//button[@class='btn-secondary btn-go-to-cart']")).click(); 
 		 
 		 Thread.sleep(5000);
 		 
