@@ -1,6 +1,9 @@
 package mm;
 
 import org.testng.annotations.Test;
+
+import library.utility;
+
 import org.testng.annotations.BeforeMethod;
 
 import java.util.Iterator;
@@ -14,17 +17,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+
+
+
+
 
 public class UnauthenticatedHomePage {
 	
-	public static WebDriver driver;
+	 WebDriver driver;
 
 	 Random r = new Random();
 	 
 	 String firstname = "QA"+r.nextInt(100);
 	   String lastname = "test"+r.nextInt(1000);
-	   String email = "QA"+r.nextInt(1000)+"@mailinator.com";
+	   String email = "QAtest"+r.nextInt(1000)+"@mailinator.com";
+	   String email1 = "QA"+r.nextInt(1000)+"@mailinator.com";
+	   
 	
 	   
   @BeforeMethod
@@ -44,9 +54,9 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-    //driver.get("https://www.selfiestyler.com/");
+    driver.get("https://www.selfiestyler.com/");
 	 
-	 driver.get("http://qa-na.selfiestyler.com/");
+	 
 	  
   }
 
@@ -93,9 +103,6 @@ public class UnauthenticatedHomePage {
   public void Men() throws InterruptedException  {
 	  
 	 
-	// Random r = new Random();
-	  // String lastname = "test"+r.nextInt(1000);
-	  // String email = "QAtest3"+r.nextInt(100)+"@mailinator.com";
 	   
 	  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 		 
@@ -116,7 +123,7 @@ public class UnauthenticatedHomePage {
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.id("mem_email")).sendKeys(email);
+		driver.findElement(By.id("mem_email")).sendKeys(email1);
 		
 		Thread.sleep(1000);
 		
@@ -225,7 +232,7 @@ public class UnauthenticatedHomePage {
      driver.findElement(By.id("customer_login")).click();
 	 
 	 Thread.sleep(10000);
-	 
+	
  }
  
 @Test (priority =2,enabled=false)
@@ -357,7 +364,10 @@ public class UnauthenticatedHomePage {
 		 
 		// driver.findElement(By.xpath("//a[@href='https://shop.selfiestyler.com/collections/shop-all']//*[text()='Shop']")).click();
 		 
+		 
 		 Signin();
+		 
+		 Thread.sleep(5000);
 		 
 		 driver.findElement(By.linkText("Shop")).click();
 		 Thread.sleep(10000);
@@ -371,7 +381,7 @@ public class UnauthenticatedHomePage {
 		 
 		 Thread.sleep(3000);
 		 
-		 driver.findElement(By.xpath("//button[@class='btn-secondary btn-go-to-cart']")).click(); 
+		 driver.findElement(By.xpath("//button[@class='tn-secondary btn-go-to-cart']")).click(); 
 		 
 		 Thread.sleep(5000);
 		 
@@ -412,12 +422,21 @@ public class UnauthenticatedHomePage {
       
 
   
-  @AfterMethod
-  public void teardown() 
-  {
-	  
-	 //driver.quit();
-  }
+
+	  @AfterMethod
+	  public void teardown(ITestResult result) 
+	  {
+		  
+		  if(ITestResult.FAILURE ==result.getStatus())
+			  
+		  {
+			  utility.capturescreenshot(driver, result.getName());
+		  }
+		  
+		  
+		 driver.quit();
+		  
+	  }
 
   
  
