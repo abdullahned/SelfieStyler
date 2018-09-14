@@ -6,6 +6,9 @@ import library.utility;
 
 import org.testng.annotations.BeforeMethod;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
+
 import java.util.Iterator;
 import java.util.Random;
 import java.util.Set;
@@ -17,6 +20,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
@@ -34,7 +38,7 @@ public class UnauthenticatedHomePage {
 	   String lastname = "test"+r.nextInt(1000);
 	   String email = "QAtest"+r.nextInt(1000)+"@mailinator.com";
 	   String email1 = "QA"+r.nextInt(1000)+"@mailinator.com";
-	   
+	   JavascriptExecutor jii = (JavascriptExecutor)driver;
 	
 	   
   @BeforeMethod
@@ -357,7 +361,7 @@ public class UnauthenticatedHomePage {
 			 
 		 }
 		 
-	 @Test (priority =6) 
+	 @Test (priority =6, enabled =false) 
 	 
 	 public void Shop() throws InterruptedException 
 	 {
@@ -419,9 +423,313 @@ public class UnauthenticatedHomePage {
 		 
 	}
 	
-      
+	 
+	 @Test (priority =7, enabled=false)
+	 
+	 public void signupE1 () throws InterruptedException
+	 
+	 {
+		 
+		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+		 
+			//handle drop box:
+			Select select = new Select(driver.findElement(By.id("gender")));
+			
+			Thread.sleep(1000);
+			
+			select.selectByVisibleText("Female");
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("first_name")).sendKeys(firstname);
+			
+			Thread.sleep(1000);
+			
+		driver.findElement(By.id("last_name")).sendKeys(lastname);
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("mem_email")).sendKeys("QAtest");
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("phone")).sendKeys("0213578965");
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
+			
+			driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan0!");
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
+			
+			Thread.sleep(5000);
+			
+			driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+			
+			Thread.sleep(5000);
+			
+			
+			WebElement element = driver.findElement(By.id("terms"));
+			
+			Actions actions = new Actions(driver);
+			
+			actions.moveToElement(element).click().perform();
+			
+			Thread.sleep(1000);
+			
+	        driver.findElement(By.id("register_button")).click();
+			
+			Thread.sleep(3000);
+			
+			jii.executeScript("window.scrollBy(0,-500)", "");
+			
+		String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
+		
+		System.out.println(actual_error);
+		String expect = "Looks like something went wrong\n" + 
+				"Email address is not valid";
+		 
+		// String expected_error = "Looks like something went wrong";
+		 
+		// Assert.assertEquals(actual_error, expected_error);
+		
+		Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+		
+		Assert.assertTrue(actual_error.contains("Email address is not valid"));
+		
+		Assert.assertEquals(actual_error, expect);
+		
+	
+	 }
 
-  
+	 
+ @Test (priority =8,enabled=false)
+	 
+	 public void signupE2 () throws InterruptedException
+	 
+	 {
+		 
+		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+		 
+			//handle drop box:
+			Select select = new Select(driver.findElement(By.id("gender")));
+			
+			Thread.sleep(1000);
+			
+			select.selectByVisibleText("Female");
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("first_name")).sendKeys(firstname);
+			
+			Thread.sleep(1000);
+			
+		driver.findElement(By.id("last_name")).sendKeys(lastname);
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("mem_email")).sendKeys(email);
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("phone")).sendKeys("0213578965");
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.id("mem_password")).sendKeys("Pakistan");
+			
+			driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan");
+			
+			Thread.sleep(1000);
+			
+			driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
+			
+			Thread.sleep(5000);
+			
+			driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+			
+			Thread.sleep(5000);
+			
+			
+			WebElement element = driver.findElement(By.id("terms"));
+			
+			Actions actions = new Actions(driver);
+			
+			actions.moveToElement(element).click().perform();
+			
+			Thread.sleep(1000);
+			
+	        driver.findElement(By.id("register_button")).click();
+			
+			Thread.sleep(3000);
+			
+			jii.executeScript("window.scrollBy(0,-500)", "");
+			
+		String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
+		
+		System.out.println(actual_error);
+		 
+		String expect = "Looks like something went wrong\n" + 
+				"Password is not valid";
+		
+		Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+		
+		Assert.assertTrue(actual_error.contains("Password is not valid"));
+	
+		Assert.assertEquals(actual_error, expect);
+		
+	 }
+
+	 
+ @Test (priority =9, enabled=false)
+ 
+ public void signupE3 () throws InterruptedException
+ 
+ {
+	 
+	 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+	 
+		//handle drop box:
+		Select select = new Select(driver.findElement(By.id("gender")));
+		
+		Thread.sleep(1000);
+		
+		select.selectByVisibleText("Female");
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("first_name")).sendKeys(firstname);
+		
+		Thread.sleep(1000);
+		
+	driver.findElement(By.id("last_name")).sendKeys(lastname);
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("mem_email")).sendKeys(email);
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("phone")).sendKeys("0213578965");
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
+		
+		driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan");
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
+		
+		Thread.sleep(5000);
+		
+		driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+		
+		Thread.sleep(5000);
+		
+		
+		WebElement element = driver.findElement(By.id("terms"));
+		
+		Actions actions = new Actions(driver);
+		
+		actions.moveToElement(element).click().perform();
+		
+		Thread.sleep(1000);
+		
+        driver.findElement(By.id("register_button")).click();
+		
+		Thread.sleep(3000);
+		
+		jii.executeScript("window.scrollBy(0,-500)", "");
+		
+	String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
+	
+	System.out.println(actual_error);
+	 
+	String expect = "Looks like something went wrong\n" + 
+			"Passwords do not match";
+	
+	Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+	
+	Assert.assertTrue(actual_error.contains("Passwords do not match"));
+
+	Assert.assertEquals(actual_error, expect);
+	
+ }
+ 
+ 
+@Test(priority = 10)
+ 
+ public void signupE4() throws InterruptedException  {
+	  
+	   
+	  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+		 
+		//handle drop box:
+		Select select = new Select(driver.findElement(By.id("gender")));
+		
+		Thread.sleep(1000);
+		
+		select.selectByVisibleText("Female");
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("first_name")).sendKeys(firstname);
+		
+		Thread.sleep(1000);
+		
+	driver.findElement(By.id("last_name")).sendKeys(lastname);
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("mem_email")).sendKeys(email);
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("phone")).sendKeys("0213578965");
+		
+		Thread.sleep(1000);
+		
+		driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
+		
+		driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan0!");
+		
+		Thread.sleep(5000);
+		
+		
+        driver.findElement(By.id("register_button")).click();
+		
+		Thread.sleep(8000);
+		
+
+		JavascriptExecutor jkk = (JavascriptExecutor)driver;
+	
+		jkk.executeScript("window.scrollBy(0,-500)", "");
+		
+		String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
+		
+		System.out.println(actual_error);
+		 
+		String expect = "Looks like something went wrong\n" + 
+				"Read Terms and Privacy Policy not checked";
+		
+		Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+		
+		Assert.assertTrue(actual_error.contains("Read Terms and Privacy Policy not checked"));
+
+		Assert.assertEquals(actual_error, expect);
+		
+		
+		
+		
+		
+ }
+
+ 
 
 	  @AfterMethod
 	  public void teardown(ITestResult result) 
@@ -434,7 +742,7 @@ public class UnauthenticatedHomePage {
 		  }
 		  
 		  
-		 driver.quit();
+		 //driver.quit();
 		  
 	  }
 

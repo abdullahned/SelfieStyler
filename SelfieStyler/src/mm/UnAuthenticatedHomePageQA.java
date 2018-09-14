@@ -1,6 +1,9 @@
 package mm;
 
 import org.testng.annotations.Test;
+
+import library.utility;
+
 import org.testng.annotations.BeforeMethod;
 
 import java.util.Iterator;
@@ -14,6 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 
 
@@ -27,7 +31,7 @@ public class UnAuthenticatedHomePageQA {
 	   String lastname = "test"+r.nextInt(1000);
 	   String email = "QAwomen"+r.nextInt(1000)+"@mailinator.com";
 	   String email1 = "QAmen"+r.nextInt(1000)+"@mailinator.com";
-	   
+	   JavascriptExecutor jii = (JavascriptExecutor)driver;
 	
 	   
   @BeforeMethod
@@ -425,12 +429,20 @@ public class UnAuthenticatedHomePageQA {
       
 
   
-  @AfterMethod
-  public void teardown() 
-  {
-	  
-	 driver.quit();
-  }
+	  @AfterMethod
+	  public void teardown(ITestResult result) 
+	  {
+		  
+		  if(ITestResult.FAILURE ==result.getStatus())
+			  
+		  {
+			  utility.capturescreenshot(driver, result.getName());
+		  }
+		  
+		  
+		 driver.quit();
+		  
+	  }
 
   
  

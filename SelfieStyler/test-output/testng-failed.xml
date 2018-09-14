@@ -5,7 +5,7 @@
     <classes>
       <class name="mm.UnauthenticatedHomePage">
         <methods>
-          <include name="Shop"/>
+          <include name="signupE4"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
