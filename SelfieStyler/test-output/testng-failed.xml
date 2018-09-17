@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="mm.UnauthenticatedHomePage">
+      <class name="mm.SignInErrorHandling">
         <methods>
-          <include name="signupE4"/>
+          <include name="SiginE3"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- mm.UnauthenticatedHomePage -->
+      </class> <!-- mm.SignInErrorHandling -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

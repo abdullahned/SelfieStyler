@@ -6,7 +6,9 @@
   
     <classes>
     
-       <class name="mm.SignUp" />
+       <class name="mm.UnauthenticatedHomePage" />
+       <class name="mm.SignUpErrorHandling" />
+       <class name="mm.SignInErrorHandling" />
        
     </classes>
   </test>
