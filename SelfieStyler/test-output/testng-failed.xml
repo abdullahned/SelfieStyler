@@ -5,8 +5,8 @@
     <classes>
       <class name="mm.SignInErrorHandling">
         <methods>
-          <include name="SiginE3"/>
           <include name="teardown"/>
+          <include name="PasswordNotMatched"/>
           <include name="setup"/>
         </methods>
       </class> <!-- mm.SignInErrorHandling -->

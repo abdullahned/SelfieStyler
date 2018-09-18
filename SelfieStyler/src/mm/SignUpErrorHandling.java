@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	
 	
- @Test (priority =7)
+ @Test (priority =7,enabled=false)
 	 
 	 public void InvalidEmail () throws InterruptedException
 	 
@@ -104,7 +104,7 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =8)
+ @Test (priority =8,enabled=false)
 	 
 	 public void InvalidPassword () throws InterruptedException
 	 
@@ -192,7 +192,7 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =9)
+ @Test (priority =9,enabled=false)
  
  public void PasswordNotMatch () throws InterruptedException
  
@@ -283,7 +283,7 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
  
  
 	
-	@Test(priority = 10)
+	@Test(priority = 10,enabled=false)
 	 
 	 public void TermsNotChecked() throws InterruptedException  {
 		  
@@ -357,7 +357,7 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
-	@Test(priority = 11)
+	@Test(priority = 11,enabled=false)
 	 
 	 public void MissingField() throws InterruptedException  {
 		  

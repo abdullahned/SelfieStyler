@@ -1,5 +1,8 @@
 package mm;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -7,7 +10,7 @@ import org.testng.annotations.Test;
 public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =12)
+	@Test (priority =12,enabled=false)
 	 
 	 public void InvalidCredentials() throws InterruptedException 
 	 {
@@ -51,7 +54,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	 }
 	
 	
-	@Test (priority =13)
+	@Test (priority =13,enabled=false)
 	 
 	 public void InvalidEmail() throws InterruptedException 
 	 {
@@ -95,7 +98,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	
 	
 
-	@Test (priority =14)
+	@Test (priority =14,enabled=false)
 	 
 	 public void EmailNotFound() throws InterruptedException 
 	 {
@@ -136,6 +139,207 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 		 
 			
 }
+	
+	
+	
+	@Test (priority =15,enabled=false)
+	 
+	 public void InvalidPwdCriteria () throws InterruptedException 
+	 {
+		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 
+		 Thread.sleep(4000); 
+		 
+		 driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]")).click();
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//input[@id='email']")).sendKeys("rikotest@mailinator.com");
+		 
+		 Thread.sleep(1000);
+		 
+		 driver.findElement(By.xpath("//button[@id='customer_login']")).click();	
+		 
+		 Thread.sleep(15000);
+		 
+		 driver.get("https://www.mailinator.com/ ");
+		 
+		 Thread.sleep(3000);
+		 
+		 driver.findElement(By.xpath("//input[@id='inboxfield']")).sendKeys("rikotest@mailinator.com");
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//button[contains(@class,'btn btn-dark')]")).click();
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//*[contains(text(),'SelfieStyler: Password Reset')]")).click();
+		 
+		 Thread.sleep(6000);
+		 
+		 driver.switchTo().frame("msg_body");
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//a[@class='button__text']")).click();
+		 
+		 Thread.sleep(8000);
+		 
+		 String parent_window= driver.getWindowHandle();
+		 
+		Set<String> s1=driver.getWindowHandles();
+		
+		Iterator<String> i1=s1.iterator();
+		
+		while (i1.hasNext())
+		{
+			String child_window = i1.next();
+			
+			if(!parent_window.equalsIgnoreCase(child_window))
+			{
+				driver.switchTo().window(child_window);
+				
+				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys("Sindhi");
+				
+				 Thread.sleep(2000);
+				 
+				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys("Sindhi");
+				 
+			     Thread.sleep(1000);
+				 
+				 driver.findElement(By.xpath("//button[@id='reset_password']")).click();
+				 
+			      Thread.sleep(8000);
+			      
+			      String actual_error = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
+					
+				  System.out.println(actual_error);
+					 
+				  String actual_error1 = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
+						
+				  System.out.println(actual_error1);
+				  
+				  String expect = "Looks like something went wrong\n" + 
+							"Password is not valid.";
+				  
+				  Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+					
+					 Assert.assertTrue(actual_error.contains("Password is not valid."));
+
+					 Assert.assertEquals(actual_error, expect);
+					 
+					 Assert.assertTrue(actual_error1.contains("Please enter valid password."));
+			      
+	      
+				
+				
+			}
+		}
+				
+		
+	 }
+		 
+
+	@Test (priority =16,enabled=false)
+	 
+	 public void PasswordNotMatched () throws InterruptedException 
+	 {
+		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 
+		 Thread.sleep(4000); 
+		 
+		 driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]")).click();
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//input[@id='email']")).sendKeys("rikotest@mailinator.com");
+		 
+		 Thread.sleep(1000);
+		 
+		 driver.findElement(By.xpath("//button[@id='customer_login']")).click();	
+		 
+		 Thread.sleep(15000);
+		 
+		 driver.get("https://www.mailinator.com/ ");
+		 
+		 Thread.sleep(3000);
+		 
+		 driver.findElement(By.xpath("//input[@id='inboxfield']")).sendKeys("rikotest@mailinator.com");
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//button[contains(@class,'btn btn-dark')]")).click();
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//*[contains(text(),'SelfieStyler: Password Reset')]")).click();
+		 
+		 Thread.sleep(6000);
+		 
+		 driver.switchTo().frame("msg_body");
+		 
+		 Thread.sleep(4000);
+		 
+		 driver.findElement(By.xpath("//a[@class='button__text']")).click();
+		 
+		 Thread.sleep(8000);
+		 
+		 String parent_window= driver.getWindowHandle();
+		 
+		Set<String> s1=driver.getWindowHandles();
+		
+		Iterator<String> i1=s1.iterator();
+		
+		while (i1.hasNext())
+		{
+			String child_window = i1.next();
+			
+			if(!parent_window.equalsIgnoreCase(child_window))
+			{
+				driver.switchTo().window(child_window);
+				
+				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys("Sindhi0!");
+				
+				 Thread.sleep(2000);
+				 
+				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys("Sindhi");
+				 
+			     Thread.sleep(1000);
+				 
+				 driver.findElement(By.xpath("//button[@id='reset_password']")).click();
+				 
+			      Thread.sleep(8000);
+			      
+			      String actual_error = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
+					
+				  System.out.println(actual_error);
+					 
+				  String actual_error1 = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
+						
+				  System.out.println(actual_error1);
+				  
+				  String expect = "Looks like something went wrong\n" + 
+							"Passwords entered do not match.";
+				  
+				  Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+					
+					 Assert.assertTrue(actual_error.contains("Passwords entered do not match."));
+
+					 Assert.assertEquals(actual_error, expect);
+					 
+					 Assert.assertTrue(actual_error1.contains("Passwords must match."));
+			      
+	      
+				
+				
+			}
+		}
+				
+		
+	 }
+		 
+
 	
 	
 	

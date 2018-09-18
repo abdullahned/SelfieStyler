@@ -1,167 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="21" total="29" passed="8" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-09-18T10:58:53Z" name="Testng Automation Suite" finished-at="2018-09-18T11:03:10Z" duration-ms="257247">
+  <suite started-at="2018-09-18T17:32:14Z" name="Default suite" finished-at="2018-09-18T17:32:37Z" duration-ms="22792">
     <groups>
     </groups>
-    <test started-at="2018-09-18T10:58:53Z" name="Nopackage" finished-at="2018-09-18T11:03:10Z" duration-ms="257247">
-      <class name="mm.SignInErrorHandling">
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:01:54Z" name="setup" finished-at="2018-09-18T11:02:02Z" duration-ms="7455" status="PASS">
+    <test started-at="2018-09-18T17:32:14Z" name="Default test" finished-at="2018-09-18T17:32:37Z" duration-ms="22792">
+      <class name="mm.ContactUsErrorHandling">
+        <test-method is-config="true" signature="setup()[pri:0, instance:mm.ContactUsErrorHandling@385e9564]" started-at="2018-09-18T17:32:14Z" name="setup" finished-at="2018-09-18T17:32:25Z" duration-ms="11128" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="InvalidCredentials()[pri:12, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:02:02Z" name="InvalidCredentials" finished-at="2018-09-18T11:02:18Z" duration-ms="15629" status="PASS">
+        <test-method signature="MissingFields()[pri:18, instance:mm.ContactUsErrorHandling@385e9564]" started-at="2018-09-18T17:32:25Z" name="MissingFields" finished-at="2018-09-18T17:32:37Z" duration-ms="11642" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- InvalidCredentials -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:02:18Z" name="teardown" finished-at="2018-09-18T11:02:18Z" duration-ms="633" status="PASS">
+        </test-method> <!-- MissingFields -->
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.ContactUsErrorHandling@385e9564]" started-at="2018-09-18T17:32:37Z" name="teardown" finished-at="2018-09-18T17:32:37Z" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=InvalidCredentials status=SUCCESS method=SignInErrorHandling.InvalidCredentials()[pri:12, instance:mm.SignInErrorHandling@1757cd72] output={null}]]]>
+                <![CDATA[[TestResult name=MissingFields status=SUCCESS method=ContactUsErrorHandling.MissingFields()[pri:18, instance:mm.ContactUsErrorHandling@385e9564] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:02:18Z" name="setup" finished-at="2018-09-18T11:02:26Z" duration-ms="7601" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="InvalidEmail()[pri:13, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:02:26Z" name="InvalidEmail" finished-at="2018-09-18T11:02:43Z" duration-ms="17200" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InvalidEmail -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:02:43Z" name="teardown" finished-at="2018-09-18T11:02:44Z" duration-ms="635" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=InvalidEmail status=SUCCESS method=SignInErrorHandling.InvalidEmail()[pri:13, instance:mm.SignInErrorHandling@1757cd72] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:02:44Z" name="setup" finished-at="2018-09-18T11:02:52Z" duration-ms="8381" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="EmailNotFound()[pri:14, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:02:52Z" name="EmailNotFound" finished-at="2018-09-18T11:03:09Z" duration-ms="17235" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmailNotFound -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignInErrorHandling@1757cd72]" started-at="2018-09-18T11:03:09Z" name="teardown" finished-at="2018-09-18T11:03:10Z" duration-ms="629" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=EmailNotFound status=SUCCESS method=SignInErrorHandling.EmailNotFound()[pri:14, instance:mm.SignInErrorHandling@1757cd72] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- mm.SignInErrorHandling -->
-      <class name="mm.SignUpErrorHandling">
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T10:58:53Z" name="setup" finished-at="2018-09-18T10:59:01Z" duration-ms="8347" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="InvalidEmail()[pri:7, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T10:59:01Z" name="InvalidEmail" finished-at="2018-09-18T10:59:28Z" duration-ms="27243" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InvalidEmail -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T10:59:28Z" name="teardown" finished-at="2018-09-18T10:59:29Z" duration-ms="649" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=InvalidEmail status=SUCCESS method=SignUpErrorHandling.InvalidEmail()[pri:7, instance:mm.SignUpErrorHandling@2e377400] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T10:59:29Z" name="setup" finished-at="2018-09-18T10:59:36Z" duration-ms="7568" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="InvalidPassword()[pri:8, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T10:59:36Z" name="InvalidPassword" finished-at="2018-09-18T11:00:05Z" duration-ms="28549" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InvalidPassword -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:00:05Z" name="teardown" finished-at="2018-09-18T11:00:06Z" duration-ms="644" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=InvalidPassword status=SUCCESS method=SignUpErrorHandling.InvalidPassword()[pri:8, instance:mm.SignUpErrorHandling@2e377400] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:00:06Z" name="setup" finished-at="2018-09-18T11:00:13Z" duration-ms="7616" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="PasswordNotMatch()[pri:9, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:00:13Z" name="PasswordNotMatch" finished-at="2018-09-18T11:00:41Z" duration-ms="28248" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PasswordNotMatch -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:00:41Z" name="teardown" finished-at="2018-09-18T11:00:42Z" duration-ms="633" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=PasswordNotMatch status=SUCCESS method=SignUpErrorHandling.PasswordNotMatch()[pri:9, instance:mm.SignUpErrorHandling@2e377400] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:00:42Z" name="setup" finished-at="2018-09-18T11:00:50Z" duration-ms="7650" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="TermsNotChecked()[pri:10, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:00:50Z" name="TermsNotChecked" finished-at="2018-09-18T11:01:16Z" duration-ms="25917" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TermsNotChecked -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:01:16Z" name="teardown" finished-at="2018-09-18T11:01:16Z" duration-ms="632" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=TermsNotChecked status=SUCCESS method=SignUpErrorHandling.TermsNotChecked()[pri:10, instance:mm.SignUpErrorHandling@2e377400] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:01:16Z" name="setup" finished-at="2018-09-18T11:01:24Z" duration-ms="7464" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="MissingField()[pri:11, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:01:24Z" name="MissingField" finished-at="2018-09-18T11:01:54Z" duration-ms="29996" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MissingField -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.SignUpErrorHandling@2e377400]" started-at="2018-09-18T11:01:54Z" name="teardown" finished-at="2018-09-18T11:01:54Z" duration-ms="653" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=MissingField status=SUCCESS method=SignUpErrorHandling.MissingField()[pri:11, instance:mm.SignUpErrorHandling@2e377400] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- mm.SignUpErrorHandling -->
-    </test> <!-- Nopackage -->
-  </suite> <!-- Testng Automation Suite -->
+      </class> <!-- mm.ContactUsErrorHandling -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
