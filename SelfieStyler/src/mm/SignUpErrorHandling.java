@@ -11,9 +11,9 @@ import org.testng.annotations.Test;
 public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	
 	
- @Test (priority =7,enabled=false)
+ @Test (priority =7)
 	 
-	 public void signupE1 () throws InterruptedException
+	 public void InvalidEmail () throws InterruptedException
 	 
 	 {
 		 
@@ -104,9 +104,9 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =8,enabled=false)
+ @Test (priority =8)
 	 
-	 public void signupE2 () throws InterruptedException
+	 public void InvalidPassword () throws InterruptedException
 	 
 	 {
 		 
@@ -192,9 +192,9 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =9,enabled=false)
+ @Test (priority =9)
  
- public void signupE3 () throws InterruptedException
+ public void PasswordNotMatch () throws InterruptedException
  
  {
 	 
@@ -283,9 +283,9 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
  
  
 	
-	@Test(priority = 10,enabled=false)
+	@Test(priority = 10)
 	 
-	 public void signupE4() throws InterruptedException  {
+	 public void TermsNotChecked() throws InterruptedException  {
 		  
 		   
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
@@ -357,9 +357,9 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
-	@Test(priority = 11,enabled=false)
+	@Test(priority = 11)
 	 
-	 public void signupE5() throws InterruptedException  {
+	 public void MissingField() throws InterruptedException  {
 		  
 		   
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();

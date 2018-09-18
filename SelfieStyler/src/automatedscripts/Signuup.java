@@ -1,4 +1,4 @@
-package mm;
+package automatedscripts;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;

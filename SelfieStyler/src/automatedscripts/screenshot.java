@@ -1,4 +1,4 @@
-package mm;
+package automatedscripts;
 
 import java.io.File;
 import java.io.IOException;

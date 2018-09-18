@@ -1,4 +1,4 @@
-package mm;
+package automatedscripts;
 
 import org.testng.annotations.Test;
 
@@ -52,6 +52,8 @@ public class UnAuthenticatedHomePageQA {
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
 	 driver.get("http://qa-na.selfiestyler.com/");
+	 
+	 
 	  
   }
 

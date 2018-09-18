@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =12,enabled=false)
+	@Test (priority =12)
 	 
-	 public void SigninE1() throws InterruptedException 
+	 public void InvalidCredentials() throws InterruptedException 
 	 {
 		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
@@ -51,9 +51,9 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	 }
 	
 	
-	@Test (priority =13, enabled=false)
+	@Test (priority =13)
 	 
-	 public void SiginE2() throws InterruptedException 
+	 public void InvalidEmail() throws InterruptedException 
 	 {
 		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
@@ -97,7 +97,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 	@Test (priority =14)
 	 
-	 public void SiginE3() throws InterruptedException 
+	 public void EmailNotFound() throws InterruptedException 
 	 {
 		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
@@ -136,6 +136,9 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 		 
 			
 }
+	
+	
+	
 	
 		
 		
