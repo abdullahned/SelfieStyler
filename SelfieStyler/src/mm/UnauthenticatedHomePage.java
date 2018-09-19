@@ -3,6 +3,7 @@ package mm;
 import org.testng.annotations.Test;
 import library.utility;
 import org.testng.annotations.BeforeMethod;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
@@ -25,8 +26,9 @@ public class UnauthenticatedHomePage {
 	   String lastname = "test"+r.nextInt(1000);
 	   String email = "QAtest"+r.nextInt(1000)+"@mailinator.com";
 	   String email1 = "QA"+r.nextInt(1000)+"@mailinator.com";
+	   
+	   
 	  
-	
 	   
   @BeforeMethod
   

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results skipped="0" failed="0" ignored="19" total="20" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-09-18T17:32:14Z" name="Default suite" finished-at="2018-09-18T17:32:37Z" duration-ms="22792">
+  <suite name="Testng Automation Suite" duration-ms="21372" started-at="2018-09-19T16:39:05Z" finished-at="2018-09-19T16:39:26Z">
     <groups>
     </groups>
-    <test started-at="2018-09-18T17:32:14Z" name="Default test" finished-at="2018-09-18T17:32:37Z" duration-ms="22792">
+    <test name="Nopackage" duration-ms="21372" started-at="2018-09-19T16:39:05Z" finished-at="2018-09-19T16:39:26Z">
       <class name="mm.ContactUsErrorHandling">
-        <test-method is-config="true" signature="setup()[pri:0, instance:mm.ContactUsErrorHandling@385e9564]" started-at="2018-09-18T17:32:14Z" name="setup" finished-at="2018-09-18T17:32:25Z" duration-ms="11128" status="PASS">
+        <test-method status="PASS" signature="setup()[pri:0, instance:mm.ContactUsErrorHandling@c038203]" name="setup" is-config="true" duration-ms="9685" started-at="2018-09-19T16:39:05Z" finished-at="2018-09-19T16:39:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="MissingFields()[pri:18, instance:mm.ContactUsErrorHandling@385e9564]" started-at="2018-09-18T17:32:25Z" name="MissingFields" finished-at="2018-09-18T17:32:37Z" duration-ms="11642" status="PASS">
+        <test-method status="PASS" signature="MissingFields()[pri:18, instance:mm.ContactUsErrorHandling@c038203]" name="MissingFields" duration-ms="11661" started-at="2018-09-19T16:39:15Z" finished-at="2018-09-19T16:39:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- MissingFields -->
-        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.ContactUsErrorHandling@385e9564]" started-at="2018-09-18T17:32:37Z" name="teardown" finished-at="2018-09-18T17:32:37Z" duration-ms="2" status="PASS">
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:mm.ContactUsErrorHandling@c038203]" name="teardown" is-config="true" duration-ms="2" started-at="2018-09-19T16:39:26Z" finished-at="2018-09-19T16:39:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=MissingFields status=SUCCESS method=ContactUsErrorHandling.MissingFields()[pri:18, instance:mm.ContactUsErrorHandling@385e9564] output={null}]]]>
+                <![CDATA[[TestResult name=MissingFields status=SUCCESS method=ContactUsErrorHandling.MissingFields()[pri:18, instance:mm.ContactUsErrorHandling@c038203] output={null}]]]>
               </value>
             </param>
           </params>
@@ -27,6 +27,6 @@
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- mm.ContactUsErrorHandling -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Nopackage -->
+  </suite> <!-- Testng Automation Suite -->
 </testng-results>
