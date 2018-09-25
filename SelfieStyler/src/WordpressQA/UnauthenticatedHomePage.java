@@ -1,4 +1,4 @@
-package mm;
+package WordpressQA;
 
 import org.testng.annotations.Test;
 import library.utility;

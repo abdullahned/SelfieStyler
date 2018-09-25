@@ -1,4 +1,4 @@
-package mm;
+package WordpressQA;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
