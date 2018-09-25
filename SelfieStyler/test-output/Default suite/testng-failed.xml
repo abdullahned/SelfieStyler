@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="mm.women">
+      <class name="WordpressQA.Cancelsignup">
         <methods>
-          <include name="Women"/>
+          <include name="cancel"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- mm.women -->
+      </class> <!-- WordpressQA.Cancelsignup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

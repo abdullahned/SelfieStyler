@@ -45,7 +45,7 @@ public class ContactUs extends UnauthenticatedHomePage {
 		 
 		 driver.findElement(By.xpath("//button[@id='contact_submit']")).click();
 		 
-		 Thread.sleep(2000);
+		 Thread.sleep(8000);
 			 
 		 }
 	

@@ -54,14 +54,19 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+
+			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
 			
-			Thread.sleep(5000);
+            Actions actions = new Actions(driver);
+			
+			actions.moveToElement(sign_up).click().perform();
+			
+			Thread.sleep(5000);			
+			
 			
 			
 			WebElement element = driver.findElement(By.id("terms"));
 			
-			Actions actions = new Actions(driver);
 			
 			actions.moveToElement(element).click().perform();
 			
@@ -147,14 +152,18 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+
+			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+			
+            Actions actions = new Actions(driver);
+			
+			actions.moveToElement(sign_up).click().perform();
 			
 			Thread.sleep(5000);
 			
 			
 			WebElement element = driver.findElement(By.id("terms"));
 			
-			Actions actions = new Actions(driver);
 			
 			actions.moveToElement(element).click().perform();
 			
@@ -235,14 +244,18 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 		
 		Thread.sleep(5000);
 		
-		driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+
+		WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+		
+        Actions actions = new Actions(driver);
+		
+		actions.moveToElement(sign_up).click().perform();
 		
 		Thread.sleep(5000);
 		
 		
 		WebElement element = driver.findElement(By.id("terms"));
 		
-		Actions actions = new Actions(driver);
 		
 		actions.moveToElement(element).click().perform();
 		
@@ -399,14 +412,18 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+
+			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+			
+            Actions actions = new Actions(driver);
+			
+			actions.moveToElement(sign_up).click().perform();
 			
 			Thread.sleep(5000);
 			
 			
 			WebElement element = driver.findElement(By.id("terms"));
 			
-			Actions actions = new Actions(driver);
 			
 			actions.moveToElement(element).click().perform();
 			

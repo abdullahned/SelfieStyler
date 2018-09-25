@@ -89,7 +89,7 @@ public class UnauthenticatedHomePage {
  
 
 		 
-	 @Test (priority =6, enabled =false) 
+	 @Test (priority =6,enabled=false) 
 	 
 	 public void Shop() throws InterruptedException 
 	 {

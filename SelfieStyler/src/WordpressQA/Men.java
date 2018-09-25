@@ -1,6 +1,7 @@
 package WordpressQA;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
@@ -41,7 +42,13 @@ public class Men extends UnauthenticatedHomePage {
 			
 			driver.findElement(By.xpath("//button[contains(text(),'Notify Me')]")).click();
 			
-			Thread.sleep(10000);
+			Thread.sleep(3000);
+			
+			JavascriptExecutor jse = (JavascriptExecutor)driver;
+			
+			jse.executeScript("window.scrollBy(0,-500)", "");
+			
+			Thread.sleep(2000);
 			
 			driver.findElement(By.xpath("//button[contains(text(),'Ok, great!')]")).click();
 			

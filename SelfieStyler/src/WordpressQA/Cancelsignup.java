@@ -3,6 +3,7 @@ package WordpressQA;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 public class Cancelsignup extends UnauthenticatedHomePage {
@@ -26,9 +27,13 @@ public class Cancelsignup extends UnauthenticatedHomePage {
 			
 		Thread.sleep(4000);
 			
-		driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();
+		WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
 		
-		Thread.sleep(3000);
+        Actions actions = new Actions(driver);
+		
+		actions.moveToElement(sign_up).click().perform();
+		
+		Thread.sleep(5000);
 	     
 		 WebElement element1=driver.findElement(By.xpath("//a[contains(@class,'cancel_button')]"));
 		 

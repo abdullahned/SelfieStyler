@@ -25,7 +25,7 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 		 
 		 Thread.sleep(1000);
 		 
-		 driver.findElement(By.xpath("//button[@id='customer_login']")).click();	
+		 driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
 		 
 		 Thread.sleep(15000);
 		 

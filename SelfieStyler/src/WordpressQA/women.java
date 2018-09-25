@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class women extends UnauthenticatedHomePage {
 	
 	
-	 @Test(priority = 0)
+	 @Test(priority = 0,enabled=false)
 	 
 	 public void Women() throws InterruptedException  {
 		  
@@ -52,20 +52,27 @@ public class women extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+			
+			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+			
+            Actions actions = new Actions(driver);
+			
+			actions.moveToElement(sign_up).click().perform();
 			
 			Thread.sleep(5000);
 			
 			
-			WebElement element = driver.findElement(By.id("terms"));
+			WebElement terms_checkbox = driver.findElement(By.id("terms_checkbox"));
 			
-			Actions actions = new Actions(driver);
+			//Actions actions = new Actions(driver);
 			
-			actions.moveToElement(element).click().perform();
+			actions.moveToElement(terms_checkbox).click().perform();
 			
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 			
-	        driver.findElement(By.id("register_button")).click();
+			WebElement register_button  = driver.findElement(By.id("register_button"));
+			
+			actions.moveToElement(register_button).click().perform();
 			
 			Thread.sleep(8000);
 			
@@ -75,7 +82,7 @@ public class women extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//img[@src='img/app_store.png']")).click();
+			driver.findElement(By.xpath("//img[@src='https://wpdev.selfiestyler.com/wp-content/img/app_store.png']")).click();
 			
 			Thread.sleep(8000);
 	 }
