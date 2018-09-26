@@ -1,4 +1,4 @@
-package automatedscripts;
+package mm;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,35 +13,29 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+
 import org.testng.Assert;
 
-public class demo {
+public class verificationofBrands {
 
 	public static void main(String[] args) throws InterruptedException, Exception {
 		
 		
-		   /* String data0=sheet1.getRow(1).getCell(0).getStringCellValue();
-
-	    System.out.println("Data from Excel is "+data0);
-	    
-	    String data1=sheet1.getRow(2).getCell(0).getStringCellValue();
-
-	    System.out.println("Data from Excel is "+data1); */
-		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\m.abdullah\\Downloads\\chromedriver.exe");
 		
-		// Create a new instance of the chrome driver
+	
 		 WebDriver driver = new ChromeDriver();
 					 
-		 driver.manage().window().maximize(); //maximize window
+		 driver.manage().window().maximize(); 
 		 
-		 driver.manage().deleteAllCookies(); //delete all the cookies
+		 driver.manage().deleteAllCookies(); 
 		 
 		 driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		 
 		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  
-		 driver.get("http://qa-na.selfiestyler.com/");
+		// driver.get("http://qa-na.selfiestyler.com/");
 		 
 		 driver.get("http://selfiestyler.com/");
 		 
@@ -72,22 +66,24 @@ public class demo {
 		 
 		 Thread.sleep(10000);
 		 
-		 List<WebElement> liElements = driver.findElements(By.xpath("//*[@class='container brands-list']"));
-	    
-               
-	      
-	      for(int i=1; i <= liElements.size(); i++)
-	        {
-	            WebElement linkElement = driver.findElement(By.xpath("//*[@class='container brands-list']"));
+		
+	     WebElement linkElement = driver.findElement(By.xpath("//*[@class='container brands-list']"));
 	            
-	           System.out.println(linkElement.getText()); 
-	          
-
-	        } 
+	    // System.out.println(linkElement.getText());
+	     
+	     String wholeText = linkElement.getText();
+	      /* 
+		   
+		   if(wholeText.contains(row1))
+			   System.out.println("element found ");
+		   else
+			   System.out.println(row1 +"not found ");
+			   		  
+	      */
 	      
 	      
-	  	
-	        File src=new File("C://Users//m.abdullah//Desktop//brands.xlsx");
+	      
+	      File src=new File("C://Users//m.abdullah//Desktop//brands.xlsx");
 			
 			FileInputStream fis=new FileInputStream(src);
 			
@@ -104,20 +100,34 @@ public class demo {
 		    	 
 		    	String data0=sheet1.getRow(i).getCell(0).getStringCellValue();
 		    	 
-		    	System.out.println("Data from Row"+i+" is "+data0);
+		    	//System.out.println("Data from Row"+i+" is "+data0);
+		    	
+		    	 if(!wholeText.contains(data0)) {
+		    		  System.out.println("\n"+ data0 +"  not found \n");
+		    	 
+		    	    sheet1.getRow(i).createCell(1).setCellValue(data0);
+		    	 }
+		    	 
+		    	
+		    	  //if(wholeText.contains(data0))
+					//   System.out.println(data0+"  element found ");
+				   //else
+					 //  System.out.println("\n"+ data0 +"  not found \n");
 		    	
 		     }
-	   
+		     
+		     
+	    	    FileOutputStream fout=new FileOutputStream(src);
+	    	    
+	    	    wb.write(fout);
+		    
+		    wb.close();
 	      
-	    String data8=sheet1.getRow(1).getCell(0).getStringCellValue();
-	    
-	    System.out.println(data8);
-	    
-	    WebElement linkElement = driver.findElement(By.xpath("//*[@class='container brands-list']"));
-	    
-		Assert.assertTrue(data8.contains(linkElement.getText()));  
-	
-	      wb.close();
+	      driver.quit();
+	      
+	      
 
 }
+	
+	
 }

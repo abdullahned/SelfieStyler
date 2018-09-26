@@ -1,4 +1,4 @@
-package mm;
+package com.excel.utility;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,7 +12,7 @@ public class readdatafromexcel {
 	public static void main(String[] args) throws Exception {
 		
 		
-File src=new File("C://Users//m.abdullah//Desktop//brands.xlsx");
+		File src=new File("C://Users//m.abdullah//Desktop//brands.xlsx");
 		
 		FileInputStream fis=new FileInputStream(src);
 		
