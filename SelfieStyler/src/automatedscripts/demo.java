@@ -19,7 +19,15 @@ public class demo {
 
 	public static void main(String[] args) throws InterruptedException, Exception {
 		
-	
+		
+		   /* String data0=sheet1.getRow(1).getCell(0).getStringCellValue();
+
+	    System.out.println("Data from Excel is "+data0);
+	    
+	    String data1=sheet1.getRow(2).getCell(0).getStringCellValue();
+
+	    System.out.println("Data from Excel is "+data1); */
+		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\m.abdullah\\Downloads\\chromedriver.exe");
 		
 		// Create a new instance of the chrome driver

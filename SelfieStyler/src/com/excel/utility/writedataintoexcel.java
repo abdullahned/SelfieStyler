@@ -8,7 +8,7 @@ import java.io.FileOutputStream;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class Demoexcel {
+public class writedataintoexcel {
 
 	public static void main(String[] args) throws Exception  {
 		
@@ -20,16 +20,6 @@ public class Demoexcel {
 		 
 	    XSSFSheet sheet1=wb.getSheetAt(0);
 		
-	   /* String data0=sheet1.getRow(1).getCell(0).getStringCellValue();
-
-	    System.out.println("Data from Excel is "+data0);
-	    
-	    String data1=sheet1.getRow(2).getCell(0).getStringCellValue();
-
-	    System.out.println("Data from Excel is "+data1); */
-	    
-	    
-
 	    sheet1.getRow(1).createCell(1).setCellValue("Pass");
 	    
 	    sheet1.getRow(2).createCell(1).setCellValue("Fail");
@@ -42,15 +32,10 @@ public class Demoexcel {
 	    
 	    wb.write(fout);
 	    
-	    
-	    
-	    
+	       
 	    wb.close();
 	    
-		
-		
-		
-		
+				
 
 	}
 
