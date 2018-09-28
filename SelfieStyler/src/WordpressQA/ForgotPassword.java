@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 public class ForgotPassword extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =2,enabled=false)
+	@Test (priority =2)
 	 
 	 public void ForgotPwd() throws InterruptedException 
 	 {
@@ -25,7 +25,10 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 		 
 		 Thread.sleep(1000);
 		 
-		 driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
+		// driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
+		 
+		 driver.findElement(By.xpath("//button[@id='customer_login']")).click();
+		 
 		 
 		 Thread.sleep(15000);
 		 
@@ -67,11 +70,11 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 			{
 				driver.switchTo().window(child_window);
 				
-				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys("Sindhi0!");
+				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys(password);
 				
 				 Thread.sleep(2000);
 				 
-				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys("Sindhi0!");
+				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys(password);
 				 
 			     Thread.sleep(1000);
 				 

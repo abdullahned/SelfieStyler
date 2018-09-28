@@ -2,29 +2,23 @@ package mm;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-
-import org.testng.Assert;
-
-public class verificationofBrands {
+public class BrandListonLeftbar {
 
 	public static void main(String[] args) throws InterruptedException, Exception {
-		
-		
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\m.abdullah\\Downloads\\chromedriver.exe");
 		
-	
+		
 		 WebDriver driver = new ChromeDriver();
 					 
 		 driver.manage().window().maximize(); 
@@ -35,9 +29,9 @@ public class verificationofBrands {
 		 
 		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  
-		// driver.get("http://qa-na.selfiestyler.com/");
+		 driver.get("http://qa-na.selfiestyler.com/");
 		 
-		 driver.get("http://selfiestyler.com/");
+		 //driver.get("http://selfiestyler.com/");
 		 
 		 
 		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
@@ -56,22 +50,32 @@ public class verificationofBrands {
 		 
 		 Thread.sleep(5000);
 		 
-		// driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
+		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
 		 
-		// Thread.sleep(1000);
+		 Thread.sleep(1000);
 		 
-		// driver.findElement(By.xpath("//input[@name='commit']")).click();
-		 
-		 driver.findElement(By.linkText("Brands")).click();
-		 
-		 Thread.sleep(10000);
-		 
+		driver.findElement(By.xpath("//input[@name='commit']")).click();
 		
-	     WebElement linkElement = driver.findElement(By.xpath("//*[@class='container brands-list']"));
+		Thread.sleep(3000);
+		
+		 
+		 driver.findElement(By.linkText("Shop")).click();
+		 
+		 Thread.sleep(5000);
+		 
+         JavascriptExecutor jex = (JavascriptExecutor)driver;
+		 
+	     jex.executeScript("window.scrollBy(0,500)", "");
+	     
+		
+	     WebElement linkElement = driver.findElement(By.xpath("//*[@class='widget sidebar-custom sidebar-tag brands_filter']"));
 	            
 	    // System.out.println(linkElement.getText());
 	     
 	     String wholeText = linkElement.getText();
+	     
+	     System.out.println(wholeText);
+	     
 	      /* 
 		   
 		   if(wholeText.contains(row1))
@@ -109,11 +113,6 @@ public class verificationofBrands {
 		    	 }
 		    	 
 		    	
-		    	  //if(wholeText.contains(data0))
-					//   System.out.println(data0+"  element found ");
-				   //else
-					 //  System.out.println("\n"+ data0 +"  not found \n");
-		    	
 		     }
 		     
 		     
@@ -121,13 +120,14 @@ public class verificationofBrands {
 	    	    
 	    	    wb.write(fout);
 		    
-		    wb.close();
-	      
+		    wb.close(); 
+	     
+	     Thread.sleep(5000);
+	       
 	      driver.quit();
 	      
 	      
 
-}
-	
-	
+	}
+
 }

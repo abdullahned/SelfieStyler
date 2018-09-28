@@ -26,6 +26,7 @@ public class UnauthenticatedHomePage {
 	   String lastname = "test"+r.nextInt(1000);
 	   String email = "QAtest"+r.nextInt(1000)+"@mailinator.com";
 	   String email1 = "QA"+r.nextInt(1000)+"@mailinator.com";
+	   String password = "Pakistan"+r.nextInt(100);
 	   
 	   
 	  
@@ -47,11 +48,11 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-    //driver.get("https://www.selfiestyler.com/");
+    driver.get("https://www.selfiestyler.com/");
 	 
-  // driver.get("http://qa-na.selfiestyler.com/");
+  driver.get("http://qa-na.selfiestyler.com/");
 	 
-	 driver.get("https://wpdev.selfiestyler.com/");
+	// driver.get("https://wpqa.selfiestyler.com/");
 	 
 	  
   }
@@ -171,7 +172,7 @@ public class UnauthenticatedHomePage {
 		  }
 		  
 		  
-		 driver.quit();
+		// driver.quit();
 		  
 	  }
 
