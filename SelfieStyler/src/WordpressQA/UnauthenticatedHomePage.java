@@ -1,8 +1,15 @@
 package WordpressQA;
 
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 import library.utility;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -13,23 +20,39 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 
 
 
 public class UnauthenticatedHomePage {
 	
 	 WebDriver driver;
+	 ExtentHtmlReporter htmlReports;
+	 ExtentReports extent;
+	ExtentTest test;
 
+	 
 	 Random r = new Random();
 	 
 	 String firstname = "QA"+r.nextInt(100);
 	   String lastname = "test"+r.nextInt(1000);
-	   String email = "QAtest"+r.nextInt(1000)+"@mailinator.com";
-	   String email1 = "QA"+r.nextInt(1000)+"@mailinator.com";
+	   String email = "Qtest"+r.nextInt(1000)+"@mailinator.com";
+	   String email1 = "Qtest"+r.nextInt(1000)+"@mailinator.com";
 	   String password = "Pakistan"+r.nextInt(100);
 	   
+	
+	@BeforeTest
+	public void set()
+	{
+		htmlReports = new ExtentHtmlReporter("./Reports/learn_automation1.html");
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReports);
+		
+		
+	}  
 	   
-	  
+	   
+	        
 	   
   @BeforeMethod
   
@@ -48,11 +71,11 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-    driver.get("https://www.selfiestyler.com/");
+    //driver.get("https://www.selfiestyler.com/");
 	 
-  driver.get("http://qa-na.selfiestyler.com/");
+ // driver.get("http://qa-na.selfiestyler.com/");
 	 
-	// driver.get("https://wpqa.selfiestyler.com/");
+	driver.get("https://wpqa.selfiestyler.com/");
 	 
 	  
   }
@@ -63,6 +86,11 @@ public class UnauthenticatedHomePage {
  
  public void Signin() throws InterruptedException 
  {
+	 
+	 ExtentTest test = extent.createTest("Sign in");
+	 
+	test.log(Status.INFO, "User is going to Sign in");
+	 
 	 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 	 
 	 Thread.sleep(5000);
@@ -71,7 +99,7 @@ public class UnauthenticatedHomePage {
 	 
 	 Thread.sleep(1000);
 	 
-	 driver.findElement(By.id("password")).sendKeys("Sindhi0!");
+	 driver.findElement(By.id("password")).sendKeys("Samsung1");
 	 
 	 Thread.sleep(1000);
  
@@ -81,7 +109,7 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
 	 
-	 Thread.sleep(1000);
+	Thread.sleep(1000);
 	 
 	 driver.findElement(By.xpath("//input[@name='commit']")).click();
 	 
@@ -97,6 +125,9 @@ public class UnauthenticatedHomePage {
 		 
 		// driver.findElement(By.xpath("//a[@href='https://shop.selfiestyler.com/collections/shop-all']//*[text()='Shop']")).click();
 		 
+          ExtentTest test = extent.createTest("Shop check out process");
+		 
+	     test.log(Status.INFO, "Shop check out process");
 		 
 		 Signin();
 		 
@@ -154,11 +185,9 @@ public class UnauthenticatedHomePage {
 	
 
  
+
 	 
-	 
-	 
-	 
-	 
+	
 	 
 
 	  @AfterMethod
@@ -172,9 +201,17 @@ public class UnauthenticatedHomePage {
 		  }
 		  
 		  
-		// driver.quit();
+	 driver.quit();
 		  
 	  }
+	  
+
+		 @AfterTest
+		 public void tear()
+		 {
+			 extent.flush();
+		 }  
+		 
 
    
   

@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class ContactUs extends UnauthenticatedHomePage {
 
 @Test (priority =5,enabled=false)
@@ -11,7 +14,11 @@ public class ContactUs extends UnauthenticatedHomePage {
 	public void contactus () throws InterruptedException
 	
 	{
-		 Thread.sleep(3000);
+	    ExtentTest test = extent.createTest("Contact Us");
+	 
+        test.log(Status.INFO, "Contact Us");
+	
+	    Thread.sleep(3000);
 		 
 		JavascriptExecutor jex = (JavascriptExecutor)driver;
 		 

@@ -4,15 +4,20 @@
 
   <test name="Nopackage" >
  
-  
+ 
   
   
     <classes>
     
-       <class name="mm.UnauthenticatedHomePage" />
-       <class name="mm.SignUpErrorHandling" />
-       <class name="mm.SignInErrorHandling" />
-       <class name="mm.ContactUsErrorHandling" />
+       <class name="WordpressQA.UnauthenticatedHomePage" />
+       <class name="WordpressQA.SignUpErrorHandling" />
+       <class name="WordpressQA.SignInErrorHandling" />
+       <class name="WordpressQA.ContactUsErrorHandling" />
+       <class name="WordpressQA.Men" />
+       <class name="WordpressQA.women" />
+       <class name="WordpressQA.ForgotPassword" />
+       <class name="WordpressQA.Cancelsignup" />
+       <class name="WordpressQA.ContactUs" />
        
     </classes>
   </test>

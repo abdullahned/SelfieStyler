@@ -4,16 +4,28 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 public class Men extends UnauthenticatedHomePage {
 	
+	ExtentReports report;
 	
+	ExtentTest test;
+	 
 	
-	@Test(priority =1,enabled=false)
+	@Test(priority =1)
 	  
 	  public void men() throws InterruptedException  {
-		  
-		 
-		   
+		
+		
+		    
+        
+		// ExtentTest logger=extent.createTest("men");
+	   
+
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 			 
 			//handle drop box:
@@ -46,7 +58,13 @@ public class Men extends UnauthenticatedHomePage {
 			driver.findElement(By.xpath("//button[contains(text(),'Ok, great!')]")).click();
 			
 			Thread.sleep(2000);
-		  
+
+	   
+	   
+            // Flush method will write the test in report- This is mandatory step  
+	    
+			
+		
 	  }
 	 
 

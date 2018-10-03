@@ -7,13 +7,22 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 	
 	@Test (priority =12,enabled=false)
 	 
 	 public void InvalidCredentials() throws InterruptedException 
-	 {
+	  {
+		
+		 ExtentTest test = extent.createTest("Invalid Crdential for Sign in");
+		 
+		test.log(Status.INFO, "User has entered invalid credentials for Sign in ");
+		
+		
 		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
 		 Thread.sleep(5000);
@@ -58,6 +67,11 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	 
 	 public void InvalidEmail() throws InterruptedException 
 	 {
+		
+		 ExtentTest test = extent.createTest("Invalid Email for Password Reset");
+		 
+		test.log(Status.INFO, "User has entered Invalid Email for Password Reset");
+		 
 		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
 		 Thread.sleep(4000); 
@@ -100,9 +114,14 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 	@Test (priority =14,enabled=false)
 	 
-	 public void EmailNotFound() throws InterruptedException 
+	 public void EmailNotFound() throws InterruptedException
 	 {
-		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 ExtentTest test = extent.createTest("Incorrect Email for Password Reset");
+		 
+		test.log(Status.INFO, "User has entered Incorrect Email for Password Reset");
+		
+			
+		driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
 		 Thread.sleep(4000); 
 		 
@@ -143,10 +162,16 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	
 	
 	@Test (priority =15,enabled=false)
-	 
+	
 	 public void InvalidPwdCriteria () throws InterruptedException 
 	 {
-		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 
+		 ExtentTest test = extent.createTest("Invalid Password for Password Reset");
+		 
+		 test.log(Status.INFO, "User has entered Invalid Password for Password Reset");
+		
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
 		 Thread.sleep(4000); 
 		 
@@ -245,7 +270,13 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	 
 	 public void PasswordNotMatched () throws InterruptedException 
 	 {
-		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 
+		ExtentTest test = extent.createTest("Password and Confirmed Password");
+		 
+		 test.log(Status.INFO, "User has entered mismatched password");
+		
+			
+		driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
 		 Thread.sleep(4000); 
 		 

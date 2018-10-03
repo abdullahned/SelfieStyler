@@ -5,6 +5,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class Men extends UnauthenticatedHomePage {
 	
 	
@@ -13,7 +16,9 @@ public class Men extends UnauthenticatedHomePage {
 	  
 	  public void men() throws InterruptedException  {
 		  
+		 ExtentTest test = extent.createTest("Men Sign up");
 		 
+		 test.log(Status.INFO, "User is going to Sign up for men");
 		   
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 			 

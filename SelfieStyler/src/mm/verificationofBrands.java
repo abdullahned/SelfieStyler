@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -64,7 +65,12 @@ public class verificationofBrands {
 		 
 		 driver.findElement(By.linkText("Brands")).click();
 		 
-		 Thread.sleep(10000);
+		 Thread.sleep(5000);
+		 
+		   JavascriptExecutor jex = (JavascriptExecutor)driver;
+			 
+		   jex.executeScript("window.scrollBy(0,900)", "");
+		     
 		 
 		
 	     WebElement linkElement = driver.findElement(By.xpath("//*[@class='container brands-list']"));

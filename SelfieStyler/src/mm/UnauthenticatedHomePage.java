@@ -1,8 +1,15 @@
 package mm;
 
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+import extentreport.ExtentFactory;
 import library.utility;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -13,12 +20,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 
 
 
 public class UnauthenticatedHomePage {
 	
 	 WebDriver driver;
+	 
+	 ExtentHtmlReporter reporter;
+	 ExtentReports report;
+	 ExtentTest test;
+	 
+
+
+	 
 
 	 Random r = new Random();
 	 
@@ -26,14 +42,30 @@ public class UnauthenticatedHomePage {
 	   String lastname = "test"+r.nextInt(1000);
 	   String email = "QAtest"+r.nextInt(1000)+"@mailinator.com";
 	   String email1 = "QA"+r.nextInt(1000)+"@mailinator.com";
-	   
+	   String password = "Pakistan"+r.nextInt(100);
 	   
 	  
+ @BeforeTest
+
+public void start() 
+{
+     report = ExtentFactory.getinstance();
+	  
+	 test =report.createTest("signup");
+	
+	
+} 
+	   
+	   
+	   
+	   
+	   
 	   
   @BeforeMethod
   
   public void setup() 
   {
+	  
 	  
   System.setProperty("webdriver.chrome.driver", "C:\\Users\\m.abdullah\\Downloads\\chromedriver.exe");
   
@@ -47,11 +79,11 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-    //driver.get("https://www.selfiestyler.com/");
+    driver.get("https://www.selfiestyler.com/");
 	 
   // driver.get("http://qa-na.selfiestyler.com/");
 	 
-	 driver.get("https://wpdev.selfiestyler.com/");
+	// driver.get("https://wpdev.selfiestyler.com/");
 	 
 	  
   }
@@ -152,10 +184,7 @@ public class UnauthenticatedHomePage {
 	}
 	
 
- 
-	 
-	 
-	 
+
 	 
 	 
 	 
@@ -170,12 +199,15 @@ public class UnauthenticatedHomePage {
 			  utility.capturescreenshot(driver, result.getName());
 		  }
 		  
+		 // report.endTest(test);
+		  report.flush();
+		  
+		  
 		  
 		 driver.quit();
 		  
 	  }
 
-   
-  
+	 
 }
 

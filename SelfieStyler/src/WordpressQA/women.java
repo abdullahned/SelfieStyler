@@ -7,6 +7,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class women extends UnauthenticatedHomePage {
 	
 	
@@ -14,6 +17,10 @@ public class women extends UnauthenticatedHomePage {
 	 
 	 public void Women() throws InterruptedException  {
 		  
+		 
+	     ExtentTest test = extent.createTest("Women Sign up");
+		 
+		 test.log(Status.INFO, "User is going to Sign up for women");
 		   
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 			 
@@ -53,18 +60,20 @@ public class women extends UnauthenticatedHomePage {
 			Thread.sleep(5000);
 			
 			
-			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+		/*	WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
 			
             Actions actions = new Actions(driver);
 			
-			actions.moveToElement(sign_up).click().perform();
+			actions.moveToElement(sign_up).click().perform(); */
 			
+	        driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();				
+						
 			Thread.sleep(5000);
 			
 			
 			WebElement terms_checkbox = driver.findElement(By.id("terms_checkbox"));
 			
-			//Actions actions = new Actions(driver);
+			Actions actions = new Actions(driver);
 			
 			actions.moveToElement(terms_checkbox).click().perform();
 			
@@ -82,7 +91,7 @@ public class women extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//img[@src='https://wpdev.selfiestyler.com/wp-content/img/app_store.png']")).click();
+			driver.findElement(By.xpath("//img[@src='https://selfiestyler.com/wp-content/img/app_store.png']")).click();
 			
 			Thread.sleep(8000);
 	 }

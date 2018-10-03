@@ -67,11 +67,13 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 			{
 				driver.switchTo().window(child_window);
 				
-				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys("Sindhi0!");
+				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys(password);
 				
 				 Thread.sleep(2000);
 				 
-				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys("Sindhi0!");
+				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys(password);
+				 
+				 System.out.println(password);
 				 
 			     Thread.sleep(1000);
 				 

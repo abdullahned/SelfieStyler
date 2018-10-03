@@ -8,15 +8,23 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	
 	
- @Test (priority =7,enabled=false)
+ @Test (priority =7, enabled=false)
 	 
 	 public void InvalidEmail () throws InterruptedException
 	 
 	 {
 		 
+	     ExtentTest test = extent.createTest("Invalid Email for Sign Up");
+	 
+	     test.log(Status.INFO, "User has entered Invalid Email for Sign Up");
+	 
+	 
 		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 		 
 			//handle drop box:
@@ -53,6 +61,7 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 			driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
 			
 			Thread.sleep(5000);
+			
 			
 
 			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
@@ -109,12 +118,15 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =8,enabled=false)
+ @Test (priority =8, enabled=false)
 	 
 	 public void InvalidPassword () throws InterruptedException
 	 
 	 {
-		 
+	      ExtentTest test = extent.createTest("Invalid Password for Sign Up");
+	 
+         test.log(Status.INFO, "User has entered Invalid Password for Sign Up");
+	 
 		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 		 
 			//handle drop box:
@@ -201,11 +213,14 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =9,enabled=false)
+ @Test (priority =9, enabled=false)
  
  public void PasswordNotMatch () throws InterruptedException
  
  {
+	 ExtentTest test = extent.createTest("Password and Confirm password don not match");
+	 
+     test.log(Status.INFO, "User has entered mismatched password");
 	 
 	 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 	 
@@ -296,11 +311,14 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
  
  
 	
-	@Test(priority = 10,enabled=false)
+	@Test(priority = 10, enabled=false)
 	 
 	 public void TermsNotChecked() throws InterruptedException  {
 		  
-		   
+		 ExtentTest test = extent.createTest("Left Terms not Checked field");
+		 
+	     test.log(Status.INFO, "User has Left Terms not Checked field");
+		
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 			 
 			//handle drop box:
@@ -370,10 +388,14 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
-	@Test(priority = 11,enabled=false)
+	@Test(priority = 11, enabled=false)
 	 
 	 public void MissingField() throws InterruptedException  {
 		  
+		ExtentTest test = extent.createTest("User left some field");
+		 
+	     test.log(Status.INFO, "User has Left some mandatory field");
+		
 		   
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 			 

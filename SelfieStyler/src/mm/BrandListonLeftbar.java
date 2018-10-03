@@ -29,9 +29,9 @@ public class BrandListonLeftbar {
 		 
 		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		  
-		 driver.get("http://qa-na.selfiestyler.com/");
+		 //driver.get("http://qa-na.selfiestyler.com/");
 		 
-		 //driver.get("http://selfiestyler.com/");
+		 driver.get("http://selfiestyler.com/");
 		 
 		 
 		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
@@ -50,11 +50,11 @@ public class BrandListonLeftbar {
 		 
 		 Thread.sleep(5000);
 		 
-		driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
+	    /* driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
 		 
 		 Thread.sleep(1000);
 		 
-		driver.findElement(By.xpath("//input[@name='commit']")).click();
+		driver.findElement(By.xpath("//input[@name='commit']")).click(); */
 		
 		Thread.sleep(3000);
 		
@@ -65,7 +65,7 @@ public class BrandListonLeftbar {
 		 
          JavascriptExecutor jex = (JavascriptExecutor)driver;
 		 
-	     jex.executeScript("window.scrollBy(0,500)", "");
+	     jex.executeScript("window.scrollBy(0,1300)", "");
 	     
 		
 	     WebElement linkElement = driver.findElement(By.xpath("//*[@class='widget sidebar-custom sidebar-tag brands_filter']"));
@@ -87,7 +87,7 @@ public class BrandListonLeftbar {
 	      
 	      
 	      
-	      File src=new File("C://Users//m.abdullah//Desktop//brands.xlsx");
+	      File src=new File("C://Users//m.abdullah//Desktop//brandss.xlsx");
 			
 			FileInputStream fis=new FileInputStream(src);
 			

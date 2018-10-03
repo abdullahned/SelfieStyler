@@ -2,6 +2,10 @@
   
 <suite name="Testng Automation Suite"  >
 
+
+
+
+
   <test name="Nopackage" >
  
   
@@ -13,6 +17,10 @@
        <class name="mm.SignUpErrorHandling" />
        <class name="mm.SignInErrorHandling" />
        <class name="mm.ContactUsErrorHandling" />
+       <class name="mm.women" />
+       <class name="mm.Men" />
+       
+       
        
     </classes>
   </test>

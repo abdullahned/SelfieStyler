@@ -6,13 +6,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class Cancelsignup extends UnauthenticatedHomePage {
 	
 	 @Test (priority =4,enabled=false)
 	  
 	  public void cancel() throws InterruptedException 
 	  {
-		   
+		   	 
+         ExtentTest test = extent.createTest("Cancel Sign up");
+		 
+	     test.log(Status.INFO, "User has cancel the sign up");
+		 
 		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 		 
 		 Thread.sleep(3000);

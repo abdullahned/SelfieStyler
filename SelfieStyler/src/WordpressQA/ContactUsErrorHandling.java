@@ -5,6 +5,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class ContactUsErrorHandling extends UnauthenticatedHomePage {
 	
 	
@@ -13,6 +16,11 @@ public class ContactUsErrorHandling extends UnauthenticatedHomePage {
 	public void InvalidEmail () throws InterruptedException
 	
 	{
+	
+	     ExtentTest test = extent.createTest("Invalid Email for Contact Us");
+	 
+         test.log(Status.INFO, "User has entered Invalid Email for Contact Us");
+    
 		 Thread.sleep(3000);
 		 
 		JavascriptExecutor jex = (JavascriptExecutor)driver;
@@ -78,6 +86,11 @@ public class ContactUsErrorHandling extends UnauthenticatedHomePage {
 public void MissingFields () throws InterruptedException
 
 {
+	 
+	 ExtentTest test = extent.createTest("User left some field");
+	 
+     test.log(Status.INFO, "User has Left some mandatory field");
+	
 	 Thread.sleep(3000);
 	 
 	JavascriptExecutor jex = (JavascriptExecutor)driver;

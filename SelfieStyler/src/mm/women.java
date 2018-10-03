@@ -7,14 +7,25 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 public class women extends UnauthenticatedHomePage {
 	
+	ExtentReports report;
 	
-	 @Test(priority = 0, enabled=false)
+	ExtentTest test;
+	 
+	 @Test(priority = 0)
 	 
 	 public void Women() throws InterruptedException  {
 		  
-		   
+		 
+		// ExtentTest logger=extent.createTest("women");
+	   
+		 
 		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
 			 
 			//handle drop box:
@@ -78,6 +89,10 @@ public class women extends UnauthenticatedHomePage {
 			driver.findElement(By.xpath("//img[@src='img/app_store.png']")).click();
 			
 			Thread.sleep(8000);
+			
+		
+		
+			
 	 }
 	 
 

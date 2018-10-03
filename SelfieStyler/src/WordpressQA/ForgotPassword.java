@@ -6,14 +6,22 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 public class ForgotPassword extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =2)
+	@Test (priority =2,enabled=false)
 	 
 	 public void ForgotPwd() throws InterruptedException 
 	 {
-		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 
+		ExtentTest test = extent.createTest("Forgot Password");
+		 
+	    test.log(Status.INFO, "User forgot the sign in credentials");
+		
+		driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
 		 
 		 Thread.sleep(4000); 
 		 
@@ -25,9 +33,9 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 		 
 		 Thread.sleep(1000);
 		 
-		// driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
+		driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
 		 
-		 driver.findElement(By.xpath("//button[@id='customer_login']")).click();
+		// driver.findElement(By.xpath("//button[@id='customer_login']")).click();
 		 
 		 
 		 Thread.sleep(15000);
@@ -70,11 +78,13 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 			{
 				driver.switchTo().window(child_window);
 				
-				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys(password);
+				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys("Germany0!");
 				
 				 Thread.sleep(2000);
 				 
-				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys(password);
+				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys("Germany0!");
+				 
+				 System.out.println(password);
 				 
 			     Thread.sleep(1000);
 				 
