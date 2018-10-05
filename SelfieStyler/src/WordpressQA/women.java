@@ -91,7 +91,7 @@ public class women extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//img[@src='https://selfiestyler.com/wp-content/img/app_store.png']")).click();
+			driver.findElement(By.xpath("//img[@alt='Apple Store Button']")).click();
 			
 			Thread.sleep(8000);
 	 }

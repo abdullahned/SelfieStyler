@@ -3,52 +3,24 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Testng Automation Suite]">
   <test thread-count="5" name="Nopackage(failed)">
     <classes>
-      <class name="WordpressQA.ContactUsErrorHandling">
-        <methods>
-          <include name="teardown"/>
-          <include name="Signin"/>
-          <include name="setup"/>
-          <include name="tear"/>
-          <include name="set"/>
-        </methods>
-      </class> <!-- WordpressQA.ContactUsErrorHandling -->
-      <class name="WordpressQA.SignUpErrorHandling">
-        <methods>
-          <include name="teardown"/>
-          <include name="Signin"/>
-          <include name="setup"/>
-          <include name="tear"/>
-          <include name="set"/>
-        </methods>
-      </class> <!-- WordpressQA.SignUpErrorHandling -->
-      <class name="WordpressQA.women">
-        <methods>
-          <include name="teardown"/>
-          <include name="Signin"/>
-          <include name="setup"/>
-          <include name="tear"/>
-          <include name="set"/>
-        </methods>
-      </class> <!-- WordpressQA.women -->
-      <class name="WordpressQA.SignInErrorHandling">
-        <methods>
-          <include name="teardown"/>
-          <include name="Signin"/>
-          <include name="setup"/>
-          <include name="tear"/>
-          <include name="set"/>
-        </methods>
-      </class> <!-- WordpressQA.SignInErrorHandling -->
       <class name="WordpressQA.Men">
         <methods>
           <include name="teardown"/>
-          <include name="Signin"/>
           <include name="setup"/>
           <include name="men"/>
           <include name="tear"/>
           <include name="set"/>
         </methods>
       </class> <!-- WordpressQA.Men -->
+      <class name="WordpressQA.ForgotPassword">
+        <methods>
+          <include name="teardown"/>
+          <include name="setup"/>
+          <include name="tear"/>
+          <include name="set"/>
+          <include name="ForgotPwd"/>
+        </methods>
+      </class> <!-- WordpressQA.ForgotPassword -->
     </classes>
   </test> <!-- Nopackage(failed) -->
 </suite> <!-- Failed suite [Testng Automation Suite] -->

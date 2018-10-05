@@ -71,11 +71,11 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-    //driver.get("https://www.selfiestyler.com/");
+   driver.get("https://www.selfiestyler.com/");
 	 
  // driver.get("http://qa-na.selfiestyler.com/");
 	 
-	driver.get("https://wpqa.selfiestyler.com/");
+	//driver.get("https://wpqa.selfiestyler.com/");
 	 
 	  
   }
@@ -99,7 +99,7 @@ public class UnauthenticatedHomePage {
 	 
 	 Thread.sleep(1000);
 	 
-	 driver.findElement(By.id("password")).sendKeys("Samsung1");
+	 driver.findElement(By.id("password")).sendKeys("Germany0!");
 	 
 	 Thread.sleep(1000);
  
@@ -107,11 +107,11 @@ public class UnauthenticatedHomePage {
 	 
 	 Thread.sleep(10000);
 	 
-	 driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
+	// driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
 	 
-	Thread.sleep(1000);
+	//Thread.sleep(1000);
 	 
-	 driver.findElement(By.xpath("//input[@name='commit']")).click();
+	// driver.findElement(By.xpath("//input[@name='commit']")).click();
 	 
 	
  }
@@ -137,7 +137,11 @@ public class UnauthenticatedHomePage {
 		 Thread.sleep(10000);
 		 
 		
-		 driver.findElement(By.xpath("//a[@class='product-grid-image']")).click();
+		 WebElement product_image= driver.findElement(By.xpath("//a[@class='product-grid-image']"));
+		 
+		 Actions actionss = new Actions(driver);
+			
+		 actionss.moveToElement(product_image).click().perform();
 			
 		 Thread.sleep(3000);
 		 

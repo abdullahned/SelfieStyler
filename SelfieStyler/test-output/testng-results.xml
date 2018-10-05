@@ -1,116 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="7" passed="5">
+<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="191827" started-at="2018-10-03T17:30:47Z" finished-at="2018-10-03T17:33:59Z">
+  <suite name="Default suite" duration-ms="109772" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:14:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="191827" started-at="2018-10-03T17:30:47Z" finished-at="2018-10-03T17:33:59Z">
-      <class name="WordpressQA.SignUpErrorHandling">
-        <test-method status="PASS" signature="set()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="set" is-config="true" duration-ms="238" started-at="2018-10-03T17:30:47Z" finished-at="2018-10-03T17:30:47Z">
+    <test name="Default test" duration-ms="109772" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:14:11Z">
+      <class name="WordpressQA.Favourite">
+        <test-method status="PASS" signature="set()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="set" is-config="true" duration-ms="176" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:12:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- set -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="setup" is-config="true" duration-ms="10233" started-at="2018-10-03T17:30:47Z" finished-at="2018-10-03T17:30:58Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="setup" is-config="true" duration-ms="13964" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:12:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="InvalidEmail()[pri:7, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="InvalidEmail" duration-ms="27150" started-at="2018-10-03T17:30:58Z" finished-at="2018-10-03T17:31:25Z">
+        <test-method status="PASS" signature="AddFavourite()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="AddFavourite" duration-ms="94636" started-at="2018-10-05T18:12:36Z" finished-at="2018-10-05T18:14:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- InvalidEmail -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="teardown" is-config="true" duration-ms="643" started-at="2018-10-03T17:31:25Z" finished-at="2018-10-03T17:31:25Z">
+        </test-method> <!-- AddFavourite -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="teardown" is-config="true" duration-ms="714" started-at="2018-10-05T18:14:10Z" finished-at="2018-10-05T18:14:11Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=InvalidEmail status=SUCCESS method=SignUpErrorHandling.InvalidEmail()[pri:7, instance:WordpressQA.SignUpErrorHandling@77cd7a0] output={null}]]]>
+                <![CDATA[[TestResult name=AddFavourite status=SUCCESS method=Favourite.AddFavourite()[pri:0, instance:WordpressQA.Favourite@77cd7a0] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="setup" is-config="true" duration-ms="9931" started-at="2018-10-03T17:31:25Z" finished-at="2018-10-03T17:31:35Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="InvalidPassword()[pri:8, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="InvalidPassword" duration-ms="28697" started-at="2018-10-03T17:31:35Z" finished-at="2018-10-03T17:32:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- InvalidPassword -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="teardown" is-config="true" duration-ms="665" started-at="2018-10-03T17:32:04Z" finished-at="2018-10-03T17:32:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=InvalidPassword status=SUCCESS method=SignUpErrorHandling.InvalidPassword()[pri:8, instance:WordpressQA.SignUpErrorHandling@77cd7a0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="setup" is-config="true" duration-ms="9386" started-at="2018-10-03T17:32:05Z" finished-at="2018-10-03T17:32:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="PasswordNotMatch()[pri:9, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="PasswordNotMatch" duration-ms="28286" started-at="2018-10-03T17:32:14Z" finished-at="2018-10-03T17:32:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- PasswordNotMatch -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="teardown" is-config="true" duration-ms="633" started-at="2018-10-03T17:32:42Z" finished-at="2018-10-03T17:32:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=PasswordNotMatch status=SUCCESS method=SignUpErrorHandling.PasswordNotMatch()[pri:9, instance:WordpressQA.SignUpErrorHandling@77cd7a0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="setup" is-config="true" duration-ms="9066" started-at="2018-10-03T17:32:43Z" finished-at="2018-10-03T17:32:52Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="TermsNotChecked()[pri:10, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="TermsNotChecked" duration-ms="26039" started-at="2018-10-03T17:32:52Z" finished-at="2018-10-03T17:33:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TermsNotChecked -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="teardown" is-config="true" duration-ms="629" started-at="2018-10-03T17:33:18Z" finished-at="2018-10-03T17:33:19Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=TermsNotChecked status=SUCCESS method=SignUpErrorHandling.TermsNotChecked()[pri:10, instance:WordpressQA.SignUpErrorHandling@77cd7a0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="setup" is-config="true" duration-ms="9478" started-at="2018-10-03T17:33:19Z" finished-at="2018-10-03T17:33:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="MissingField()[pri:11, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="MissingField" duration-ms="29830" started-at="2018-10-03T17:33:28Z" finished-at="2018-10-03T17:33:58Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- MissingField -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="teardown" is-config="true" duration-ms="604" started-at="2018-10-03T17:33:58Z" finished-at="2018-10-03T17:33:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=MissingField status=SUCCESS method=SignUpErrorHandling.MissingField()[pri:11, instance:WordpressQA.SignUpErrorHandling@77cd7a0] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="tear()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="tear" is-config="true" duration-ms="293" started-at="2018-10-03T17:33:59Z" finished-at="2018-10-03T17:33:59Z">
+        <test-method status="PASS" signature="tear()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="tear" is-config="true" duration-ms="266" started-at="2018-10-05T18:14:11Z" finished-at="2018-10-05T18:14:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tear -->
-      </class> <!-- WordpressQA.SignUpErrorHandling -->
+      </class> <!-- WordpressQA.Favourite -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

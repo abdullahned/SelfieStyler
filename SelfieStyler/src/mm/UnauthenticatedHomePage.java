@@ -2,14 +2,10 @@ package mm;
 
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import extentreport.ExtentFactory;
 import library.utility;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -20,7 +16,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
+
 
 
 
@@ -28,9 +24,9 @@ public class UnauthenticatedHomePage {
 	
 	 WebDriver driver;
 	 
-	 ExtentHtmlReporter reporter;
-	 ExtentReports report;
-	 ExtentTest test;
+	 //ExtentHtmlReporter reporter;
+	// ExtentReports report;
+	// ExtentTest test;
 	 
 
 
@@ -44,21 +40,9 @@ public class UnauthenticatedHomePage {
 	   String email1 = "QA"+r.nextInt(1000)+"@mailinator.com";
 	   String password = "Pakistan"+r.nextInt(100);
 	   
-	  
- @BeforeTest
-
-public void start() 
-{
-     report = ExtentFactory.getinstance();
-	  
-	 test =report.createTest("signup");
-	
-	
-} 
+	    
 	   
-	   
-	   
-	   
+	     
 	   
 	   
   @BeforeMethod
@@ -199,8 +183,7 @@ public void start()
 			  utility.capturescreenshot(driver, result.getName());
 		  }
 		  
-		 // report.endTest(test);
-		  report.flush();
+	
 		  
 		  
 		  

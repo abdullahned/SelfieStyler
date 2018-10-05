@@ -12,7 +12,7 @@ import com.aventstack.extentreports.Status;
 public class ForgotPassword extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =2,enabled=false)
+	@Test (priority =2)
 	 
 	 public void ForgotPwd() throws InterruptedException 
 	 {

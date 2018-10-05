@@ -3,13 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WordpressQA.UnauthenticatedHomePage">
+      <class name="WordpressQA.Favourite">
         <methods>
           <include name="teardown"/>
           <include name="setup"/>
-          <include name="Shop"/>
+          <include name="tear"/>
+          <include name="AddFavourite"/>
+          <include name="set"/>
         </methods>
-      </class> <!-- WordpressQA.UnauthenticatedHomePage -->
+      </class> <!-- WordpressQA.Favourite -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

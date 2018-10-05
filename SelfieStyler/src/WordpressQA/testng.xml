@@ -1,26 +1,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-  
-<suite name="Testng Automation Suite"  >
 
-  <test name="Nopackage" >
- 
- 
-  
-  
-    <classes>
-    
-       <class name="WordpressQA.UnauthenticatedHomePage" />
-       <class name="WordpressQA.SignUpErrorHandling" />
-       <class name="WordpressQA.SignInErrorHandling" />
-       <class name="WordpressQA.ContactUsErrorHandling" />
-       <class name="WordpressQA.Men" />
-       <class name="WordpressQA.women" />
-       <class name="WordpressQA.ForgotPassword" />
-       <class name="WordpressQA.Cancelsignup" />
-       <class name="WordpressQA.ContactUs" />
-       
-    </classes>
-  </test>
- 
+<suite name="Testng Automation Suite">
+
+	<test name="Nopackage">
+
+
+
+
+		<classes>
+
+
+			<class name="WordpressQA.women" />
+			<class name="WordpressQA.Men" />
+			<class name="WordpressQA.ForgotPassword" />
+			<class name="WordpressQA.UnauthenticatedHomePage" />
+			<class name="WordpressQA.Cancelsignup" />
+			<class name="WordpressQA.ContactUs" />
+			<class name="WordpressQA.SignUpErrorHandling" />
+			<class name="WordpressQA.SignInErrorHandling" />
+			<class name="WordpressQA.ContactUsErrorHandling" />
+
+
+		</classes>
+	</test>
+
 </suite>
  

@@ -14,10 +14,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class women extends UnauthenticatedHomePage {
 	
-	ExtentReports report;
-	
-	ExtentTest test;
-	 
+
 	 @Test(priority = 0)
 	 
 	 public void Women() throws InterruptedException  {
