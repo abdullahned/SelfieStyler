@@ -14,7 +14,7 @@ public class Favourite extends UnauthenticatedHomePage {
 	
 	//JavascriptExecutor jse = (JavascriptExecutor)driver;
 	
-	@Test
+	@Test (enabled=false)
 	public void AddFavourite () throws InterruptedException
 	
 	{

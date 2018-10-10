@@ -4,11 +4,14 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
+import library.HighlightLocator;
 
 public class SignInErrorHandling extends UnauthenticatedHomePage {
 
@@ -23,94 +26,106 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 		test.log(Status.INFO, "User has entered invalid credentials for Sign in ");
 		
 		
-		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		WebElement clickLogin = driver.findElement(By.xpath("//a[contains(text(),'Log in')]"));
 		 
-		 Thread.sleep(5000);
+		HighlightLocator.highLightElement(driver, clickLogin);
+		
+		clickLogin.click();
 		 
-		 driver.findElement(By.id("email")).sendKeys("abc@gmail.com");
+		 Thread.sleep(3000);
+		  
+		 WebElement enterEmail = driver.findElement(By.id("email")); 
+		 
+		 HighlightLocator.highLightElement(driver,enterEmail );
+		 
+		 enterEmail.sendKeys("abc@gmail.com");
 		 
 		 Thread.sleep(1000);
 		 
-		 driver.findElement(By.id("password")).sendKeys("Sindhi0!");
+		 WebElement enterPassword = driver.findElement(By.id("password"));
+		 
+		 HighlightLocator.highLightElement(driver,enterPassword );
+		 
+		 enterPassword.sendKeys("Germany0!");
 		 
 		 Thread.sleep(1000);
 		 
-	     driver.findElement(By.id("customer_login")).click();
+		 WebElement submit =  driver.findElement(By.id("customer_login"));
+		 
+		 HighlightLocator.highLightElement(driver,submit );
+		 
+		 submit.click();
 		 
 		 Thread.sleep(6000);
 		 
-		 String actual_error = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
+		 String top_error_para = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
 			
-		 System.out.println(actual_error);
+		 System.out.println(top_error_para);
 		 
-		 String actual_error1 = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
+		 String bottom_error_para = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
 			
-		 System.out.println(actual_error1);
+		 System.out.println(bottom_error_para);
 			 	
 		 String expect = "Looks like something went wrong\n" + 
 					"User name and/or password is not valid";
 			
-    	 Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+    	 Assert.assertTrue(top_error_para.contains("Looks like something went wrong"));
 			
-		 Assert.assertTrue(actual_error.contains("User name and/or password is not valid"));
+		 Assert.assertTrue(top_error_para.contains("User name and/or password is not valid"));
 
-		 Assert.assertEquals(actual_error, expect);
+		 Assert.assertEquals(top_error_para, expect);
 			
-		 Assert.assertTrue(actual_error1.contains("Please enter valid user name and password."));
+		 Assert.assertTrue(bottom_error_para.contains("Please enter valid user name and password."));
 						
-									 
-		 		
-	 }
-	
-	
-	@Test (priority =13, enabled=false)
-	 
-	 public void InvalidEmail() throws InterruptedException 
-	 {
-		
-		 ExtentTest test = extent.createTest("Invalid Email for Password Reset");
+		 driver.navigate().refresh();
 		 
-		test.log(Status.INFO, "User has entered Invalid Email for Password Reset");
+         WebElement Forgot = driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]"));  // Invalid Email
 		 
-		 driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 HighlightLocator.highLightElement(driver, Forgot);
 		 
-		 Thread.sleep(4000); 
+		 Forgot.click();
 		 
-		 driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]")).click();
+		 Thread.sleep(2000);
 		 
-		 Thread.sleep(4000);
+		 WebElement enterEmail1 = driver.findElement(By.id("email")); 
 		 
-		 driver.findElement(By.xpath("//input[@id='email']")).sendKeys("abc.com");
+		 HighlightLocator.highLightElement(driver,enterEmail1 );
 		 
-		 Thread.sleep(1000);
+		 enterEmail1.sendKeys("abc.com");
+		 	   	 
+			 
+         WebElement customer_login_forgot = driver.findElement(By.xpath("//button[@id='customer_login_forgot']"));	
 		 
-		 driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
+		 HighlightLocator.highLightElement(driver,customer_login_forgot );
 		 
-		 Thread.sleep(5000);
+		 customer_login_forgot.click();
 		 
-		 String actual_error = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
+	     Thread.sleep(5000);
+		 
+		 String top_error_para1 = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
 			
-		 System.out.println(actual_error);
+		 System.out.println(top_error_para1);
 		 
-		 String actual_error1 = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
+		 String bottom_error_para1 = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
 			
-		 System.out.println(actual_error1);
+		 System.out.println(bottom_error_para1);
 			                                           		 
-		 String expect = "Looks like something went wrong\n" + 
+		 String expect1 = "Looks like something went wrong\n" + 
 					"Email address is not valid.";
 			
-		 Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
+		 Assert.assertTrue(top_error_para1.contains("Looks like something went wrong"));
 			
-		 Assert.assertTrue(actual_error.contains("Email address is not valid."));
+		 Assert.assertTrue(top_error_para1.contains("Email address is not valid."));
 
-		 Assert.assertEquals(actual_error, expect);
+		 Assert.assertEquals(top_error_para1, expect1);
 		 
-		 Assert.assertTrue(actual_error1.contains("Please enter valid email address."));
+		 Assert.assertTrue(bottom_error_para1.contains("Please enter valid email address."));
+		
 		 
-			
-}
+		 
+	 }
 	
-	
+
 
 	@Test (priority =14,enabled=false)
 	 
@@ -171,19 +186,36 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 		 test.log(Status.INFO, "User has entered Invalid Password for Password Reset");
 		
 		
-		driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
+		 WebElement clickLogin = driver.findElement(By.xpath("//a[contains(text(),'Log in')]"));
 		 
-		 Thread.sleep(4000); 
-		 
-		 driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]")).click();
-		 
-		 Thread.sleep(4000);
-		 
-		 driver.findElement(By.xpath("//input[@id='email']")).sendKeys("rikotest@mailinator.com");
-		 
-		 Thread.sleep(1000);
-		 
-		 driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
+			HighlightLocator.highLightElement(driver, clickLogin);
+			
+			clickLogin.click();
+			 
+			 Thread.sleep(4000); 
+			 
+			 WebElement Forgot =   driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]"));
+			 
+			 HighlightLocator.highLightElement(driver, Forgot);
+			 
+			 Forgot.click();
+			 
+			 Thread.sleep(4000);
+			  
+
+			 WebElement enterEmail = driver.findElement(By.xpath("//input[@id='email']")); 
+			 
+			 HighlightLocator.highLightElement(driver,enterEmail );
+			 
+			 enterEmail.sendKeys("rikotest@mailinator.com");
+			 
+			 Thread.sleep(1000);
+			 
+			 WebElement customer_login_forgot = driver.findElement(By.xpath("//button[@id='customer_login_forgot']"));	
+			 
+			 HighlightLocator.highLightElement(driver,customer_login_forgot );
+			 
+			 customer_login_forgot.click();
 		 
 		 Thread.sleep(15000);
 		 
@@ -191,15 +223,27 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 		 
 		 Thread.sleep(3000);
 		 
-		 driver.findElement(By.xpath("//input[@id='inboxfield']")).sendKeys("rikotest@mailinator.com");
+		 WebElement inboxfield  = driver.findElement(By.xpath("//input[@id='inboxfield']"));
+		 
+		 HighlightLocator.highLightElement(driver,inboxfield );
+		 
+		 inboxfield.sendKeys("rikotest@mailinator.com");
 		 
 		 Thread.sleep(4000);
 		 
-		 driver.findElement(By.xpath("//button[contains(@class,'btn btn-dark')]")).click();
+         WebElement btn   =  driver.findElement(By.xpath("//button[contains(@class,'btn btn-dark')]"));
+		 
+		 HighlightLocator.highLightElement(driver,btn);
+		 
+		 btn.click();
 		 
 		 Thread.sleep(4000);
 		 
-		 driver.findElement(By.xpath("//*[contains(text(),'SelfieStyler: Password Reset')]")).click();
+         WebElement link = driver.findElement(By.xpath("//*[contains(text(),'SelfieStyler: Password Reset')]"));
+		 
+		 HighlightLocator.highLightElement(driver,link);
+		 
+		 link.click();
 		 
 		 Thread.sleep(6000);
 		 
@@ -225,15 +269,29 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 			{
 				driver.switchTo().window(child_window);
 				
-				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys("Sindhi");
+                WebElement password1 = driver.findElement(By.xpath("//input[@id='password1']"));
 				
-				 Thread.sleep(2000);
+				HighlightLocator.highLightElement(driver,password1 );
+				
+				password1.sendKeys("Germany");
+				
+				Thread.sleep(2000);
 				 
-				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys("Sindhi");
+                WebElement password2 = driver.findElement(By.xpath("//input[@id='password2']"));
+				
+				HighlightLocator.highLightElement(driver,password2);
+				
+				password2.sendKeys("Germany");
+				 
+				 System.out.println(password);
 				 
 			     Thread.sleep(1000);
 				 
-				 driver.findElement(By.xpath("//button[@id='reset_password']")).click();
+			     WebElement reset_password = driver.findElement(By.xpath("//button[@id='reset_password']"));
+				 
+			     HighlightLocator.highLightElement(driver,reset_password);
+			     
+			     reset_password.click();
 				 
 			      Thread.sleep(8000);
 			      
@@ -256,113 +314,54 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 					 
 					 Assert.assertTrue(actual_error1.contains("Please enter valid password."));
 			      
+	      driver.navigate().refresh();
 	      
-				
-				
-			}
-		}
-				
-		
-	 }
-		 
-
-	@Test (priority =16,enabled=false)
-	 
-	 public void PasswordNotMatched () throws InterruptedException 
-	 {
-		 
-		ExtentTest test = extent.createTest("Password and Confirmed Password");
-		 
-		 test.log(Status.INFO, "User has entered mismatched password");
-		
+	      WebElement password3 = driver.findElement(By.xpath("//input[@id='password1']"));    // Entered password must match
 			
-		driver.findElement(By.xpath("//a[contains(text(),'Log in')]")).click();
-		 
-		 Thread.sleep(4000); 
-		 
-		 driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]")).click();
-		 
-		 Thread.sleep(4000);
-		 
-		 driver.findElement(By.xpath("//input[@id='email']")).sendKeys("rikotest@mailinator.com");
-		 
-		 Thread.sleep(1000);
-		 
-		 driver.findElement(By.xpath("//button[@id='customer_login_forgot']")).click();	
-		 
-		 Thread.sleep(15000);
-		 
-		 driver.get("https://www.mailinator.com/ ");
-		 
-		 Thread.sleep(3000);
-		 
-		 driver.findElement(By.xpath("//input[@id='inboxfield']")).sendKeys("rikotest@mailinator.com");
-		 
-		 Thread.sleep(4000);
-		 
-		 driver.findElement(By.xpath("//button[contains(@class,'btn btn-dark')]")).click();
-		 
-		 Thread.sleep(4000);
-		 
-		 driver.findElement(By.xpath("//*[contains(text(),'SelfieStyler: Password Reset')]")).click();
-		 
-		 Thread.sleep(6000);
-		 
-		 driver.switchTo().frame("msg_body");
-		 
-		 Thread.sleep(4000);
-		 
-		 driver.findElement(By.xpath("//a[@class='button__text']")).click();
-		 
-		 Thread.sleep(8000);
-		 
-		 String parent_window= driver.getWindowHandle();
-		 
-		Set<String> s1=driver.getWindowHandles();
-		
-		Iterator<String> i1=s1.iterator();
-		
-		while (i1.hasNext())
-		{
-			String child_window = i1.next();
+			HighlightLocator.highLightElement(driver,password3 );
 			
-			if(!parent_window.equalsIgnoreCase(child_window))
-			{
-				driver.switchTo().window(child_window);
+			password3.sendKeys("Germany0!");
+			
+			Thread.sleep(2000);
+			 
+          WebElement password4 = driver.findElement(By.xpath("//input[@id='password2']"));
+			
+			HighlightLocator.highLightElement(driver,password4);
+			
+			password4.sendKeys("Germany");
+			 
+			 System.out.println(password);
+			 
+		     Thread.sleep(1000);
+			 
+		     WebElement reset_password1 = driver.findElement(By.xpath("//button[@id='reset_password']"));
+			 
+		     HighlightLocator.highLightElement(driver,reset_password1);
+		     
+		     reset_password1.click();
+			 
+		      Thread.sleep(8000);
+		      
+		      String actual1 = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
 				
-				driver.findElement(By.xpath("//input[@id='password1']")).sendKeys("Sindhi0!");
+			  System.out.println(actual1);
+				 
+			  String actual2 = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
+					
+			  System.out.println(actual2);
+			  
+			  String exp = "Looks like something went wrong\n" + 
+						"Passwords entered do not match.";
+			  
+			  Assert.assertTrue(actual1.contains("Looks like something went wrong"));
 				
-				 Thread.sleep(2000);
-				 
-				 driver.findElement(By.xpath("//input[@id='password2']")).sendKeys("Sindhi");
-				 
-			     Thread.sleep(1000);
-				 
-				 driver.findElement(By.xpath("//button[@id='reset_password']")).click();
-				 
-			      Thread.sleep(8000);
-			      
-			      String actual_error = driver.findElement(By.xpath("//div[@id='top_error_para']")).getText();
-					
-				  System.out.println(actual_error);
-					 
-				  String actual_error1 = driver.findElement(By.xpath("//div[@id='bottom_error_para']")).getText();
-						
-				  System.out.println(actual_error1);
-				  
-				  String expect = "Looks like something went wrong\n" + 
-							"Passwords entered do not match.";
-				  
-				  Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
-					
-					 Assert.assertTrue(actual_error.contains("Passwords entered do not match."));
+				 Assert.assertTrue(actual1.contains("Passwords entered do not match."));
 
-					 Assert.assertEquals(actual_error, expect);
-					 
-					 Assert.assertTrue(actual_error1.contains("Passwords must match."));
-			      
+				 Assert.assertEquals(actual1, exp);
+				 
+				 Assert.assertTrue(actual2.contains("Passwords must match."));
 	      
-				
+	      			
 				
 			}
 		}
@@ -372,10 +371,6 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 		 
 
 	
-	
-	
-	
-		
 		
 	
 }

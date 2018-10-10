@@ -2,10 +2,13 @@ package WordpressQA;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
+import library.HighlightLocator;
 
 public class ContactUs extends UnauthenticatedHomePage {
 
@@ -26,33 +29,72 @@ public class ContactUs extends UnauthenticatedHomePage {
 	     
 	     Thread.sleep(2000);
 	     
-	     driver.findElement(By.xpath("//a[contains(text(),'Contact')]")).click();
+	     WebElement contact =  driver.findElement(By.xpath("//a[contains(text(),'Contact')]"));
+	     
+	     HighlightLocator.highLightElement(driver, contact);
+	     
+	     contact.click();
 	     
 	     Thread.sleep(2000);
 	     
-	     driver.findElement(By.id("first_name")).sendKeys(firstname);
+	     WebElement first_name = driver.findElement(By.id("first_name"));
 			
-		 Thread.sleep(1000);
+	     HighlightLocator.highLightElement(driver, first_name);
+	     
+	     first_name.sendKeys(firstname);
+	     
+	     Thread.sleep(1000);
 			
-		 driver.findElement(By.id("last_name")).sendKeys(lastname);
+	     WebElement last_name =driver.findElement(By.id("last_name"));
 			
-		 Thread.sleep(1000);
+	     HighlightLocator.highLightElement(driver, last_name);
+	     
+	     last_name.sendKeys(lastname);
+	     
+	     Thread.sleep(1000);
 			
-		 driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
+	     WebElement email1 = driver.findElement(By.xpath("//input[@id='email']")); 
 		 
-		 Thread.sleep(1000);
+	     HighlightLocator.highLightElement(driver, email1);
+	     
+	     email1.sendKeys(email);
+	     
+	     Thread.sleep(1000);
 		 
-		 driver.findElement(By.xpath("//input[@id='phone_number']")).sendKeys("0213578965");
+	     WebElement phone_number= driver.findElement(By.xpath("//input[@id='phone_number']"));
 		 
-		 Thread.sleep(1000);
+	     HighlightLocator.highLightElement(driver, phone_number);
 		 
-		 driver.findElement(By.xpath("//textarea[@id='comments']")).sendKeys("Please Let me know !!");
+	     phone_number.sendKeys("0213578965");
+	          
+	     Thread.sleep(2000);
 		 
-		 Thread.sleep(1000);
+         JavascriptExecutor num = (JavascriptExecutor)driver;
 		 
-		 driver.findElement(By.xpath("//button[@id='contact_submit']")).click();
+	     num.executeScript("window.scrollBy(0,200)", "");
+	     
+	     
+	     WebElement comments =  driver.findElement(By.xpath("//textarea[@id='comments']"));
 		 
-		 Thread.sleep(8000);
+	     HighlightLocator.highLightElement(driver, comments);
+	     
+	     comments.sendKeys("Please Let me know !!");
+	     
+	     Thread.sleep(3000);
+		 
+	     WebElement contact_submit  = driver.findElement(By.xpath("//button[@id='contact_submit']"));
+		 
+	     HighlightLocator.highLightElement(driver, contact_submit);
+	     
+	     contact_submit.click();
+	     
+	     Thread.sleep(2000);
+	      
+         JavascriptExecutor nu = (JavascriptExecutor)driver;
+		 
+	     nu.executeScript("window.scrollBy(0,-500)", "");
+	     
+	     Thread.sleep(7000);
 			 
 		 }
 	

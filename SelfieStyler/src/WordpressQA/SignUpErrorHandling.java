@@ -11,12 +11,14 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import library.HighlightLocator;
+
 public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	
 	
  @Test (priority =7, enabled=false)
 	 
-	 public void InvalidEmail () throws InterruptedException
+	 public void InvalidEmail () throws InterruptedException                  // Invalid email , Invalid password , Terms not check
 	 
 	 {
 		 
@@ -25,10 +27,18 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	     test.log(Status.INFO, "User has entered Invalid Email for Sign Up");
 	 
 	 
-		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+         WebElement Signup =  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+		 
+		 HighlightLocator.highLightElement(driver, Signup);
+		 
+		 Signup.click();
 		 
 			//handle drop box:
-			Select select = new Select(driver.findElement(By.id("gender")));
+		  WebElement gender = driver.findElement(By.id("gender")); 
+		 
+		    HighlightLocator.highLightElement(driver, gender);
+		 
+			Select select = new Select(gender);
 			
 			Thread.sleep(1000);
 			
@@ -36,52 +46,72 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("first_name")).sendKeys(firstname);
+	      WebElement first_name = driver.findElement(By.id("first_name"));
+			
+			HighlightLocator.highLightElement(driver, first_name);
+			
+			first_name.sendKeys(firstname);
 			
 			Thread.sleep(1000);
 			
-		driver.findElement(By.id("last_name")).sendKeys(lastname);
+            WebElement last_name =  driver.findElement(By.id("last_name"));
+			
+			HighlightLocator.highLightElement(driver, last_name);
+			
+			last_name.sendKeys(lastname);
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("mem_email")).sendKeys("QAtest");
+            WebElement mem_email = driver.findElement(By.id("mem_email"));
+			
+			HighlightLocator.highLightElement(driver, mem_email);
+			
+			mem_email.sendKeys("abc.com");
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("phone")).sendKeys("0213578965");
+			WebElement phone = driver.findElement(By.id("phone"));
+				
+			HighlightLocator.highLightElement(driver, phone);
+				
+			phone.sendKeys("0213578965");
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
+            WebElement mem_password = driver.findElement(By.id("mem_password"));
 			
-			driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan0!");
+			HighlightLocator.highLightElement(driver, mem_password);
+			
+			mem_password.sendKeys("Pakistan");
+			
+			WebElement confirm_mem_password = driver.findElement(By.id("confirm_mem_password"));
+			
+			HighlightLocator.highLightElement(driver, confirm_mem_password);
+			
+			confirm_mem_password.sendKeys("Pakistan");
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
+			WebElement Terms= driver.findElement(By.xpath("//a[contains(text(),'Terms')]"));
+		     
+		    HighlightLocator.highLightElement(driver, Terms);
+		     
+		    Terms.click();
 			
 			Thread.sleep(5000);
 			
 			
-
-			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
-			
-            Actions actions = new Actions(driver);
-			
-			actions.moveToElement(sign_up).click().perform();
+			driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();	
 			
 			Thread.sleep(5000);			
 			
+	       WebElement register_button  = driver.findElement(By.id("register_button"));
 			
+			HighlightLocator.highLightElement(driver, register_button);
 			
-			WebElement element = driver.findElement(By.id("terms"));
+			Actions actions = new Actions(driver);
 			
-			
-			actions.moveToElement(element).click().perform();
-			
-			Thread.sleep(1000);
-			
-	        driver.findElement(By.id("register_button")).click();
+			actions.moveToElement(register_button).click().perform();
 			
 			Thread.sleep(3000);
 			
@@ -91,141 +121,71 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 			
 			Thread.sleep(3000);
 			
-		String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
+		String top_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
 		
-		System.out.println(actual_error);
-		String expect = "Looks like something went wrong\n" + 
-				"Email address is not valid";
-		 
-		String actual_error1 = driver.findElement(By.xpath("//div[@id='error_mem_email']")).getText();
-		
-		System.out.println(actual_error1);
-		
-		// String expected_error = "Looks like something went wrong";
-		 
-		// Assert.assertEquals(actual_error, expected_error);
-		
-		Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
-		
-		Assert.assertTrue(actual_error.contains("Email address is not valid"));
-		
-		Assert.assertEquals(actual_error, expect);
-		
-		Assert.assertTrue(actual_error1.contains("Please enter a valid email address"));
+		System.out.println(top_error);
 		
 		
+		String expected = "Looks like something went wrong\r\n" + 
+				"Email address is not valid\r\n" + 
+				"Password is not valid\r\n" + 
+				"Read Terms and Privacy Policy not checked";
+		
+		
+		String error_mem_email = driver.findElement(By.xpath("//div[@id='error_mem_email']")).getText();
+		
+		System.out.println(error_mem_email);
+		
+        String error_mem_password = driver.findElement(By.xpath("//div[@id='error_mem_password']")).getText();
+		
+		System.out.println(error_mem_password);
+		
+		String error_terms = driver.findElement(By.xpath("//div[@id='error_terms']")).getText();
+		
+		System.out.println(error_terms);
+		
+		
+		Assert.assertTrue(top_error.contains("Looks like something went wrong"));
+		
+		Assert.assertTrue(top_error.contains("Email address is not valid"));
+		
+		Assert.assertTrue(top_error.contains("Password is not valid"));
+		
+		Assert.assertTrue(top_error.contains("Read Terms and Privacy Policy not checked"));
+		
+		
+		Assert.assertTrue(error_mem_email.contains("Please enter a valid email address"));
+		
+		Assert.assertTrue(error_mem_password.contains("Please enter a valid password."));
+		
+		Assert.assertTrue(error_terms.contains("Please check that you have read our Terms and Privacy Policy."));
+		
+		Assert.assertEquals(top_error, expected);
 	
 	 }
 
 	 
- @Test (priority =8, enabled=false)
-	 
-	 public void InvalidPassword () throws InterruptedException
-	 
-	 {
-	      ExtentTest test = extent.createTest("Invalid Password for Sign Up");
-	 
-         test.log(Status.INFO, "User has entered Invalid Password for Sign Up");
-	 
-		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
-		 
-			//handle drop box:
-			Select select = new Select(driver.findElement(By.id("gender")));
-			
-			Thread.sleep(1000);
-			
-			select.selectByVisibleText("Female");
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("first_name")).sendKeys(firstname);
-			
-			Thread.sleep(1000);
-			
-		driver.findElement(By.id("last_name")).sendKeys(lastname);
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("mem_email")).sendKeys(email);
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("phone")).sendKeys("0213578965");
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("mem_password")).sendKeys("Pakistan");
-			
-			driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan");
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
-			
-			Thread.sleep(5000);
-			
-
-			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
-			
-            Actions actions = new Actions(driver);
-			
-			actions.moveToElement(sign_up).click().perform();
-			
-			Thread.sleep(5000);
-			
-			
-			WebElement element = driver.findElement(By.id("terms"));
-			
-			
-			actions.moveToElement(element).click().perform();
-			
-			Thread.sleep(1000);
-			
-	        driver.findElement(By.id("register_button")).click();
-			
-			Thread.sleep(3000);
-			
-			JavascriptExecutor jw = (JavascriptExecutor)driver;
-			
-			jw.executeScript("window.scrollBy(0,-500)", "");
-			
-			Thread.sleep(3000);
-			
-		String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
-		
-		System.out.println(actual_error);
-		 
-		String expect = "Looks like something went wrong\n" + 
-				"Password is not valid";
-		
-        String actual_error1 = driver.findElement(By.xpath("//div[@id='error_mem_password']")).getText();
-		
-		System.out.println(actual_error1);
-		
-		Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
-		
-		Assert.assertTrue(actual_error.contains("Password is not valid"));
-	
-		Assert.assertEquals(actual_error, expect);
-		
-		Assert.assertTrue(actual_error1.contains("Please enter a valid password."));
-		
-	 }
-
-	 
- @Test (priority =9, enabled=false)
+ @Test (priority =9, enabled=false)                                      // Missing field, Password do not match
  
  public void PasswordNotMatch () throws InterruptedException
  
  {
-	 ExtentTest test = extent.createTest("Password and Confirm password don not match");
+	 ExtentTest test = extent.createTest("Missing fields and passwords do not match");
 	 
-     test.log(Status.INFO, "User has entered mismatched password");
+     test.log(Status.INFO, "User has entered mismatched password and missed some fields");
 	 
-	 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+     WebElement Signup =  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+	 
+	  HighlightLocator.highLightElement(driver, Signup);
+		 
+	  Signup.click();
 	 
 		//handle drop box:
-		Select select = new Select(driver.findElement(By.id("gender")));
+	  WebElement gender = driver.findElement(By.id("gender")); 
+		 
+	    HighlightLocator.highLightElement(driver, gender);
+	 
+		Select select = new Select(gender);
 		
 		Thread.sleep(1000);
 		
@@ -233,52 +193,77 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.id("first_name")).sendKeys(firstname);
+    WebElement first_name = driver.findElement(By.id("first_name"));
+		
+		HighlightLocator.highLightElement(driver, first_name);
+		
+		first_name.sendKeys(firstname);
 		
 		Thread.sleep(1000);
 		
-	driver.findElement(By.id("last_name")).sendKeys(lastname);
+      WebElement last_name =  driver.findElement(By.id("last_name"));
+		
+		HighlightLocator.highLightElement(driver, last_name);
+		
+		last_name.sendKeys(lastname);
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.id("mem_email")).sendKeys(email);
+		//driver.findElement(By.id("mem_email")).sendKeys(email);
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.id("phone")).sendKeys("0213578965");
+		WebElement phone = driver.findElement(By.id("phone"));
+		
+		HighlightLocator.highLightElement(driver, phone);
+			
+		phone.sendKeys("0213578965");
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
+        WebElement mem_password = driver.findElement(By.id("mem_password"));
 		
-		driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan");
+		HighlightLocator.highLightElement(driver, mem_password);
+		
+		mem_password.sendKeys("Pakistan0!");
+		
+		WebElement confirm_mem_password = driver.findElement(By.id("confirm_mem_password"));
+		
+		HighlightLocator.highLightElement(driver, confirm_mem_password);
+		
+		confirm_mem_password.sendKeys("Pakistan");
 		
 		Thread.sleep(1000);
 		
-		driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
+		WebElement Terms= driver.findElement(By.xpath("//a[contains(text(),'Terms')]"));
+	     
+	    HighlightLocator.highLightElement(driver, Terms);
+	     
+	    Terms.click();
 		
 		Thread.sleep(5000);
 		
-
-		WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
 		
-        Actions actions = new Actions(driver);
-		
-		actions.moveToElement(sign_up).click().perform();
-		
-		Thread.sleep(5000);
+		driver.findElement(By.xpath("//button[contains(@class,'close')]")).click();	
+				
+		Thread.sleep(3000);
 		
 		
 		WebElement element = driver.findElement(By.id("terms"));
 		
+		Actions actions = new Actions(driver);
 		
 		actions.moveToElement(element).click().perform();
 		
 		Thread.sleep(1000);
 		
-        driver.findElement(By.id("register_button")).click();
+		WebElement register_button  = driver.findElement(By.id("register_button"));
 		
-		Thread.sleep(3000);
+		HighlightLocator.highLightElement(driver, register_button);
+		
+		actions.moveToElement(register_button).click().perform();
+		
+		Thread.sleep(5000);
 		
 		JavascriptExecutor je = (JavascriptExecutor)driver;
 		
@@ -286,202 +271,40 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 		
 		Thread.sleep(3000);
 		
-	String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
+	String toperror = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
 	
-	System.out.println(actual_error);
+	System.out.println(toperror);
 	
-	String actual_error1 = driver.findElement(By.xpath("//div[@id='error_confirm_mem_password']")).getText();
+	String error_confirm_mem_password = driver.findElement(By.xpath("//div[@id='error_confirm_mem_password']")).getText();
 	
-	System.out.println(actual_error1);
+	System.out.println(error_confirm_mem_password);
+	
+	String error_all_fields = driver.findElement(By.xpath("//div[@id='error_all_fields']")).getText();
+		
+	System.out.println(error_all_fields);
 	
 	 
-	String expect = "Looks like something went wrong\n" + 
+	String expect = "Looks like something went wrong\r\n" + 
+			"Missing required fields\r\n" + 
 			"Passwords do not match";
 	
-	Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
 	
-	Assert.assertTrue(actual_error.contains("Passwords do not match"));
-
-	Assert.assertEquals(actual_error, expect);
 	
-	Assert.assertTrue(actual_error1.contains("Passwords entered do not match."));
-		
+	
+	Assert.assertTrue(toperror.contains("Looks like something went wrong"));
+	
+	Assert.assertTrue(toperror.contains("Passwords do not match"));
+	
+	Assert.assertTrue(toperror.contains("Missing required fields"));
+	
+	Assert.assertTrue(error_confirm_mem_password.contains("Passwords entered do not match."));
+	
+	Assert.assertTrue(error_all_fields.contains("Please fill out all required fields"));
+	
+    Assert.assertEquals(toperror, expect);
 	
  }
  
- 
-	
-	@Test(priority = 10, enabled=false)
 	 
-	 public void TermsNotChecked() throws InterruptedException  {
-		  
-		 ExtentTest test = extent.createTest("Left Terms not Checked field");
-		 
-	     test.log(Status.INFO, "User has Left Terms not Checked field");
-		
-		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
-			 
-			//handle drop box:
-			Select select = new Select(driver.findElement(By.id("gender")));
-			
-			Thread.sleep(1000);
-			
-			select.selectByVisibleText("Female");
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("first_name")).sendKeys(firstname);
-			
-			Thread.sleep(1000);
-			
-		driver.findElement(By.id("last_name")).sendKeys(lastname);
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("mem_email")).sendKeys(email);
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("phone")).sendKeys("0213578965");
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
-			
-			driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan0!");
-			
-			Thread.sleep(5000);
-			
-			
-	        driver.findElement(By.id("register_button")).click();
-			
-			Thread.sleep(8000);
-			
-
-			JavascriptExecutor jkk = (JavascriptExecutor)driver;
-		
-			jkk.executeScript("window.scrollBy(0,-500)", "");
-			
-			Thread.sleep(3000);
-			
-			String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
-			
-			System.out.println(actual_error);
-			
-			String actual_error1 = driver.findElement(By.xpath("//div[@id='error_terms']")).getText();
-			
-			System.out.println(actual_error1);
-			
-					 
-			String expect = "Looks like something went wrong\n" + 
-					"Read Terms and Privacy Policy not checked";
-			
-			Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
-			
-			Assert.assertTrue(actual_error.contains("Read Terms and Privacy Policy not checked"));
-
-			Assert.assertEquals(actual_error, expect);
-			
-			Assert.assertTrue(actual_error1.contains("Please check that you have read our Terms and Privacy Policy."));
-							
-				
-	 }
-
-	 
-	@Test(priority = 11, enabled=false)
-	 
-	 public void MissingField() throws InterruptedException  {
-		  
-		ExtentTest test = extent.createTest("User left some field");
-		 
-	     test.log(Status.INFO, "User has Left some mandatory field");
-		
-		   
-		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
-			 
-			//handle drop box:
-			Select select = new Select(driver.findElement(By.id("gender")));
-			
-			Thread.sleep(1000);
-			
-			select.selectByVisibleText("Female");
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("first_name")).sendKeys(firstname);
-			
-			Thread.sleep(1000);
-			
-		driver.findElement(By.id("last_name")).sendKeys(lastname);
-			
-			Thread.sleep(1000);
-			
-			//driver.findElement(By.id("mem_email")).sendKeys(email);
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("phone")).sendKeys("0213578965");
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
-			
-			driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan0!");
-			
-			Thread.sleep(5000);
-			
-			driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
-			
-			Thread.sleep(5000);
-			
-
-			WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
-			
-            Actions actions = new Actions(driver);
-			
-			actions.moveToElement(sign_up).click().perform();
-			
-			Thread.sleep(5000);
-			
-			
-			WebElement element = driver.findElement(By.id("terms"));
-			
-			
-			actions.moveToElement(element).click().perform();
-			
-			
-	        driver.findElement(By.id("register_button")).click();
-			
-			Thread.sleep(3000);
-				
-
-			JavascriptExecutor ji = (JavascriptExecutor)driver;
-		
-			ji.executeScript("window.scrollBy(0,-500)", "");
-			
-			Thread.sleep(3000);
-			
-			String actual_error = driver.findElement(By.xpath("//div[@id='top-error']")).getText();
-			
-			System.out.println(actual_error);
-			
-            String actual_error1 = driver.findElement(By.xpath("//div[@id='error_all_fields']")).getText();
-			
-			System.out.println(actual_error1);
-			
-				 
-			String expect = "Looks like something went wrong\n" + 
-					"Missing required fields";
-			
-			Assert.assertTrue(actual_error.contains("Looks like something went wrong"));
-			
-			Assert.assertTrue(actual_error.contains("Missing required fields"));
-
-			Assert.assertEquals(actual_error, expect);
-			
-			Assert.assertTrue(actual_error1.contains("Please fill out all required fields"));
-							
-				
-	 }
 
 }

@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="2" total="3" passed="1">
+<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="109772" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:14:11Z">
+  <suite name="Default suite" duration-ms="47068" started-at="2018-10-10T12:24:15Z" finished-at="2018-10-10T12:25:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="109772" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:14:11Z">
-      <class name="WordpressQA.Favourite">
-        <test-method status="PASS" signature="set()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="set" is-config="true" duration-ms="176" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:12:22Z">
+    <test name="Default test" duration-ms="47068" started-at="2018-10-10T12:24:15Z" finished-at="2018-10-10T12:25:02Z">
+      <class name="WordpressQA.SignUpErrorHandling">
+        <test-method status="PASS" signature="set()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="set" is-config="true" duration-ms="176" started-at="2018-10-10T12:24:15Z" finished-at="2018-10-10T12:24:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- set -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="setup" is-config="true" duration-ms="13964" started-at="2018-10-05T18:12:22Z" finished-at="2018-10-05T18:12:36Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="setup" is-config="true" duration-ms="10173" started-at="2018-10-10T12:24:15Z" finished-at="2018-10-10T12:24:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="AddFavourite()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="AddFavourite" duration-ms="94636" started-at="2018-10-05T18:12:36Z" finished-at="2018-10-05T18:14:10Z">
+        <test-method status="PASS" signature="PasswordNotMatch()[pri:9, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="PasswordNotMatch" duration-ms="36490" started-at="2018-10-10T12:24:26Z" finished-at="2018-10-10T12:25:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddFavourite -->
-        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="teardown" is-config="true" duration-ms="714" started-at="2018-10-05T18:14:10Z" finished-at="2018-10-05T18:14:11Z">
+        </test-method> <!-- PasswordNotMatch -->
+        <test-method status="PASS" signature="teardown(org.testng.ITestResult)[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="teardown" is-config="true" duration-ms="1" started-at="2018-10-10T12:25:02Z" finished-at="2018-10-10T12:25:02Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=AddFavourite status=SUCCESS method=Favourite.AddFavourite()[pri:0, instance:WordpressQA.Favourite@77cd7a0] output={null}]]]>
+                <![CDATA[[TestResult name=PasswordNotMatch status=SUCCESS method=SignUpErrorHandling.PasswordNotMatch()[pri:9, instance:WordpressQA.SignUpErrorHandling@77cd7a0] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method status="PASS" signature="tear()[pri:0, instance:WordpressQA.Favourite@77cd7a0]" name="tear" is-config="true" duration-ms="266" started-at="2018-10-05T18:14:11Z" finished-at="2018-10-05T18:14:11Z">
+        <test-method status="PASS" signature="tear()[pri:0, instance:WordpressQA.SignUpErrorHandling@77cd7a0]" name="tear" is-config="true" duration-ms="211" started-at="2018-10-10T12:25:02Z" finished-at="2018-10-10T12:25:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tear -->
-      </class> <!-- WordpressQA.Favourite -->
+      </class> <!-- WordpressQA.SignUpErrorHandling -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

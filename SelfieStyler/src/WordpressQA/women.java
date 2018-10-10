@@ -10,10 +10,12 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import library.HighlightLocator;
+
 public class women extends UnauthenticatedHomePage {
 	
 	
-	 @Test(priority = 0,enabled=false)
+	 @Test(priority = 0, enabled=false)
 	 
 	 public void Women() throws InterruptedException  {
 		  
@@ -22,40 +24,77 @@ public class women extends UnauthenticatedHomePage {
 		 
 		 test.log(Status.INFO, "User is going to Sign up for women");
 		   
-		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+		 WebElement Signup =  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+		 
+		 HighlightLocator.highLightElement(driver, Signup);
+		 
+		 Signup.click();
 			 
 			//handle drop box:
-			Select select = new Select(driver.findElement(By.id("gender")));
+		 
+		    WebElement gender = driver.findElement(By.id("gender")); 
+		 
+		    HighlightLocator.highLightElement(driver, gender);
+		 
+			Select select = new Select(gender);
 			
 			Thread.sleep(1000);
 			
 			select.selectByVisibleText("Female");
 			
 			Thread.sleep(1000);
+
+			WebElement first_name = driver.findElement(By.id("first_name"));
 			
-			driver.findElement(By.id("first_name")).sendKeys(firstname);
+			HighlightLocator.highLightElement(driver, first_name);
 			
-			Thread.sleep(1000);
-			
-		driver.findElement(By.id("last_name")).sendKeys(lastname);
-			
-			Thread.sleep(1000);
-			
-			driver.findElement(By.id("mem_email")).sendKeys(email);
+			first_name.sendKeys(firstname);
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("phone")).sendKeys("0213578965");
+            WebElement last_name =  driver.findElement(By.id("last_name"));
+			
+			HighlightLocator.highLightElement(driver, last_name);
+			
+			last_name.sendKeys(lastname);
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("mem_password")).sendKeys("Pakistan0!");
+            WebElement mem_email = driver.findElement(By.id("mem_email"));
 			
-			driver.findElement(By.id("confirm_mem_password")).sendKeys("Pakistan0!");
+			HighlightLocator.highLightElement(driver, mem_email);
+			
+			mem_email.sendKeys(email1);
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
+            WebElement phone = driver.findElement(By.id("phone"));
+			
+			HighlightLocator.highLightElement(driver, phone);
+			
+			phone.sendKeys("0213578965");
+			
+			Thread.sleep(1000);
+			
+			WebElement mem_password = driver.findElement(By.id("mem_password"));
+			
+			HighlightLocator.highLightElement(driver, mem_password);
+			
+			mem_password.sendKeys("Pakistan0!");
+			
+			WebElement confirm_mem_password = driver.findElement(By.id("confirm_mem_password"));
+			
+			HighlightLocator.highLightElement(driver, confirm_mem_password);
+			
+			confirm_mem_password.sendKeys("Pakistan0!");
+			
+			Thread.sleep(1000);
+			
+			 WebElement Terms= driver.findElement(By.xpath("//a[contains(text(),'Terms')]"));
+		     
+		     HighlightLocator.highLightElement(driver, Terms);
+		     
+		     Terms.click();
 			
 			Thread.sleep(5000);
 			
@@ -73,6 +112,8 @@ public class women extends UnauthenticatedHomePage {
 			
 			WebElement terms_checkbox = driver.findElement(By.id("terms_checkbox"));
 			
+			HighlightLocator.highLightElement(driver, terms_checkbox);
+			
 			Actions actions = new Actions(driver);
 			
 			actions.moveToElement(terms_checkbox).click().perform();
@@ -80,6 +121,8 @@ public class women extends UnauthenticatedHomePage {
 			Thread.sleep(5000);
 			
 			WebElement register_button  = driver.findElement(By.id("register_button"));
+			
+			HighlightLocator.highLightElement(driver, register_button);
 			
 			actions.moveToElement(register_button).click().perform();
 			
@@ -91,16 +134,17 @@ public class women extends UnauthenticatedHomePage {
 			
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//img[@alt='Apple Store Button']")).click();
+			WebElement AppleButton =   driver.findElement(By.xpath("//img[@alt='Apple Store Button']"));
+			
+			HighlightLocator.highLightElement(driver, AppleButton); 
+			
+			AppleButton.click();
 			
 			Thread.sleep(8000);
 	 }
 	 
 
 	
-	
-	
-	
-	
+
 
 }

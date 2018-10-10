@@ -9,9 +9,11 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
+import library.HighlightLocator;
+
 public class Cancelsignup extends UnauthenticatedHomePage {
 	
-	 @Test (priority =4,enabled=false)
+	 @Test (priority =4, enabled=false)
 	  
 	  public void cancel() throws InterruptedException 
 	  {
@@ -20,7 +22,11 @@ public class Cancelsignup extends UnauthenticatedHomePage {
 		 
 	     test.log(Status.INFO, "User has cancel the sign up");
 		 
-		 driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+	     WebElement signup = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
+	     
+	     HighlightLocator.highLightElement(driver, signup);
+	     
+	     signup.click();
 		 
 		 Thread.sleep(3000);
 		 
@@ -30,24 +36,27 @@ public class Cancelsignup extends UnauthenticatedHomePage {
 		 
 	     Thread.sleep(3000);
 	     
-	     driver.findElement(By.xpath("//a[contains(text(),'Terms')]")).click();
+	     WebElement Terms= driver.findElement(By.xpath("//a[contains(text(),'Terms')]"));
+	     
+	     HighlightLocator.highLightElement(driver, Terms);
+	     
+	     Terms.click();
+	     
+	     Thread.sleep(4000);
 			
-		Thread.sleep(4000);
-			
-		WebElement  sign_up  = driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
-		
-        Actions actions = new Actions(driver);
-		
-		actions.moveToElement(sign_up).click().perform();
-		
+	     WebElement close =  driver.findElement(By.xpath("//button[contains(@class,'close')]"));
+	     
+	     HighlightLocator.highLightElement(driver, close);
+	     
+		close.click();
+	     
 		Thread.sleep(5000);
 	     
-		 WebElement element1=driver.findElement(By.xpath("//a[contains(@class,'cancel_button')]"));
+		 WebElement cancel_button=driver.findElement(By.xpath("//a[contains(@class,'cancel_button')]"));
 		 
-		 
-		 Thread.sleep(3000);
-		 
-		 element1.click();	
+		 HighlightLocator.highLightElement(driver, cancel_button);
+	      
+		 cancel_button.click();	
 		 
 		 Thread.sleep(3000);
 		 

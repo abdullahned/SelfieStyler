@@ -2,11 +2,14 @@ package WordpressQA;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
+import library.HighlightLocator;
 
 public class Men extends UnauthenticatedHomePage {
 	
@@ -20,9 +23,13 @@ public class Men extends UnauthenticatedHomePage {
 		 
 		 test.log(Status.INFO, "User is going to Sign up for men");
 		   
-		  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]")).click();
+		 WebElement Signup =  driver.findElement(By.xpath("//a[contains(text(),'Sign up')]"));
 			 
-			//handle drop box:
+		 HighlightLocator.highLightElement(driver, Signup);
+		 
+		 Signup.click();
+		 
+		 //handle drop box:
 			Select select = new Select(driver.findElement(By.id("gender")));
 			
 			Thread.sleep(1000);
@@ -31,21 +38,41 @@ public class Men extends UnauthenticatedHomePage {
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("first_name")).sendKeys(firstname);
+			WebElement first_name = driver.findElement(By.id("first_name"));
+			
+			HighlightLocator.highLightElement(driver, first_name);
+			
+			first_name.sendKeys(firstname);
 			
 			Thread.sleep(1000);
 			
-		driver.findElement(By.id("last_name")).sendKeys(lastname);
+			WebElement last_name =  driver.findElement(By.id("last_name"));
+			
+			HighlightLocator.highLightElement(driver, last_name);
+			
+			last_name.sendKeys(lastname);
 			
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("mem_email")).sendKeys(email1);
+			WebElement mem_email = driver.findElement(By.id("mem_email"));
 			
+			HighlightLocator.highLightElement(driver, mem_email);
+			
+			mem_email.sendKeys(email1);
+					
 			Thread.sleep(1000);
 			
-			driver.findElement(By.id("phone")).sendKeys("0213578965");
+			WebElement phone = driver.findElement(By.id("phone"));
 			
-			driver.findElement(By.xpath("//button[contains(text(),'Notify Me')]")).click();
+			HighlightLocator.highLightElement(driver, phone);
+			
+			phone.sendKeys("0213578965");
+			
+			WebElement notify = driver.findElement(By.xpath("//button[contains(text(),'Notify Me')]"));
+			
+			HighlightLocator.highLightElement(driver, notify);
+			
+			notify.click();
 			
 			Thread.sleep(3000);
 			
@@ -55,7 +82,11 @@ public class Men extends UnauthenticatedHomePage {
 			
 			Thread.sleep(2000);
 			
-			driver.findElement(By.xpath("//button[contains(text(),'Ok, great!')]")).click();
+			WebElement great = driver.findElement(By.xpath("//button[contains(text(),'Ok, great!')]"));
+			
+			HighlightLocator.highLightElement(driver, great);
+			
+			great.click();
 			
 			Thread.sleep(2000);
 		  
