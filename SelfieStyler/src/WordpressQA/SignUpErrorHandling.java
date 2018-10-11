@@ -165,7 +165,7 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =9, enabled=false)                                      // Missing field, Password do not match
+ @Test (priority =8, enabled=false)                                      // Missing field, Password do not match
  
  public void PasswordNotMatch () throws InterruptedException
  

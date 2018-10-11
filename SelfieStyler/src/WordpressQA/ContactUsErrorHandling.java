@@ -14,7 +14,7 @@ import library.HighlightLocator;
 public class ContactUsErrorHandling extends UnauthenticatedHomePage {
 	
 
-@Test (priority =17)
+@Test (priority =12,enabled=false)
 
 public void MissingFields () throws InterruptedException
 

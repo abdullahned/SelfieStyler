@@ -16,7 +16,7 @@ import library.HighlightLocator;
 public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =12,enabled=false)
+	@Test (priority =9,enabled=false)
 	 
 	 public void InvalidCredentials() throws InterruptedException 
 	  {
@@ -127,7 +127,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	
 
 
-	@Test (priority =14,enabled=false)
+	@Test (priority =10,enabled=false)
 	 
 	 public void EmailNotFound() throws InterruptedException
 	 {
@@ -176,7 +176,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 	
 	
 	
-	@Test (priority =15,enabled=false)
+	@Test (priority =11,enabled=false)
 	
 	 public void InvalidPwdCriteria () throws InterruptedException 
 	 {

@@ -103,7 +103,7 @@ public class UnauthenticatedHomePage {
 	 
 	 WebElement enterEmail = driver.findElement(By.id("email")); 
 	 
-	 HighlightLocator.highLightElement(driver,enterEmail );
+	 HighlightLocator.highLightElement(driver,enterEmail);
 	 
 	 enterEmail.sendKeys("rikotest@mailinator.com");
 	 

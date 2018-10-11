@@ -19,6 +19,7 @@
 			<class name="WordpressQA.SignUpErrorHandling" />
 			<class name="WordpressQA.SignInErrorHandling" />
 			<class name="WordpressQA.ContactUsErrorHandling" />
+			<class name="WordpressQA.Favourite" />
 
 
 		</classes>
