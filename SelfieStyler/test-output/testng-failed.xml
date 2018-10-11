@@ -3,15 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="WordpressQA.SignInErrorHandling">
+      <class name="POM.TestCase.VerifyLogin">
         <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="tear"/>
-          <include name="InvalidPwdCriteria"/>
-          <include name="set"/>
+          <include name="checkValidCredentials"/>
         </methods>
-      </class> <!-- WordpressQA.SignInErrorHandling -->
+      </class> <!-- POM.TestCase.VerifyLogin -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
