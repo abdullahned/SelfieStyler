@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12056" started-at="2018-10-11T17:18:50Z" finished-at="2018-10-11T17:19:02Z">
+  <suite name="Default suite" duration-ms="48491" started-at="2018-10-15T17:09:57Z" finished-at="2018-10-15T17:10:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="12056" started-at="2018-10-11T17:18:50Z" finished-at="2018-10-11T17:19:02Z">
-      <class name="POM.TestCase.VerifyLogin">
-        <test-method status="PASS" signature="checkValidCredentials()[pri:0, instance:POM.TestCase.VerifyLogin@42d80b78]" name="checkValidCredentials" duration-ms="12038" started-at="2018-10-11T17:18:50Z" finished-at="2018-10-11T17:19:02Z">
+    <test name="Default test" duration-ms="48491" started-at="2018-10-15T17:09:57Z" finished-at="2018-10-15T17:10:45Z">
+      <class name="POM.TestCase.Verify_Fitting_Room_Popup">
+        <test-method status="PASS" signature="validate_fitting_room_popup()[pri:0, instance:POM.TestCase.Verify_Fitting_Room_Popup@42d80b78]" name="validate_fitting_room_popup" duration-ms="48463" started-at="2018-10-15T17:09:57Z" finished-at="2018-10-15T17:10:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkValidCredentials -->
-      </class> <!-- POM.TestCase.VerifyLogin -->
+        </test-method> <!-- validate_fitting_room_popup -->
+      </class> <!-- POM.TestCase.Verify_Fitting_Room_Popup -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

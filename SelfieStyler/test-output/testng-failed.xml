@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="POM.TestCase.VerifyLogin">
+      <class name="POM.TestCase.Verify_Fitting_Room_Popup">
         <methods>
-          <include name="checkValidCredentials"/>
+          <include name="validate_fitting_room_popup"/>
         </methods>
-      </class> <!-- POM.TestCase.VerifyLogin -->
+      </class> <!-- POM.TestCase.Verify_Fitting_Room_Popup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
