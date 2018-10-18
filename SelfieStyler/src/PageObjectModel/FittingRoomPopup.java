@@ -4,6 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import library.HighlightLocator;
 
@@ -13,7 +14,10 @@ public class FittingRoomPopup {
 	  
 	public FittingRoomPopup(WebDriver ldriver)
 	{
+		
 	this.driver=ldriver;
+	PageFactory.initElements(driver, this);
+	
 	}
 	
 	
@@ -26,6 +30,8 @@ public class FittingRoomPopup {
 	@FindBy(xpath="//span[@class='up']") 
 	WebElement up;
 	
+	
+	
 	public void fitting_selfie_styler () throws InterruptedException
 	{
 		
@@ -36,7 +42,7 @@ public class FittingRoomPopup {
 		
 		JavascriptExecutor jex = (JavascriptExecutor)driver;          // To scroll down the page 
 		 
-	    jex.executeScript("window.scrollBy(0,200)", "");
+	    jex.executeScript("window.scrollBy(0,500)", "");
 		
 		Thread.sleep(8000);
 		
@@ -44,7 +50,9 @@ public class FittingRoomPopup {
 		
 		down.click();                                                 // Click on down arrow
 		
-		Thread.sleep(5000);
+		Thread.sleep(2000);
+		
+		 jex.executeScript("window.scrollBy(0,-500)", "");
 		
 	    HighlightLocator.highLightElement(driver, up);             // High lighting the web element
 		

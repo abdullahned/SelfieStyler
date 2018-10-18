@@ -3,6 +3,7 @@ package PageObjectModel;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import library.HighlightLocator;
 
@@ -13,6 +14,7 @@ public class Login {
 	public Login(WebDriver ldriver)
 	{
 	this.driver=ldriver;
+	PageFactory.initElements(driver, this);
 	}
 	
 	
@@ -39,6 +41,8 @@ public class Login {
 	HighlightLocator.highLightElement(driver,enterEmail);
 	
 	enterEmail.sendKeys(uid);                                   // Enter Email
+	
+	HighlightLocator.highLightElement(driver,enterPassword);
 	
 	enterPassword.sendKeys(pass);                         // Enter Password
 	

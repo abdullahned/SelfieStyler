@@ -10,6 +10,10 @@ import PageObjectModel.Login;
 
 public class Verify_Fitting_Room_Popup {
 
+	Login login_page;              // login_page is the object reference variable of Login class
+	
+	FittingRoomPopup fitting_room;    // fitting_room is the object reference variable of FittingRoomPopup
+	
 	
     @Test
 	
@@ -19,18 +23,15 @@ public class Verify_Fitting_Room_Popup {
 	// This will launch browser and specific url 
 	WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
 	
-	Login login_page=PageFactory.initElements(driver, Login.class); // Created Page Object using Page Factory
-	 
-	 
+	login_page = new Login(driver);  // create the object of login class 
+	
 	// Call the method
 	login_page.login_selfie_styler("rikotest@mailinator.com", "Germany0!");      // live credentials
 	
 	
-	// Created Page Object using Page Factory
+	fitting_room = new FittingRoomPopup(driver);
 	
-	FittingRoomPopup fittingroom =PageFactory.initElements(driver, FittingRoomPopup.class);
-	
-	fittingroom.fitting_selfie_styler();   // Call the method
+	fitting_room.fitting_selfie_styler();   // Call the method
 	
 	driver.quit();
 	
