@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="55369" started-at="2018-10-18T15:40:04Z" finished-at="2018-10-18T15:40:59Z">
+  <suite name="Default suite" duration-ms="79399" started-at="2018-10-23T17:33:02Z" finished-at="2018-10-23T17:34:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="55369" started-at="2018-10-18T15:40:04Z" finished-at="2018-10-18T15:40:59Z">
+    <test name="Default test" duration-ms="79399" started-at="2018-10-23T17:33:02Z" finished-at="2018-10-23T17:34:22Z">
       <class name="POM.TestCase.Verify_Fitting_Room_Edit_Look">
-        <test-method status="PASS" signature="validate_fitting_room_editlook()[pri:0, instance:POM.TestCase.Verify_Fitting_Room_Edit_Look@42d80b78]" name="validate_fitting_room_editlook" duration-ms="55349" started-at="2018-10-18T15:40:04Z" finished-at="2018-10-18T15:40:59Z">
+        <test-method status="PASS" signature="validate_change_color()[pri:0, instance:POM.TestCase.Verify_Fitting_Room_Edit_Look@42d80b78]" name="validate_change_color" duration-ms="79375" started-at="2018-10-23T17:33:02Z" finished-at="2018-10-23T17:34:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validate_fitting_room_editlook -->
+        </test-method> <!-- validate_change_color -->
       </class> <!-- POM.TestCase.Verify_Fitting_Room_Edit_Look -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

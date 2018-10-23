@@ -26,7 +26,7 @@ public class Verify_Fitting_Room_Popup {
 	login_page = new Login(driver);  // create the object of login class 
 	
 	// Call the method
-	login_page.login_selfie_styler("rikotest@mailinator.com", "Germany0!");      // live credentials
+	login_page.login_selfie_styler("rikodemos@mailinator.com", "Germany0!");      // live credentials
 	
 	
 	fitting_room = new FittingRoomPopup(driver);

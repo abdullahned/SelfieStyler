@@ -33,11 +33,11 @@ public class Favourite extends UnauthenticatedHomePage {
 		Thread.sleep(10000);
 		
 		
-		driver.findElement(By.xpath("//*[@data-product-id='529743904822']")).click(); // need to change if product change
+		driver.findElement(By.xpath("//*[@data-product-id='1722324647993']")).click(); // need to change if product change
 		
 		 Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("//*[@data-product-id='529743839286']")).click(); // need to change if product change
+		driver.findElement(By.xpath("//*[@data-product-id='1722338410553']")).click(); // need to change if product change
 		
 		Thread.sleep(5000);
 		

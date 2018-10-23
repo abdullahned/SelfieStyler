@@ -16,7 +16,7 @@ import library.HighlightLocator;
 public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	
 	
- @Test (priority =7, enabled=false)
+ @Test (priority =7,enabled=false)
 	 
 	 public void InvalidEmail () throws InterruptedException                  // Invalid email , Invalid password , Terms not check
 	 
@@ -165,7 +165,7 @@ public class SignUpErrorHandling extends UnauthenticatedHomePage {
 	 }
 
 	 
- @Test (priority =8, enabled=false)                                      // Missing field, Password do not match
+ @Test (priority =8,enabled=false)                                      // Missing field, Password do not match
  
  public void PasswordNotMatch () throws InterruptedException
  

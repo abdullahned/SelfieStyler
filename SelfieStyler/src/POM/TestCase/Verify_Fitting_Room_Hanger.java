@@ -24,12 +24,12 @@ public class Verify_Fitting_Room_Hanger {
 	 public void validate_Fitting_Room_Hanger () throws InterruptedException
 	 {
 		// This will launch browser and specific url 
-			WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+			WebDriver driver=BrowserFactory.startBrowser("chrome", "https://marlon4xx.myshopify.com/");  // live Environment
 				
 			login_page = new Login(driver);  // create the object of login class	 
 			 
 			// Call the method
-			login_page.login_selfie_styler("rikotest@mailinator.com", "Germany0!");      // live credentials
+			login_page.login_selfie_styler("rikodemo@mailinator.com", "Germany0!");      // live credentials
 				
 			//Fitting_Room_Hanger_Icon fittinghanger =PageFactory.initElements(driver, Fitting_Room_Hanger_Icon.class);
 			

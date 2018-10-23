@@ -58,7 +58,7 @@ public class UnauthenticatedHomePage {
 	   
   @BeforeMethod
   
-  public void setup() 
+  public void setup() throws InterruptedException 
   {
 	  
   System.setProperty("webdriver.chrome.driver", "C:\\Users\\m.abdullah\\Downloads\\chromedriver.exe");
@@ -73,11 +73,21 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-   driver.get("https://www.selfiestyler.com/");
+  // driver.get("https://www.selfiestyler.com/");
 	 
  // driver.get("http://qa-na.selfiestyler.com/");
 	 
 	//driver.get("https://wpqa.selfiestyler.com/");
+   
+   driver.get("https://marlon4xx.myshopify.com/");
+ 
+ driver.findElement(By.xpath("//input[@id='password']")).sendKeys("rahvaw"); // comment code
+	 
+	Thread.sleep(1000);
+	 
+	 driver.findElement(By.xpath("//input[@name='commit']")).click();
+   
+   
 	 
 	  
   }
@@ -105,7 +115,7 @@ public class UnauthenticatedHomePage {
 	 
 	 HighlightLocator.highLightElement(driver,enterEmail);
 	 
-	 enterEmail.sendKeys("rikotest@mailinator.com");
+	 enterEmail.sendKeys("rikodemo@mailinator.com");
 	 
 	 Thread.sleep(1000);
 	 
@@ -265,7 +275,7 @@ public class UnauthenticatedHomePage {
 		  }
 		  
 		  
-	 //driver.quit();
+	 driver.quit();
 		  
 	  }
 	  

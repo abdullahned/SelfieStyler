@@ -2,6 +2,7 @@ package Helper;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,7 +12,7 @@ public class BrowserFactory {
 
 	static WebDriver driver;
 	
-	public static WebDriver startBrowser(String browserName, String url)
+	public static WebDriver startBrowser(String browserName, String url) throws InterruptedException
 	
 	{
 		if (browserName.equals("chrome")) 
@@ -42,6 +43,12 @@ public class BrowserFactory {
 		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		 driver.get(url);
+		 
+		/* driver.findElement(By.xpath("//input[@id='password']")).sendKeys("rahvaw"); // comment code
+		 
+		Thread.sleep(1000);
+			 
+		driver.findElement(By.xpath("//input[@name='commit']")).click(); */
 		 
 		 
 		return driver;

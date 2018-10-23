@@ -15,7 +15,7 @@ import library.HighlightLocator;
 public class ForgotPassword extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =2, enabled=false)
+	@Test (priority =2,enabled=false)
 	 
 	 public void ForgotPwd() throws InterruptedException 
 	 {
@@ -45,7 +45,7 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 		 
 		 HighlightLocator.highLightElement(driver,enterEmail );
 		 
-		 enterEmail.sendKeys("rikotest@mailinator.com");
+		 enterEmail.sendKeys("rikodemo@mailinator.com");
 		 
 		 Thread.sleep(1000);
 		 
@@ -68,7 +68,7 @@ public class ForgotPassword extends UnauthenticatedHomePage {
 		 
 		 HighlightLocator.highLightElement(driver,inboxfield );
 		 
-		 inboxfield.sendKeys("rikotest@mailinator.com");
+		 inboxfield.sendKeys("rikodemo@mailinator.com");
 		 
 		 Thread.sleep(4000);
 		 

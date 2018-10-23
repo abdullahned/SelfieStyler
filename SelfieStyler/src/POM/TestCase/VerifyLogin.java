@@ -11,7 +11,7 @@ public class VerifyLogin {
 
 	@Test
 	
-	public void checkValidCredentials()
+	public void checkValidCredentials() throws InterruptedException
 	{
 	   
 		// This will launch browser and specific url 

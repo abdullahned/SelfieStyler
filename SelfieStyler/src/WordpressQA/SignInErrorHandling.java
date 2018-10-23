@@ -207,7 +207,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 			 
 			 HighlightLocator.highLightElement(driver,enterEmail );
 			 
-			 enterEmail.sendKeys("rikotest@mailinator.com");
+			 enterEmail.sendKeys("rikodemo@mailinator.com");
 			 
 			 Thread.sleep(1000);
 			 
@@ -227,7 +227,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 		 
 		 HighlightLocator.highLightElement(driver,inboxfield );
 		 
-		 inboxfield.sendKeys("rikotest@mailinator.com");
+		 inboxfield.sendKeys("rikodemo@mailinator.com");
 		 
 		 Thread.sleep(4000);
 		 

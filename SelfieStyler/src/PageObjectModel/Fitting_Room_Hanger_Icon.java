@@ -36,7 +36,7 @@ public class Fitting_Room_Hanger_Icon {
 		
 		shop.click();                                                 // Click on shop
 		
-		Thread.sleep(3000);	
+		Thread.sleep(5000);	
 		
 		JavascriptExecutor jex = (JavascriptExecutor)driver;          // To scroll down the page 
 		 
