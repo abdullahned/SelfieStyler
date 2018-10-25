@@ -12,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import library.HighlightLocator;
+import library.Synchronization;
 
 public class Fitting_Room_Edit_Look {
 
@@ -61,13 +62,10 @@ public class Fitting_Room_Edit_Look {
 	WebElement color;
 	
 	
-	public void Click_Edit_look() throws InterruptedException
+	public void Click_Edit_look() throws Exception
 	{
-		HighlightLocator.highLightElement(driver, Edit_look);
 		
-		Thread.sleep(1000);
-		
-		Edit_look.click();
+		Synchronization.Exception_Handling(driver, Edit_look, 30);
 	}
 	
 	
@@ -79,46 +77,37 @@ public class Fitting_Room_Edit_Look {
 		
 	}
 	
-	public void Remove_product ()
+	public void Remove_product () throws Exception
 	{
 		
-		HighlightLocator.highLightElement(driver, remove);
+		Synchronization.Exception_Handling(driver, remove, 30);
 		
-		remove.click();
 	}
 
 	
-	public void Close_edit_popup()
+	public void Close_edit_popup() throws Exception
 	{
-		HighlightLocator.highLightElement(driver, close);
 		
-		close.click();
+		Synchronization.Exception_Handling(driver, close, 30);
 	}
 	
 	
-	public void Select_a_size() throws InterruptedException
-	
+	public void Select_a_size() 
 	{
 		
 		HighlightLocator.highLightElement(driver, Size);
 		 
 		Select select = new Select(Size);
 		
-		Thread.sleep(2000);
-		
-		select.selectByVisibleText("Size: 26");
-		
-		Thread.sleep(1000);
-			
+		select.selectByVisibleText("Size: 26");	
 		
 	}
 	
 	
-	public void Click_Add_to_bag()
-	{
-		HighlightLocator.highLightElement(driver, Add_to_bag);
-			
-		Add_to_bag.click();
+	public void Click_Add_to_bag() throws Exception
+	{	
+		
+		Synchronization.Exception_Handling(driver, Add_to_bag, 30);
 		
 	}
 	
@@ -131,7 +120,7 @@ public class Fitting_Room_Edit_Look {
 		
 		HighlightLocator.highLightElement(driver, cart_toggle);
 		
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		
 		action.moveToElement(cart_toggle).build().perform();
 		
@@ -156,7 +145,6 @@ public class Fitting_Room_Edit_Look {
 	public void recommended() 
 	{
 		
-		//Select oSelect = new Select(driver.findElement(By.xpath("//select[@id='size_0']")));
 		
 		HighlightLocator.highLightElement(driver, Size);
 		
@@ -175,34 +163,45 @@ public class Fitting_Room_Edit_Look {
 	
 	
 	
-	public void click_brand()
+	public void click_brand() throws Exception
 	{
-		HighlightLocator.highLightElement(driver, brand);
+		//HighlightLocator.highLightElement(driver, brand);
 		
-		brand.click();
+		//Synchronization.clickOn(driver,brand, 5);	
+		
+		Synchronization.Exception_Handling(driver, brand, 30);
 		
 	}
 	
 	
 	
-	public void clickMonrow()
+	public void clickMonrow() throws Exception
 	{
-		monrow.click();
+	
+		
+		//Synchronization.Exception_Handling(driver, monrow, 30);
+		
+			
+		Synchronization.clickOn(driver, monrow, 30);
 		
 		JavascriptExecutor jex = (JavascriptExecutor)driver;          // To scroll down the page 
 		 
-	    jex.executeScript("window.scrollBy(0,300)", "");
-			
+		jex.executeScript("window.scrollBy(0,300)", "");
 			
 	}
 	
 	
-  public void click_monrow_product()
+  public void click_monrow_product() throws Exception
   {
-	  monrow_product.click();
+	    
 	  
+	 Synchronization.click_explicitly(driver, monrow_product, 30);
 	  
+	  //Synchronization.Exception_Handling(driver, monrow_product, 40);
+	  
+	  //monrow_product.click();
   }
+  
 	
 	
   public void Select_a_color() throws InterruptedException

@@ -23,7 +23,7 @@ public class Verify_Fitting_Room_Edit_Look {
 	
 	@Test (enabled=false)
 	
-	public void validate_fitting_room_editlook () throws InterruptedException
+	public void validate_fitting_room_editlook () throws Exception
 	{
 		// This will launch browser and specific url 
 		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
@@ -75,7 +75,7 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		fitting_editlook.Click_Add_to_bag();   // add the item to the bag
 		
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		
 		fitting_editlook.Add_to_cart();      // shows the status of cart
 		
@@ -85,7 +85,7 @@ public class Verify_Fitting_Room_Edit_Look {
 	
 	@Test(enabled=false)
 	
-	public void validate_select_a_size() throws InterruptedException
+	public void validate_select_a_size() throws Exception
 	
 	{
 		
@@ -114,6 +114,8 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		fitting_editlook.Click_Add_to_bag();   // add the item to the bag
 		
+		Thread.sleep(3000);
+		
 		String text1 = fitting_editlook.error_message_select_size();  // get the text of error message of select a size
 		
 		Assert.assertTrue(text1.contains("Select a size"));
@@ -125,9 +127,9 @@ public class Verify_Fitting_Room_Edit_Look {
 	
 	
 	
-	@Test(enabled=false)
+	@Test (enabled=false)
 	
-	public void validate_calibrated_user() throws InterruptedException
+	public void validate_calibrated_user() throws Exception
 	{
 		
 		// This will launch browser and specific url 
@@ -188,9 +190,9 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 	}
 	
-	@Test
+	@Test (enabled=false)
 	
-	public void validate_change_color() throws InterruptedException
+	public void validate_change_color() throws Exception
 	{
 		// This will launch browser and specific url 
 		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
@@ -206,7 +208,7 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		fitting_editlook.click_brand();
 		
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		   
 		fitting_editlook.clickMonrow();
 		

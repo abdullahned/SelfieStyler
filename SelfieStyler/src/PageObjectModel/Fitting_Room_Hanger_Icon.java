@@ -3,10 +3,12 @@ package PageObjectModel;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import library.HighlightLocator;
+import library.Synchronization;
 
 public class Fitting_Room_Hanger_Icon {
 
@@ -21,22 +23,23 @@ public class Fitting_Room_Hanger_Icon {
 	
 	@FindBy(linkText="Shop") 
 	WebElement shop;
-	
+
+
 	@FindBy(xpath="//a[@id='740']") 
 	WebElement hanger;
 	
 	@FindBy(xpath="//a[@id='614']") 
 	WebElement hanger1;
 	
+	@FindBy(xpath="//div[@class='toolbar']") 
+	WebElement random;
 	
-	public void click_shop () throws InterruptedException	
+	
+	
+	
+	public void click_shop () throws Exception	
 	{
-	
-	   HighlightLocator.highLightElement(driver, shop);             // High lighting the web element
-		
-		shop.click();                                                 // Click on shop
-		
-		Thread.sleep(5000);	
+		Synchronization.Exception_Handling(driver, shop, 30);  // click the shop link 
 		
 		JavascriptExecutor jex = (JavascriptExecutor)driver;          // To scroll down the page 
 		 
@@ -47,18 +50,34 @@ public class Fitting_Room_Hanger_Icon {
 	}
 	
 	
-	public void click_hanger ()	
+	public void click_hanger () throws Exception	
 	{
-		hanger.click();		
-				
+		
+		Synchronization.click_explicitly(driver, hanger, 30);
+	
 	}
 	
-	public void click_hanger1 ()	
+	
+	public void click_hanger1 () throws Exception	
 	{
-		hanger1.click();		
-				
+	
+		
+		
+		Synchronization.click_explicitly(driver, hanger1, 30);
+					
 	}
 	
+	
+	
+	public void clickRandom()
+	{
+		
+	Actions action = new Actions(driver);
+
+	action.moveToElement(random).click().perform();
+			
+		
+	}
 	
 	
 	

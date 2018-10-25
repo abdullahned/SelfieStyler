@@ -17,7 +17,6 @@ public class VerifyLogin {
 		// This will launch browser and specific url 
 		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
 		
-		//WebDriver driver=BrowserFactory.startBrowser("chrome", "http://qa-na.selfiestyler.com/");  // QA Environment
 		 
 		// Created Page Object using Page Factory
 		

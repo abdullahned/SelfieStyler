@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import library.HighlightLocator;
+import library.Synchronization;
 
 public class FittingRoomPopup {
 
@@ -31,40 +32,30 @@ public class FittingRoomPopup {
 	WebElement up;
 	
 	
-	
-	public void fitting_selfie_styler () throws InterruptedException
+	public void fitting_selfie_styler () throws Exception
 	{
-		
-		
-		HighlightLocator.highLightElement(driver, shop);             // High lighting the web element
-		
-		shop.click();                                                 // Click on shop
+	
+		Synchronization.Exception_Handling(driver, shop, 30);    // click on shop link
 		
 		JavascriptExecutor jex = (JavascriptExecutor)driver;          // To scroll down the page 
 		 
 	    jex.executeScript("window.scrollBy(0,500)", "");
-		
-		Thread.sleep(8000);
-		
-		HighlightLocator.highLightElement(driver, down);             // High lighting the web element
-		
-		down.click();                                                 // Click on down arrow
-		
+	    
+	    Thread.sleep(8000);
+	    
+	    Synchronization.Exception_Handling(driver, down, 30);       // minimize the demo model popup
+	    		                                             	
 		Thread.sleep(2000);
 		
-		 jex.executeScript("window.scrollBy(0,-500)", "");
+		jex.executeScript("window.scrollBy(0,-500)", "");         // To scroll up the page
 		
-	    HighlightLocator.highLightElement(driver, up);             // High lighting the web element
-		
-		up.click();                                                 // Click on up arrow
+		Synchronization.Exception_Handling(driver, up, 30);
 		
 		Thread.sleep(4000);
 		
 		
 	}
 	
-	
-	
-	
+
 	
 }

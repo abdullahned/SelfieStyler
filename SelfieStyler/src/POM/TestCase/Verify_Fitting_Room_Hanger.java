@@ -1,15 +1,12 @@
 package POM.TestCase;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.Test;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
 import Helper.BrowserFactory;
 import PageObjectModel.Fitting_Room_Hanger_Icon;
 import PageObjectModel.Login;
+
 
 public class Verify_Fitting_Room_Hanger {
 
@@ -21,15 +18,15 @@ public class Verify_Fitting_Room_Hanger {
 	
 	@Test
 	 
-	 public void validate_Fitting_Room_Hanger () throws InterruptedException
+	 public void validate_Fitting_Room_Hanger () throws Exception
 	 {
 		// This will launch browser and specific url 
-			WebDriver driver=BrowserFactory.startBrowser("chrome", "https://marlon4xx.myshopify.com/");  // live Environment
+			WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
 				
 			login_page = new Login(driver);  // create the object of login class	 
 			 
 			// Call the method
-			login_page.login_selfie_styler("rikodemo@mailinator.com", "Germany0!");      // live credentials
+			login_page.login_selfie_styler("rikotest@mailinator.com", "Germany0!");      // live credentials
 				
 			//Fitting_Room_Hanger_Icon fittinghanger =PageFactory.initElements(driver, Fitting_Room_Hanger_Icon.class);
 			
@@ -45,21 +42,14 @@ public class Verify_Fitting_Room_Hanger {
 			
 			Thread.sleep(1000);	
 			
-			WebElement tool = driver.findElement(By.xpath("//div[@class='toolbar']")); 
+			fitting_hanger.clickRandom();
 			
-			Actions action = new Actions(driver);
-
-			action.moveToElement(tool).click().perform();
+			Thread.sleep(1000);
 			
-			Thread.sleep(4000);	
-			
-			driver.quit();
-			
-			
+			driver.quit(); 
+					
 			
 	 }
-	
-	
 	
 	
 	

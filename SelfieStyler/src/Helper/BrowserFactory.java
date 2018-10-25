@@ -40,7 +40,7 @@ public class BrowserFactory {
 		 
 		 driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		 
-		 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
 		 driver.get(url);
 		 
