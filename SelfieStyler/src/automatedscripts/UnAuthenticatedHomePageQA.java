@@ -2,7 +2,7 @@ package automatedscripts;
 
 import org.testng.annotations.Test;
 
-import library.utility;
+import library.screenshot;
 
 import org.testng.annotations.BeforeMethod;
 
@@ -438,7 +438,7 @@ public class UnAuthenticatedHomePageQA {
 		  if(ITestResult.FAILURE ==result.getStatus())
 			  
 		  {
-			  utility.capturescreenshot(driver, result.getName());
+			  screenshot.capturescreenshot(driver, result.getName());
 		  }
 		  
 		  

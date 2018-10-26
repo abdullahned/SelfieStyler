@@ -8,7 +8,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import library.HighlightLocator;
-import library.utility;
+import library.screenshot;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
@@ -73,19 +73,19 @@ public class UnauthenticatedHomePage {
 	 
 	 driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	 
-  // driver.get("https://www.selfiestyler.com/");
+   driver.get("https://www.selfiestyler.com/");
 	 
  // driver.get("http://qa-na.selfiestyler.com/");
 	 
 	//driver.get("https://wpqa.selfiestyler.com/");
    
-   driver.get("https://marlon4xx.myshopify.com/");
+  // driver.get("https://marlon4xx.myshopify.com/");
  
- driver.findElement(By.xpath("//input[@id='password']")).sendKeys("rahvaw"); // comment code
+// driver.findElement(By.xpath("//input[@id='password']")).sendKeys("rahvaw"); // comment code
+//	 
+	//Thread.sleep(1000);
 	 
-	Thread.sleep(1000);
-	 
-	 driver.findElement(By.xpath("//input[@name='commit']")).click();
+	// driver.findElement(By.xpath("//input[@name='commit']")).click();
    
    
 	 
@@ -271,7 +271,7 @@ public class UnauthenticatedHomePage {
 		  if(ITestResult.FAILURE ==result.getStatus())
 			  
 		  {
-			  utility.capturescreenshot(driver, result.getName());
+			  screenshot.capturescreenshot(driver, result.getName());
 		  }
 		  
 		  

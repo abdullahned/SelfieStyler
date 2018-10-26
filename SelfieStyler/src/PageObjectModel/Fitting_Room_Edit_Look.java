@@ -195,11 +195,15 @@ public class Fitting_Room_Edit_Look {
   {
 	    
 	  
-	 Synchronization.click_explicitly(driver, monrow_product, 30);
+	Synchronization.click_explicitly(driver, monrow_product, 30);
 	  
 	  //Synchronization.Exception_Handling(driver, monrow_product, 40);
 	  
 	  //monrow_product.click();
+	  
+	 
+	 
+	 
   }
   
 	
