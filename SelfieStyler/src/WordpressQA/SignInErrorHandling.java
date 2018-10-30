@@ -16,7 +16,7 @@ import library.HighlightLocator;
 public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 	
-	@Test (priority =9,enabled=false)
+	@Test (priority =9,enabled=true)
 	 
 	 public void InvalidCredentials() throws InterruptedException 
 	  {
@@ -77,7 +77,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 			
 		 Assert.assertTrue(bottom_error_para.contains("Please enter valid user name and password."));
 						
-		 driver.navigate().refresh();
+		/* driver.navigate().refresh();
 		 
          WebElement Forgot = driver.findElement(By.xpath("//a[contains(text(),'Forgot?')]"));  // Invalid Email
 		 
@@ -119,7 +119,7 @@ public class SignInErrorHandling extends UnauthenticatedHomePage {
 
 		 Assert.assertEquals(top_error_para1, expect1);
 		 
-		 Assert.assertTrue(bottom_error_para1.contains("Please enter valid email address."));
+		 Assert.assertTrue(bottom_error_para1.contains("Please enter valid email address.")); */
 		
 		 
 		 

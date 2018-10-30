@@ -3,13 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="library.FindBrokenLink">
+      <class name="POM.TestCase.Signin_Errorhandling">
         <methods>
-          <include name="openBrowser"/>
-          <include name="getBrokenLinks"/>
-          <include name="tearDown"/>
+          <include name="Invalidcrdentials"/>
         </methods>
-      </class> <!-- library.FindBrokenLink -->
+      </class> <!-- POM.TestCase.Signin_Errorhandling -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

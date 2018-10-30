@@ -45,6 +45,13 @@ WebDriver driver;
 	@FindBy(id="confirm_mem_password") 
 	WebElement confirm_mem_password;
 	
+	@FindBy(xpath="//img[@src='https://wpqa.selfiestyler.com/wp-content/img/female-model.jpg']") 
+	WebElement RadioFemale;
+	
+	@FindBy(xpath="//img[@src='https://wpqa.selfiestyler.com/wp-content/img/male-model-small.jpg']") 
+	WebElement RadioMale;
+	
+	
 	@FindBy(xpath="//a[contains(text(),'Terms')]") 
 	WebElement Terms;
 	
@@ -124,6 +131,40 @@ WebDriver driver;
 	}
 	
 	
+
+	public void Enter_Password_Invalid()   // enter password
+	{
+		
+		Synchronization.sendKeys(driver, mem_password, 30, "Pakistan");
+			
+	}
+	
+	public void Enter_Confirm_Password_Invalid()   // enter confirm password
+	{
+	
+		Synchronization.sendKeys(driver, confirm_mem_password, 30, "Pakistan");
+			
+	}
+	
+	
+	public void women_click() throws Exception
+	{
+		
+		Synchronization.Exception_Handling(driver, RadioFemale, 50);		
+		
+		//RadioFemale.click();
+	}
+	
+	
+	public void men_click() throws Exception
+	{
+		
+		Synchronization.Exception_Handling(driver, RadioMale, 30);
+				
+	}
+	
+
+
 	public void Terms_Click() throws Exception   // click the Terms click
 	{
 		
@@ -163,6 +204,8 @@ WebDriver driver;
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
 		
 		jse.executeScript("window.scrollBy(0,-500)", "");
+		
+		Thread.sleep(2000);
 		
 		Synchronization.Exception_Handling(driver, AppleButton, 30);		
 		

@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import Helper.BrowserFactory;
 import PageObjectModel.Login;
 
-public class VerifyLogin {
+public class Verify_Login {
 
 	@Test
 	
