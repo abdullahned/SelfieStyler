@@ -22,9 +22,6 @@ public class FittingRoomPopup {
 	}
 	
 	
-	@FindBy(linkText="Shop") 
-	WebElement shop;
-	
 	@FindBy(xpath="//span[@class='down']") 
 	WebElement down;
 	
@@ -32,29 +29,28 @@ public class FittingRoomPopup {
 	WebElement up;
 	
 	
-	public void fitting_selfie_styler () throws Exception
+	public void click_down() throws Exception
 	{
+		Synchronization.Exception_Handling(driver, down, 30);       // minimize the demo model popup
+     	
+		Thread.sleep(2000);
+		
+	}
 	
-		Synchronization.Exception_Handling(driver, shop, 30);    // click on shop link
+	
+	public void click_up() throws Exception
+	{
 		
 		JavascriptExecutor jex = (JavascriptExecutor)driver;          // To scroll down the page 
 		 
-	    jex.executeScript("window.scrollBy(0,500)", "");
-	    
-	    Thread.sleep(8000);
-	    
-	    Synchronization.Exception_Handling(driver, down, 30);       // minimize the demo model popup
-	    		                                             	
+	    jex.executeScript("window.scrollBy(0,-500)", "");
+			
+		Synchronization.Exception_Handling(driver, up, 30);       // maximize the demo model popup
+     	
 		Thread.sleep(2000);
 		
-		jex.executeScript("window.scrollBy(0,-500)", "");         // To scroll up the page
-		
-		Synchronization.Exception_Handling(driver, up, 30);
-		
-		Thread.sleep(4000);
-		
-		
 	}
+	
 	
 
 	

@@ -171,6 +171,10 @@ public class Fitting_Room_Edit_Look {
 		
 		Synchronization.Exception_Handling(driver, brand, 30);
 		
+		JavascriptExecutor jex = (JavascriptExecutor)driver;          // To scroll down the page 
+		 
+		jex.executeScript("window.scrollBy(0,300)", "");
+		
 	}
 	
 	
@@ -195,11 +199,11 @@ public class Fitting_Room_Edit_Look {
   {
 	    
 	  
-	Synchronization.click_explicitly(driver, monrow_product, 30);
+	//Synchronization.click_explicitly(driver, monrow_product, 30);
 	  
 	  //Synchronization.Exception_Handling(driver, monrow_product, 40);
 	  
-	  //monrow_product.click();
+	  monrow_product.click();
 	  
 	 
 	 

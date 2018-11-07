@@ -115,7 +115,7 @@ public class UnauthenticatedHomePage {
 	 
 	 HighlightLocator.highLightElement(driver,enterEmail);
 	 
-	 enterEmail.sendKeys("rikodemo@mailinator.com");
+	 enterEmail.sendKeys("rikotest@mailinator.com");
 	 
 	 Thread.sleep(1000);
 	 

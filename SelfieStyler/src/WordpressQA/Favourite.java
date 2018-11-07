@@ -14,7 +14,7 @@ public class Favourite extends UnauthenticatedHomePage {
 	
 	//JavascriptExecutor jse = (JavascriptExecutor)driver;
 	
-	@Test (priority =13,enabled=false)
+	@Test (priority =13,enabled=true)
 	
 	public void AddFavourite () throws InterruptedException
 	
@@ -33,11 +33,11 @@ public class Favourite extends UnauthenticatedHomePage {
 		Thread.sleep(10000);
 		
 		
-		driver.findElement(By.xpath("//*[@data-product-id='1722324647993']")).click(); // need to change if product change
+		driver.findElement(By.xpath("//*[@data-product-id='1482907025462']")).click(); // need to change if product change
 		
 		 Thread.sleep(3000);
 		
-		driver.findElement(By.xpath("//*[@data-product-id='1722338410553']")).click(); // need to change if product change
+		driver.findElement(By.xpath("//*[@data-product-id='1482906992694']")).click(); // need to change if product change
 		
 		Thread.sleep(5000);
 		

@@ -45,10 +45,10 @@ WebDriver driver;
 	@FindBy(id="confirm_mem_password") 
 	WebElement confirm_mem_password;
 	
-	@FindBy(xpath="//img[@src='https://wpqa.selfiestyler.com/wp-content/img/female-model.jpg']") 
+	@FindBy(xpath="//img[@src='https://selfiestyler.com/wp-content/img/female-model.jpg']") 
 	WebElement RadioFemale;
 	
-	@FindBy(xpath="//img[@src='https://wpqa.selfiestyler.com/wp-content/img/male-model-small.jpg']") 
+	@FindBy(xpath="//img[@src='https://selfiestyler.com/wp-content/img/male-model-small.jpg']") 
 	WebElement RadioMale;
 	
 	

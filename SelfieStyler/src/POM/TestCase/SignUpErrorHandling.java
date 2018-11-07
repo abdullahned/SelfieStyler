@@ -38,7 +38,7 @@ Random r = new Random();
 
 	   Women womenobj;
 	   
-	   @BeforeTest
+	/*   @BeforeTest
 	   
 		public void set()
 		{
@@ -47,17 +47,17 @@ Random r = new Random();
 			extent.attachReporter(htmlReports);
 			
 			
-		}  
+		}  */
 		   
-   
+	  // (priority =0,enabled=true)
 	   
-	   @Test (priority =0,enabled=true)
+	   @Test (priority =2,enabled=true)
 	
 	public void InvalidEmail() throws Exception                     // Invalid email , Invalid password , Terms not check
 	{
-		ExtentTest test = extent.createTest("Invalid Email for Sign Up");
+		//ExtentTest test = extent.createTest("Invalid Email for Sign Up");
 		 
-	     test.log(Status.INFO, "User has entered Invalid Email for Sign Up");
+	    // test.log(Status.INFO, "User has entered Invalid Email for Sign Up");
 		
 		
 		
@@ -68,7 +68,7 @@ Random r = new Random();
 		
 		womenobj.Signup_Click(); // click the sign up link
 		
-		 womenobj.select_gender(); // select the gender
+		// womenobj.select_gender(); // select the gender
 		 
 		 womenobj.Enter_Firstname(firstname);  // enter the first name
 		   
@@ -122,16 +122,16 @@ Random r = new Random();
 		
 	}
 	
-	
+	   //(priority =1,enabled=true) 
 	 
-  @Test (priority =1,enabled=true)                                      // Missing field, Password do not match
+  @Test  (priority =3,enabled=true)                                   // Missing field, Password do not match
 
    public void PasswordNotMatch () throws Exception
   {
 	 
-	  ExtentTest test = extent.createTest("Missing fields and passwords do not match");
+	 // ExtentTest test = extent.createTest("Missing fields and passwords do not match");
 		 
-	  test.log(Status.INFO, "User has entered mismatched password and missed some fields");
+	 // test.log(Status.INFO, "User has entered mismatched password and missed some fields");
 	  
 	//This will launch browser and specific url 
 	  WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
@@ -140,7 +140,7 @@ Random r = new Random();
 	  
 	  womenobj.Signup_Click();
 	  
-	  womenobj.select_gender(); // select the gender
+	//  womenobj.select_gender(); // select the gender
 		 
 	  womenobj.Enter_Firstname(firstname);  // enter the first name
 		   
@@ -191,7 +191,7 @@ Random r = new Random();
 	
 
 
-	 @AfterTest
+	/* @AfterTest
 	 public void tear()
 	 {
 		 
@@ -199,7 +199,7 @@ Random r = new Random();
 		 
 		 
 		 
-	 }  
+	 }  */
 	 
 	
 	

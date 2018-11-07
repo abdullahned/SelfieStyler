@@ -54,7 +54,7 @@ public class Forgot_Password {
 			
 	}
 	
-	public void click_reset_button() throws Exception
+	public void click_request_password_button() throws Exception
 	{
 		Synchronization.Exception_Handling(driver, customer_login_forgot, 30);
 		
@@ -70,9 +70,9 @@ public class Forgot_Password {
 		
 	}
 	
-	public void inboxfield_mailinator()
+	public void inboxfield_mailinator(String email)
 	{
-		Synchronization.sendKeys(driver, inboxfield, 30, "rikotest@mailinator.com");
+		Synchronization.sendKeys(driver, inboxfield, 30, email);
 		
 	}
 	
@@ -97,7 +97,7 @@ public class Forgot_Password {
 		Thread.sleep(8000);
 	}
 	
-	public void switch_to_other_page() throws Exception
+	public void switch_to_other_page(String pass1, String pass2 ) throws Exception
 	{
 		
 		String parent_window= driver.getWindowHandle();
@@ -114,11 +114,11 @@ public class Forgot_Password {
 			{
 				driver.switchTo().window(child_window);
 				
-				Synchronization.sendKeys(driver, password1, 30, "America0!");
+				Synchronization.sendKeys(driver, password1, 30, pass1);
 				
 				Thread.sleep(2000);
 				
-				Synchronization.sendKeys(driver, password2, 30, "America0!");
+				Synchronization.sendKeys(driver, password2, 30, pass2);
 				
 				Thread.sleep(1000);
 				
@@ -135,7 +135,13 @@ public class Forgot_Password {
 	}
 	
 	
-	
+	public void click_reset_password() throws Exception
+	{
+
+		Synchronization.Exception_Handling(driver, reset_password, 30);
+		
+	}
+
 	
 	
 }

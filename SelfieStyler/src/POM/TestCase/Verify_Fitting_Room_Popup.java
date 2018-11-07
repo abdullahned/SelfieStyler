@@ -7,12 +7,15 @@ import org.testng.annotations.Test;
 import Helper.BrowserFactory;
 import PageObjectModel.FittingRoomPopup;
 import PageObjectModel.Login;
+import PageObjectModel.Shop_Checkout;
 
 public class Verify_Fitting_Room_Popup {
 
-	Login login_page;              // login_page is the object reference variable of Login class
+	Login Login_obj;             // login_obj is the object reference variable of Login class
 	
-	FittingRoomPopup fitting_room;    // fitting_room is the object reference variable of FittingRoomPopup
+	FittingRoomPopup fitting_room_popup_obj;    // fitting_room_popup_obj is the object reference variable of FittingRoomPopup
+	
+	Shop_Checkout Shop_Checkout_obj;  // Shop_Checkout_obj is the object reference variable of Shop_Checkout class
 	
 	
     @Test
@@ -23,16 +26,29 @@ public class Verify_Fitting_Room_Popup {
 	// This will launch browser and specific url 
 	WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
 	
-	login_page = new Login(driver);  // create the object of login class 
+	  Login_obj = new Login(driver); // create the object of login class
 	
-	// Call the method
-	login_page.login_selfie_styler("rikotest@mailinator.com", "Germany0!");      // live credentials
+	  fitting_room_popup_obj = new FittingRoomPopup(driver);   // create the object of FittingRoomPopup class
+	
+	  Shop_Checkout_obj = new Shop_Checkout(driver); // create the object of shop_checkout class
+	
+	  Login_obj.click_login(); // click the login
+	   
+	  Login_obj.enter_email("qa-women@mailinator.com");  // enter the email for login
+	   
+	  Login_obj.enter_password("Germany0!");  // enter the password for login
+	   
+	  Login_obj.click_submit(); // submit button
+	   
+	  Thread.sleep(5000);
+	
+	  Shop_Checkout_obj.click_Women();
+	
+	  fitting_room_popup_obj.click_down();
+	  
+	  fitting_room_popup_obj.click_up();
 		
-	fitting_room = new FittingRoomPopup(driver);   // create the object of FittingRoomPopup class
-	
-	fitting_room.fitting_selfie_styler();   // Call the method
-	
-	driver.quit();
+	  driver.quit();
 	
 	
 	}

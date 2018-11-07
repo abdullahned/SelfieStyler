@@ -20,11 +20,11 @@ public class MenTest {
 		
 		Women womenobj;
 		
-		@Test (enabled=true)
+		@Test (priority=1, enabled=true)
 		public void validate_men() throws Exception
 		{
 			// This will launch browser and specific url 
-			   WebDriver driver=BrowserFactory.startBrowser("chrome", "https://wpqa.selfiestyler.com/");  // live Environment
+			   WebDriver driver=BrowserFactory.startBrowser("chrome", "https://www.selfiestyler.com/");  // live Environment
 			   
 			   womenobj = new Women(driver);  // create the object of women class
 				

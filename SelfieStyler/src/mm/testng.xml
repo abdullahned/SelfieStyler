@@ -2,27 +2,37 @@
   
 <suite name="Testng Automation Suite"  >
 
-
-
-
-
-  <test name="Nopackage" >
+  <test name="Regression suite 1">
  
-  
-  
-  
-    <classes>
+  <classes>
     
-       <class name="mm.UnauthenticatedHomePage" />
-       <class name="mm.SignUpErrorHandling" />
-       <class name="mm.SignInErrorHandling" />
-       <class name="mm.ContactUsErrorHandling" />
-       <class name="mm.women" />
-       <class name="mm.Men" />
+       <class name="Updated.POM.Testcases.WomenTest"  />
        
+       <class name="Updated.POM.Testcases.MenTest"  />
+       
+       <class name="POM.TestCase.SignUpErrorHandling" />
+       
+       <class name="POM.TestCase.Verify_Login" />
+       
+       <class name="POM.TestCase.Verify_Forgot_Password" /> 
+            
+       <class name="POM.TestCase.Signin_Errorhandling" />
+       
+       <class name="POM.TestCase.Verify_Contactus" />
+       
+       <class name="POM.TestCase.Contactus_Errorhandling" />
+       
+       <class name="POM.TestCase.Verify_Cancelsignup" />
+       
+
        
        
     </classes>
+  
+  
+
+
+    
   </test>
  
 </suite>

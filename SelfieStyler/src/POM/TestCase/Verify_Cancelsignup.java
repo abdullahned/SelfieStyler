@@ -16,7 +16,7 @@ public class Verify_Cancelsignup {
 	CancelSignup cancelobj;
 	
 	
-	@Test
+	@Test(priority =13,enabled=true)  
 	public void validate_cancelsignup() throws Exception
 	{
 		

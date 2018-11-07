@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="POM.TestCase.Signin_Errorhandling">
+      <class name="POM.TestCase.Verify_Badge_Number">
         <methods>
-          <include name="Invalidcrdentials"/>
+          <include name="validate_Badge_number"/>
         </methods>
-      </class> <!-- POM.TestCase.Signin_Errorhandling -->
+      </class> <!-- POM.TestCase.Verify_Badge_Number -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

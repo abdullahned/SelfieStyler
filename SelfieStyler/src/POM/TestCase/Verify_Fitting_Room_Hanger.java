@@ -1,11 +1,13 @@
 package POM.TestCase;
 
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import Helper.BrowserFactory;
 import PageObjectModel.Fitting_Room_Hanger_Icon;
 import PageObjectModel.Login;
+import PageObjectModel.Shop_Checkout;
 
 
 public class Verify_Fitting_Room_Hanger {
@@ -13,7 +15,9 @@ public class Verify_Fitting_Room_Hanger {
 
 	Fitting_Room_Hanger_Icon fitting_hanger;  // fitting_hanger is the object reference variable of Fitting_Room_Hanger_Icon
 	
-	Login login_page;                       // login_page is the object reference variable of Login class
+	 Login Login_obj;                      // login_obj is the object reference variable of Login class
+	
+	Shop_Checkout Shop_Checkout_obj;  // Shop_Checkout_obj is the object reference variable of Shop_Checkout class
 	
 	
 	@Test
@@ -23,28 +27,36 @@ public class Verify_Fitting_Room_Hanger {
 		// This will launch browser and specific url 
 			WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
 				
-			login_page = new Login(driver);  // create the object of login class	 
-			 
-			// Call the method
-			login_page.login_selfie_styler("rikotest@mailinator.com", "Germany0!");      // live credentials
-				
-			//Fitting_Room_Hanger_Icon fittinghanger =PageFactory.initElements(driver, Fitting_Room_Hanger_Icon.class);
+			Login_obj = new Login(driver); // create the object of login class
 			
-			fitting_hanger = new Fitting_Room_Hanger_Icon(driver);
+			fitting_hanger = new Fitting_Room_Hanger_Icon(driver); // create the object of fitting_hanger class
 			
-			fitting_hanger.click_shop();
+			Shop_Checkout_obj = new Shop_Checkout(driver); // create the object of shop_checkout class
+			 	
+			Login_obj.click_login(); // click the login
+			   
+			Login_obj.enter_email("qa-women@mailinator.com");  // enter the email for login
+			   
+			Login_obj.enter_password("Germany0!");  // enter the password for login
+			   
+			Login_obj.click_submit(); // submit button
 			
+		    Thread.sleep(8000);
+			
+			Shop_Checkout_obj.click_Women();
+		  //  Thread.sleep(5000);
+		    
 			fitting_hanger.click_hanger();
 			
 			Thread.sleep(8000);	
-			
+		    
 			fitting_hanger.click_hanger();
 			
 			Thread.sleep(1000);	
 			
 			fitting_hanger.clickRandom();
 			
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			
 			driver.quit(); 
 					

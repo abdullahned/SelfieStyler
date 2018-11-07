@@ -9,7 +9,7 @@ import PageObjectModel.Login;
 
 public class Verify_Login {
 
-	@Test
+	@Test (priority =4,enabled=true)  
 	
 	public void checkValidCredentials() throws InterruptedException
 	{
@@ -24,6 +24,10 @@ public class Verify_Login {
 		 
 		// Call the method
 		login_page.login_selfie_styler("rikotest@mailinator.com", "Germany0!");      // live credentials
+		
+		Thread.sleep(4000);
+		
+		driver.quit();
 		
 		
 	

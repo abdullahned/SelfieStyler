@@ -1,26 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Testng Automation Suite]">
-  <test thread-count="5" name="Nopackage(failed)">
+  <test thread-count="5" name="Regression suite 1(failed)">
     <classes>
-      <class name="WordpressQA.Men">
+      <class name="Updated.POM.Testcases.WomenTest">
         <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="men"/>
-          <include name="tear"/>
-          <include name="set"/>
+          <include name="validate_women"/>
         </methods>
-      </class> <!-- WordpressQA.Men -->
-      <class name="WordpressQA.ForgotPassword">
+      </class> <!-- Updated.POM.Testcases.WomenTest -->
+      <class name="Updated.POM.Testcases.MenTest">
         <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="tear"/>
-          <include name="set"/>
-          <include name="ForgotPwd"/>
+          <include name="validate_men"/>
         </methods>
-      </class> <!-- WordpressQA.ForgotPassword -->
+      </class> <!-- Updated.POM.Testcases.MenTest -->
+      <class name="POM.TestCase.Signin_Errorhandling">
+        <methods>
+          <include name="Invalidcrdentials"/>
+        </methods>
+      </class> <!-- POM.TestCase.Signin_Errorhandling -->
+      <class name="POM.TestCase.SignUpErrorHandling">
+        <methods>
+          <include name="PasswordNotMatch"/>
+          <include name="InvalidEmail"/>
+        </methods>
+      </class> <!-- POM.TestCase.SignUpErrorHandling -->
+      <class name="POM.TestCase.Verify_Forgot_Password">
+        <methods>
+          <include name="validate_forgot_password"/>
+        </methods>
+      </class> <!-- POM.TestCase.Verify_Forgot_Password -->
+      <class name="POM.TestCase.Verify_Contactus">
+        <methods>
+          <include name="validate_contactus"/>
+        </methods>
+      </class> <!-- POM.TestCase.Verify_Contactus -->
     </classes>
-  </test> <!-- Nopackage(failed) -->
+  </test> <!-- Regression suite 1(failed) -->
 </suite> <!-- Failed suite [Testng Automation Suite] -->

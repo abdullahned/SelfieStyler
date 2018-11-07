@@ -24,7 +24,7 @@ public class Synchronization {
 	
 	
 	public static void click_explicitly1(WebDriver driver, WebElement locator, int timeout) {
-		new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+		new WebDriverWait(driver, timeout).ignoring(ElementNotVisibleException.class).until(ExpectedConditions.elementToBeClickable(locator));
 		locator.click();
 	}
 	
