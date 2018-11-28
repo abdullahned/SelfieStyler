@@ -183,9 +183,6 @@ public class UnauthenticatedHomePage {
 			  screenshot.capturescreenshot(driver, result.getName());
 		  }
 		  
-	
-		  
-		  
 		  
 		 driver.quit();
 		  

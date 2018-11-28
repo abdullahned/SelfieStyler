@@ -7,7 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
+import library.HighlightLocator;
 import library.Synchronization;
 
 public class Shop_Checkout {
@@ -40,11 +42,15 @@ public class Shop_Checkout {
 	@FindBy(xpath="//input[@id='product-add-to-cart']") 
     WebElement add_to_cart;
 	
-	@FindBy(xpath="//span[@class='icon']") 
-    WebElement go_to_cart;
+	@FindBy(xpath="//span[@id='cartCount']") 
+    WebElement cartCount;
 	
 	@FindBy(xpath="//button[@class ='btn-secondary btn-go-to-cart']")
-	WebElement View_Cart;
+	WebElement go_to_Cart;
+	
+	@FindBy(xpath="//p[@class ='success-message btn-go-to-cart']")
+	WebElement go_to_Cart_message;
+	
 	
 	@FindBy(xpath="//input[@name='checkout']") 
     WebElement checkout;
@@ -54,6 +60,10 @@ public class Shop_Checkout {
 	
 	@FindBy(xpath="//input[@id='checkout_shipping_address_city']") 
     WebElement checkout_shipping_address_city;
+	
+	@FindBy(xpath="//input[@id='checkout_shipping_address_province']") 
+    WebElement checkout_shipping_address_province;
+	
 	
 	@FindBy(xpath="//input[@id='checkout_shipping_address_zip']") 
     WebElement checkout_shipping_address_zip;
@@ -66,6 +76,15 @@ public class Shop_Checkout {
 	
 	@FindBy(xpath="//span[@class='fit_count']") 
     WebElement fit_count;
+	
+	@FindBy(xpath="//input[@value='Add to fitting room']") 
+    WebElement add_to_fitting_room;
+	
+	@FindBy(xpath="//input[@value='Remove from fitting room']") 
+    WebElement remove_from_fitting_room;
+	
+	@FindBy(xpath="//span[@class='up']") 
+	WebElement up;
 	
 	
 	public void click_Women() throws Exception
@@ -116,16 +135,17 @@ public class Shop_Checkout {
 	public void click_go_to_cart() throws Exception
 	{
 	    
-	    boolean b1 = View_Cart.isDisplayed();
+	    boolean b1 = go_to_Cart.isDisplayed();
 		System.out.println(b1); //true
 	
-		boolean b2 = View_Cart.isEnabled();
+		boolean b2 = go_to_Cart.isEnabled();
 		System.out.println(b2); //false
 		
 		JavascriptExecutor executor = (JavascriptExecutor)driver;
 		
-		executor.executeScript("arguments[0].click();", View_Cart);
-	    
+		executor.executeScript("arguments[0].click();", go_to_Cart);    
+		
+		
 	}
 	
 	
@@ -148,15 +168,28 @@ public class Shop_Checkout {
 	public void click_checkout_shipping_address_city() throws Exception
 	{
 		
-		Synchronization.sendKeys(driver, checkout_shipping_address_city, 30, "Karachi");
+		Synchronization.sendKeys(driver, checkout_shipping_address_city, 30, "Chicago");
 				
 	}
+	
+	
+	public void click_checkout_shipping_address_state() throws Exception
+	{
+		
+		HighlightLocator.highLightElement(driver, checkout_shipping_address_province);
+		 
+		Select select = new Select(checkout_shipping_address_province);
+		
+		select.selectByVisibleText("California");	
+				
+	}
+	
 	
 	
 	public void click_checkout_shipping_address_zip() throws Exception
 	{
 		
-		Synchronization.sendKeys(driver, checkout_shipping_address_zip, 30, "12345");
+		Synchronization.sendKeys(driver, checkout_shipping_address_zip, 30, "74200");
 		
 	}
 	
@@ -164,12 +197,9 @@ public class Shop_Checkout {
 	public void click_continue_to_shipping_method() throws Exception
 	{
 		
-		
-		
 		Actions actions = new Actions(driver);
 
-		actions.moveToElement(continue_to_shipping_method).click().perform();
-		
+		actions.moveToElement(continue_to_shipping_method).click().perform();		
 		
 	}
 	
@@ -201,6 +231,60 @@ public class Shop_Checkout {
 	}
 	
 	
+	public String get_cart_count()
+	{
+	    
+		String count = cartCount.getText();
+		return count;
+		
+	}
 	
+	
+	public String get_cart_message()
+	{
+		
+		String message = go_to_Cart_message.getText();
+		return message;
+	}
+	
+	
+	public void click_add_fitting_room() throws Exception
+	{
+			
+		Synchronization.Exception_Handling(driver, add_to_fitting_room, 30);
+	
+		
+	}
+	
+	public void click_remove_fitting_room() throws Exception
+	{
+		
+		Synchronization.Exception_Handling(driver, remove_from_fitting_room, 30);
+		
+	}
+	
+	public String before_remove_fitting_room_text()
+	{
+		String button_text = remove_from_fitting_room.getAttribute("value");
+		return button_text;
+			
+	}
 
+	public String after_remove_fitting_room_text()
+	{
+		String button_text = add_to_fitting_room.getAttribute("value");
+		return button_text;
+			
+	}
+	
+	
+	public String click_up_text()
+	{
+		String text = up.getAttribute("class");
+		return text;	
+	}
+	
+	
+	
+	
 }

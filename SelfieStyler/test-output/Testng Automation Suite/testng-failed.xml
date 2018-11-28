@@ -3,37 +3,21 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Testng Automation Suite]">
   <test thread-count="5" name="Regression suite 1(failed)">
     <classes>
-      <class name="Updated.POM.Testcases.WomenTest">
+      <class name="POM.TestCase.Verify_Shop_Checkout">
         <methods>
-          <include name="validate_women"/>
+          <include name="validate_shop_checkout"/>
         </methods>
-      </class> <!-- Updated.POM.Testcases.WomenTest -->
-      <class name="Updated.POM.Testcases.MenTest">
+      </class> <!-- POM.TestCase.Verify_Shop_Checkout -->
+      <class name="POM.TestCase.Verify_Fitting_Room_Buy_Look">
         <methods>
-          <include name="validate_men"/>
+          <include name="validate_fitting_room_buylook"/>
         </methods>
-      </class> <!-- Updated.POM.Testcases.MenTest -->
-      <class name="POM.TestCase.Signin_Errorhandling">
+      </class> <!-- POM.TestCase.Verify_Fitting_Room_Buy_Look -->
+      <class name="POM.TestCase.Verify_Fitting_Room_Edit_Look">
         <methods>
-          <include name="Invalidcrdentials"/>
+          <include name="validate_change_color"/>
         </methods>
-      </class> <!-- POM.TestCase.Signin_Errorhandling -->
-      <class name="POM.TestCase.SignUpErrorHandling">
-        <methods>
-          <include name="PasswordNotMatch"/>
-          <include name="InvalidEmail"/>
-        </methods>
-      </class> <!-- POM.TestCase.SignUpErrorHandling -->
-      <class name="POM.TestCase.Verify_Forgot_Password">
-        <methods>
-          <include name="validate_forgot_password"/>
-        </methods>
-      </class> <!-- POM.TestCase.Verify_Forgot_Password -->
-      <class name="POM.TestCase.Verify_Contactus">
-        <methods>
-          <include name="validate_contactus"/>
-        </methods>
-      </class> <!-- POM.TestCase.Verify_Contactus -->
+      </class> <!-- POM.TestCase.Verify_Fitting_Room_Edit_Look -->
     </classes>
   </test> <!-- Regression suite 1(failed) -->
 </suite> <!-- Failed suite [Testng Automation Suite] -->

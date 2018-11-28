@@ -5,26 +5,33 @@ import java.util.Random;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+
 import Helper.BrowserFactory;
+import POM.TestCase.Test_Base;
+import PageObjectModel.Base;
 import PageObjectModel.Women;
 
-public class MenTest {
+public class MenTest  {
 
-	 Random r = new Random();
+	Random r = new Random();
 		
 		String firstname = "QA"+r.nextInt(100);
 		   String lastname = "test"+r.nextInt(1000);
 		   String email = "Qtest"+r.nextInt(1000)+"@mailinator.com";
 		   String email1 = "Qtest"+r.nextInt(1000)+"@mailinator.com";
 			
-		
 		Women womenobj;
 		
-		@Test (priority=1, enabled=true)
+	//	WebDriver driver;
+		
+		@Test (priority=2, enabled=true)
 		public void validate_men() throws Exception
 		{
-			// This will launch browser and specific url 
-			   WebDriver driver=BrowserFactory.startBrowser("chrome", "https://www.selfiestyler.com/");  // live Environment
+			//This will launch browser and specific url 
+			 WebDriver driver=BrowserFactory.startBrowser("chrome", "https://www.selfiestyler.com/");  // live Environment
+			
+			//test = reports.createTest("validate_men");
 			   
 			   womenobj = new Women(driver);  // create the object of women class
 				

@@ -1,8 +1,6 @@
 package POM.TestCase;
 
-import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -24,12 +22,12 @@ public class Verify_Fitting_Room_Edit_Look {
 	Shop_Checkout Shop_Checkout_obj;  // Shop_Checkout_obj is the object reference variable of Shop_Checkout class
 	
 
-	@Test (priority=0, enabled=false)
+	@Test (priority=17, enabled=false)
 	
 	public void validate_fitting_room_editlook () throws Exception
 	{
 		// This will launch browser and specific url 
-		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 		
 		Login_obj = new Login(driver);  // create the object of login class 
 		
@@ -39,13 +37,7 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		Shop_Checkout_obj = new Shop_Checkout(driver); // create the object of shop_checkout class
 			
-		Login_obj.click_login(); // click the login
-		   
-		Login_obj.enter_email("qa-women@mailinator.com");  // enter the email for login
-		   
-		Login_obj.enter_password("Germany0!");  // enter the password for login
-		   
-		Login_obj.click_submit(); // submit button
+		Login_obj.login_selfie_styler("qa-women@mailinator.com", "Germany0!");
 		   
 		Thread.sleep(5000);
 		
@@ -61,9 +53,7 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		fitting_editlook_obj.Click_Edit_look();  // click on edit look in demo model
 		
-		fitting_editlook_obj.Select_size();      // verify select size
-		
-		String text = fitting_editlook_obj.Select_size();   // get the text of select size drop down 
+		String text = fitting_editlook_obj.Select_size_0();   // get the text of select size drop down 
 		
 		Assert.assertTrue(text.contains("Select a size")); // verify by default, select a size should be selected for non calibrated
 		
@@ -79,11 +69,11 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		fitting_editlook_obj.Click_Edit_look();   // click on edit look in demo model
 		
-		fitting_editlook_obj.recommended();   // select size from the drop down
+		fitting_editlook_obj.recommended_size0();   // select size from the drop down
 		
 		fitting_editlook_obj.Add_to_cart();      // shows the status of cart
 		
-		fitting_editlook_obj.Click_Add_to_bag();   // add the item to the bag
+		fitting_editlook_obj.Click_Add_to_bag_0();   // add the item to the bag
 		
 		Thread.sleep(2000);
 		
@@ -93,14 +83,14 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 	}
 	
-	@Test(priority=1, enabled=false)
+	@Test(priority=18, enabled=false)
 	
 	public void validate_select_a_size() throws Exception
 	
 	{
 		
 		// This will launch browser and specific url 
-		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 				
 		Login_obj = new Login(driver);  // create the object of login class 
 		
@@ -110,13 +100,7 @@ public class Verify_Fitting_Room_Edit_Look {
 
 		Shop_Checkout_obj = new Shop_Checkout(driver); // create the object of shop_checkout class
 		
-		Login_obj.click_login(); // click the login
-		   
-		Login_obj.enter_email("qa-women@mailinator.com");  // enter the email for login
-		   
-		Login_obj.enter_password("Germany0!");  // enter the password for login
-		   
-		Login_obj.click_submit(); // submit button
+		Login_obj.login_selfie_styler("qa-women@mailinator.com", "Germany0!");
 		   
 		Thread.sleep(5000);
 		
@@ -130,7 +114,7 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		Thread.sleep(4000);
 		
-		fitting_editlook_obj.Click_Add_to_bag();   // add the item to the bag
+		fitting_editlook_obj.Click_Add_to_bag_0();   // add the item to the bag
 		
 		Thread.sleep(3000);
 		
@@ -145,13 +129,13 @@ public class Verify_Fitting_Room_Edit_Look {
 	
 	
 	
-	@Test (priority =2, enabled=false)
+	@Test (priority =19, enabled=false)
 	
 	public void validate_calibrated_user() throws Exception
 	{
 		
 		// This will launch browser and specific url 
-		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 				
 		Login_obj = new Login(driver);  // create the object of login class 
 		
@@ -161,14 +145,8 @@ public class Verify_Fitting_Room_Edit_Look {
 
 		Shop_Checkout_obj = new Shop_Checkout(driver); // create the object of shop_checkout class
 				
-		Login_obj.click_login(); // click the login
-		   
-		Login_obj.enter_email("chandellevaldizon@yahoo.com");  // enter the email for login
-		   
-		Login_obj.enter_password("Cjv913306061");  // enter the password for login
-		   
-		Login_obj.click_submit(); // submit button
-		   
+		Login_obj.login_selfie_styler("chandellevaldizon@yahoo.com", "Cjv913306061");
+		  
 		Thread.sleep(5000);
 				
 		Shop_Checkout_obj.click_Women();
@@ -183,7 +161,7 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		fitting_editlook_obj.Click_Edit_look();  // click on edit look in demo model
 		
-       String recommended = fitting_editlook_obj.Select_size();   // get the text of select size drop down 
+       String recommended = fitting_editlook_obj.Select_size_0();   // get the text of select size drop down 
 		
 		Assert.assertTrue(recommended.contains("(SureFit™ Recommended)")); // verify by default, (SureFit™ Recommended) should be selected for non calibrated
 		
@@ -201,13 +179,13 @@ public class Verify_Fitting_Room_Edit_Look {
 		
         Thread.sleep(3000);
 		
-		fitting_editlook_obj.recommended();
+		fitting_editlook_obj.recommended_size0();
 		
 		Thread.sleep(2000);
 		
 	    fitting_editlook_obj.Add_to_cart();      // shows the status of cart
 		
-		fitting_editlook_obj.Click_Add_to_bag();   // add the item to the bag
+		fitting_editlook_obj.Click_Add_to_bag_0();   // add the item to the bag
 		
 		Thread.sleep(3000);
 		
@@ -217,12 +195,12 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 	}
 	
-	@Test (priority =3, enabled=true)
+	@Test (priority =20, enabled=true)
 	
 	public void validate_change_color() throws Exception
 	{
 		// This will launch browser and specific url 
-		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 						
 		Login_obj = new Login(driver);  // create the object of login class 
 		
@@ -232,15 +210,9 @@ public class Verify_Fitting_Room_Edit_Look {
 
 		Shop_Checkout_obj = new Shop_Checkout(driver); // create the object of shop_checkout class
 				
-		Login_obj.click_login(); // click the login
+		Login_obj.login_selfie_styler("chandellevaldizon@yahoo.com", "Cjv913306061");
 		   
-		Login_obj.enter_email("chandellevaldizon@yahoo.com");  // enter the email for login
-		   
-		Login_obj.enter_password("Cjv913306061");  // enter the password for login
-		   
-		Login_obj.click_submit(); // submit button
-		   
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		
 		fitting_editlook_obj.click_brand();
 		
@@ -260,11 +232,11 @@ public class Verify_Fitting_Room_Edit_Look {
 		
 		Thread.sleep(2000);
 		
-		fitting_editlook_obj.recommended();
+		fitting_editlook_obj.recommended_size0();
 		
         fitting_editlook_obj.Add_to_cart();      // shows the status of cart
 		
-		fitting_editlook_obj.Click_Add_to_bag();   // add the item to the bag
+		fitting_editlook_obj.Click_Add_to_bag_0();   // add the item to the bag
 		
 		Thread.sleep(3000);
 		

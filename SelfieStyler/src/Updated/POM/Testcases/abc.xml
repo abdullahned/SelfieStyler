@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Testng Automation">
+
+  <test name="Regression">
+ 
+  <classes>
+       
+       
+       <class name="Updated.POM.Testcases.WomenTest"  />
+       
+       <class name="Updated.POM.Testcases.MenTest"  />
+         
+   
+    </classes>
+  
+  
+
+
+    
+  </test>
+ 
+</suite>

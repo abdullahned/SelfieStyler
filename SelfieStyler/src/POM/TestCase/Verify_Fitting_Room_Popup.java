@@ -18,13 +18,13 @@ public class Verify_Fitting_Room_Popup {
 	Shop_Checkout Shop_Checkout_obj;  // Shop_Checkout_obj is the object reference variable of Shop_Checkout class
 	
 	
-    @Test
+    @Test(priority =15,enabled=false)
 	
 	public void validate_fitting_room_popup() throws Exception
 	{
 	
 	// This will launch browser and specific url 
-	WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+	WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 	
 	  Login_obj = new Login(driver); // create the object of login class
 	
@@ -32,13 +32,7 @@ public class Verify_Fitting_Room_Popup {
 	
 	  Shop_Checkout_obj = new Shop_Checkout(driver); // create the object of shop_checkout class
 	
-	  Login_obj.click_login(); // click the login
-	   
-	  Login_obj.enter_email("qa-women@mailinator.com");  // enter the email for login
-	   
-	  Login_obj.enter_password("Germany0!");  // enter the password for login
-	   
-	  Login_obj.click_submit(); // submit button
+	  Login_obj.login_selfie_styler("qa-women@mailinator.com", "Germany0!");
 	   
 	  Thread.sleep(5000);
 	

@@ -44,24 +44,21 @@ public class Login {
 	
 	
 	
-	public void login_selfie_styler(String uid,String pass)
+	public void login_selfie_styler(String uid,String pass) throws Exception
 	{
 	
-	HighlightLocator.highLightElement(driver, clickLogin);             // High lighting the web element
-	
-	clickLogin.click();                                                 // Click on Login
-		
-	HighlightLocator.highLightElement(driver,enterEmail);
-	
-	enterEmail.sendKeys(uid);                                   // Enter Email
-	
-	HighlightLocator.highLightElement(driver,enterPassword);
-	
-	enterPassword.sendKeys(pass);                         // Enter Password
-	
-	submit.click();                                  // Click on submit button
-	
+	  Synchronization.Exception_Handling(driver, clickLogin,30);
+	  
+	  Synchronization.sendKeys(driver, enterEmail, 30, uid);
+	  
+	  Synchronization.sendKeys(driver, enterPassword, 30, pass);
+	  
+	  Synchronization.Exception_Handling(driver, submit, 30);
+	  
+
 	}
+	
+	
 	
 	public void click_login() throws Exception
 	{

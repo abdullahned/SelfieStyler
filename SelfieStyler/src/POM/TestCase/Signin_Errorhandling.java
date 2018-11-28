@@ -16,7 +16,7 @@ public class Signin_Errorhandling {
 	Forgot_Password Forgot_Password_obj;
 
 	
-	@Test(priority =6,enabled=true)  
+	@Test(priority =6,enabled=false)  
 	public void Invalidcrdentials() throws Exception
 	{
 		//This will launch browser and specific url 
@@ -24,7 +24,7 @@ public class Signin_Errorhandling {
 		
 		loginobj = new Login(driver);
 		
-		loginobj.click_login();
+		//loginobj.click_login();
 		
 		loginobj.enter_email("abc@gmail.com");
 		
@@ -52,7 +52,7 @@ public class Signin_Errorhandling {
 		
 	}
 	
-	@Test(priority =7,enabled=true)  
+	@Test(priority =7,enabled=false)  
 	
 	public void InvalidEmail() throws Exception
 	{
@@ -64,7 +64,7 @@ public class Signin_Errorhandling {
 		
 		Forgot_Password_obj = new Forgot_Password(driver); // create object of forgot password class
 		
-		loginobj.click_login();
+		//loginobj.click_login();
 		
 		Forgot_Password_obj.Click_forgot();
 		
@@ -92,7 +92,7 @@ public class Signin_Errorhandling {
 				
 	}
 	
-	@Test(priority =8,enabled=true)  
+	@Test(priority =8,enabled=false)  
 	
 	public void EmailNotFound() throws Exception
 	{
@@ -103,7 +103,7 @@ public class Signin_Errorhandling {
 		
 		Forgot_Password_obj = new Forgot_Password(driver); // create object of forgot password class
 		
-		loginobj.click_login();
+		//loginobj.click_login();
 		
 		Forgot_Password_obj.Click_forgot();
 		
@@ -138,7 +138,7 @@ public class Signin_Errorhandling {
 	{
 		
 		//This will launch browser and specific url 
-		   WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+		   WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 		   
 		   Forgot_Password_obj = new Forgot_Password(driver); // create the object of forgot password class
 		   
@@ -148,13 +148,13 @@ public class Signin_Errorhandling {
 		   
 		   Forgot_Password_obj.Click_forgot(); // click the forgot password link
 			
-		   loginobj.enter_email("rikotest@mailinator.com"); // enter the email to get the forgot password link
+		   loginobj.enter_email("qatest0505@mailinator.com"); // enter the email to get the forgot password link
 		   
 		   Forgot_Password_obj.click_request_password_button(); // click the reset button
 		   
 		   Forgot_Password_obj.mailinator(); //open the mailinator url
 		   
-		   Forgot_Password_obj.inboxfield_mailinator("rikotest@mailinator.com"); // enter the email in mailinator
+		   Forgot_Password_obj.inboxfield_mailinator("qatest0505@mailinator.com"); // enter the email in mailinator
 		   
 		   Forgot_Password_obj.btn_mailinator(); // click the go button
 		   
@@ -194,7 +194,7 @@ public class Signin_Errorhandling {
 	}
 	
 	
-	@Test(priority =10,enabled=true)
+	@Test(priority =10,enabled=false)
 	public void PasswordNotMatched() throws Exception
 	{
 		//This will launch browser and specific url 
@@ -204,17 +204,17 @@ public class Signin_Errorhandling {
 		   
 		   loginobj = new Login(driver); // create the object of login class
 		   
-		   loginobj.click_login(); // click the login link
+		  // loginobj.click_login(); // click the login link
 		   
 		   Forgot_Password_obj.Click_forgot(); // click the forgot password link
 			
-		   loginobj.enter_email("rikotest@mailinator.com"); // enter the email to get the forgot password link
+		   loginobj.enter_email("qatest0505@mailinator.com"); // enter the email to get the forgot password link
 		   
 		   Forgot_Password_obj.click_request_password_button(); // click the reset button
 		   
 		   Forgot_Password_obj.mailinator(); //open the mailinator url
 		   
-		   Forgot_Password_obj.inboxfield_mailinator("rikotest@mailinator.com"); // enter the email in mailinator
+		   Forgot_Password_obj.inboxfield_mailinator("qatest0505@mailinator.com"); // enter the email in mailinator
 		   
 		   Forgot_Password_obj.btn_mailinator(); // click the go button
 		   

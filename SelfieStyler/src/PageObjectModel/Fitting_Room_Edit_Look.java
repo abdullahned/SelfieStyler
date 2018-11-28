@@ -31,7 +31,10 @@ public class Fitting_Room_Edit_Look {
 	WebElement Edit_look;
 	
 	@FindBy(xpath="//select[@id ='size_0']") 
-	WebElement Size;
+	WebElement Size0;
+	
+	@FindBy(xpath="//select[@id ='size_1']") 
+	WebElement Size1;
 	
 	@FindBy(xpath="//input[@id ='product-remove-1']") 
 	WebElement remove;
@@ -41,7 +44,11 @@ public class Fitting_Room_Edit_Look {
 	
 	
 	@FindBy(xpath="//input[@id ='product-add-0']") 
-	WebElement Add_to_bag;
+	WebElement Add_to_bag_0;
+	
+	@FindBy(xpath="//input[@id ='product-add-1']") 
+	WebElement Add_to_bag_1;
+	
 	
 	@FindBy(xpath="//a[@id ='cartToggle']") 
 	WebElement cart_toggle;
@@ -69,13 +76,24 @@ public class Fitting_Room_Edit_Look {
 	}
 	
 	
-	public String Select_size ()
+	public String Select_size_0 ()
 	{
 		
-		String text = Size.getText();
+		String text = Size0.getText();
 		return text;
 		
 	}
+	
+	
+	public String Select_size_1 ()
+	{
+		
+		String text = Size1.getText();
+		return text;
+		
+	}
+	
+
 	
 	public void Remove_product () throws Exception
 	{
@@ -95,22 +113,31 @@ public class Fitting_Room_Edit_Look {
 	public void Select_a_size() 
 	{
 		
-		HighlightLocator.highLightElement(driver, Size);
+		HighlightLocator.highLightElement(driver, Size0);
 		 
-		Select select = new Select(Size);
+		Select select = new Select(Size0);
 		
 		select.selectByVisibleText("Size: 26");	
 		
 	}
 	
 	
-	public void Click_Add_to_bag() throws Exception
+	public void Click_Add_to_bag_0() throws Exception
 	{	
 		
-		Synchronization.Exception_Handling(driver, Add_to_bag, 30);
+		Synchronization.Exception_Handling(driver, Add_to_bag_0, 30);
 		
 	}
 	
+	
+	public void Click_Add_to_bag_1() throws Exception
+	{	
+		
+		Synchronization.Exception_Handling(driver, Add_to_bag_1, 30);
+		
+	}
+	
+
 	
 	public void Add_to_cart () throws InterruptedException
 	
@@ -141,20 +168,35 @@ public class Fitting_Room_Edit_Look {
 	
 
 	
-	
-	public void recommended() 
-	{
+	public void recommended_size0() 
+	{			
+		HighlightLocator.highLightElement(driver, Size0);
 		
-		
-		HighlightLocator.highLightElement(driver, Size);
-		
-		Select oSelect = new Select(Size);
+		Select oSelect = new Select(Size0);
 		
 		List<WebElement> liElements = oSelect.getOptions();
 		
 		int size = liElements.size();
 		
-		int randnMumber = ThreadLocalRandom.current().nextInt(0, size);
+		int randnMumber = ThreadLocalRandom.current().nextInt(1, size);
+		
+		liElements.get(randnMumber).click();					
+	}
+	
+	
+	
+	public void recommended_size1() 
+	{
+			
+		HighlightLocator.highLightElement(driver, Size1);
+		
+		Select oSelect = new Select(Size1);
+		
+		List<WebElement> liElements = oSelect.getOptions();
+		
+		int size = liElements.size();
+		
+		int randnMumber = ThreadLocalRandom.current().nextInt(1, size);
 		
 		liElements.get(randnMumber).click();
 					

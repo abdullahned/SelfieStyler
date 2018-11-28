@@ -47,8 +47,7 @@ public class FittingRoomPopup {
 			
 		Synchronization.Exception_Handling(driver, up, 30);       // maximize the demo model popup
      	
-		Thread.sleep(2000);
-		
+		Thread.sleep(2000);	
 	}
 	
 	

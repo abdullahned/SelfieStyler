@@ -12,10 +12,14 @@ public class BrowserFactory {
 
 	static WebDriver driver;
 	
+	String browserName="chrome";
+	
+	String url = "https://selfiestyler.com/";
+	
 	public static WebDriver startBrowser(String browserName, String url) throws InterruptedException
 	
 	{
-		if (browserName.equals("chrome")) 
+		if (browserName.equals("chrome"))
 		{
 			System.setProperty("webdriver.chrome.driver", "C:\\Users\\m.abdullah\\Downloads\\chromedriver.exe");
 			driver = new ChromeDriver(); // launch chrome

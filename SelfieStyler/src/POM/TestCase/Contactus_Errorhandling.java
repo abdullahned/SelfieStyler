@@ -11,7 +11,7 @@ public class Contactus_Errorhandling {
 	
 	Contactus contactobj;
 
-	@Test(priority =12,enabled=true)  
+	@Test(priority =12,enabled=false)  
 	
 	public void Missing_Fields() throws Exception
 	{

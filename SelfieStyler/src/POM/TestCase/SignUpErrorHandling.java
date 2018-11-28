@@ -38,20 +38,8 @@ Random r = new Random();
 
 	   Women womenobj;
 	   
-	/*   @BeforeTest
 	   
-		public void set()
-		{
-			htmlReports = new ExtentHtmlReporter("./Reports/learn_automation1.html");
-			extent = new ExtentReports();
-			extent.attachReporter(htmlReports);
-			
-			
-		}  */
-		   
-	  // (priority =0,enabled=true)
-	   
-	   @Test (priority =2,enabled=true)
+	   @Test (priority =2,enabled=false)
 	
 	public void InvalidEmail() throws Exception                     // Invalid email , Invalid password , Terms not check
 	{
@@ -124,7 +112,7 @@ Random r = new Random();
 	
 	   //(priority =1,enabled=true) 
 	 
-  @Test  (priority =3,enabled=true)                                   // Missing field, Password do not match
+  @Test  (priority =3,enabled=false)                                   // Missing field, Password do not match
 
    public void PasswordNotMatch () throws Exception
   {

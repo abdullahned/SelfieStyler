@@ -20,7 +20,11 @@ public class Fitting_Room_Hanger_Icon {
 	
 	}
 	
-
+   
+	@FindBy(xpath="//a[@id='594']") 
+	WebElement productdetail_hanger;
+	
+	
 	@FindBy(xpath="//a[@id='1399']") 
 	WebElement hanger;
 	
@@ -31,6 +35,13 @@ public class Fitting_Room_Hanger_Icon {
 	WebElement random;
 	
 	
+	public void click_productdetail_hanger()
+	{
+		productdetail_hanger.click();
+		
+	}
+	
+
 	
 	public void click_hanger () throws Exception	
 	{
@@ -64,6 +75,13 @@ public class Fitting_Room_Hanger_Icon {
 		
 	}
 	
+	
+	public String verify_hanger_clicked()
+	{
+		String text = productdetail_hanger.getAttribute("class");
+		return text;
+		
+	}
 	
 	
 	

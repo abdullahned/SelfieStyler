@@ -13,17 +13,17 @@ public class Verify_Forgot_Password {
 	
 	Login Login_obj;
 	
-	@Test(priority =5,enabled=true)  
+	@Test(priority =5,enabled=false)  
 	public void validate_forgot_password() throws Exception
 	{
 	// This will launch browser and specific url 
-	   WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/");  // live Environment
+	   WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 	   
 	   Forgot_Password_obj = new Forgot_Password(driver); // create the object of forgot password class
 	   
 	   Login_obj = new Login(driver); // create the object of login class
 	   
-	   Login_obj.click_login(); // click the login link
+	   //Login_obj.click_login(); // click the login link
 	   
 	   Forgot_Password_obj.Click_forgot(); // click the forgot password link
 		
