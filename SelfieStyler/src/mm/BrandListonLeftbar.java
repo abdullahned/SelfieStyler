@@ -38,11 +38,11 @@ public class BrandListonLeftbar {
 		 
 		 Thread.sleep(5000);
 		 
-		 driver.findElement(By.id("email")).sendKeys("rikotest@mailinator.com");
+		 driver.findElement(By.id("email")).sendKeys("qa-women@mailinator.com");
 		 
 		 Thread.sleep(1000);
 		 
-		 driver.findElement(By.id("password")).sendKeys("Sindhi0!");
+		 driver.findElement(By.id("password")).sendKeys("Germany0!");
 		 
 		 Thread.sleep(1000);
 	 
@@ -59,7 +59,7 @@ public class BrandListonLeftbar {
 		Thread.sleep(3000);
 		
 		 
-		 driver.findElement(By.linkText("Shop")).click();
+		 driver.findElement(By.linkText("Women")).click();
 		 
 		 Thread.sleep(5000);
 		 
@@ -112,7 +112,6 @@ public class BrandListonLeftbar {
 		    	    sheet1.getRow(i).createCell(1).setCellValue("Not Found");
 		    	 }
 		    	 
-		    	
 		     }
 		     
 		     

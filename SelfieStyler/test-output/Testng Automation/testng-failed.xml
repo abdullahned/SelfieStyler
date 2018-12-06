@@ -3,24 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Testng Automation]">
   <test thread-count="5" name="Regression(failed)">
     <classes>
-      <class name="Updated.POM.Testcases.MenTest">
+      <class name="Updated.POM.Testcases.abc">
         <methods>
-          <include name="teardown"/>
           <include name="validate_men"/>
-          <include name="setup"/>
           <include name="startTest"/>
+          <include name="startbrowser"/>
+          <include name="closebrowser"/>
           <include name="endTest"/>
         </methods>
-      </class> <!-- Updated.POM.Testcases.MenTest -->
-      <class name="Updated.POM.Testcases.WomenTest">
-        <methods>
-          <include name="teardown"/>
-          <include name="setup"/>
-          <include name="validate_women"/>
-          <include name="startTest"/>
-          <include name="endTest"/>
-        </methods>
-      </class> <!-- Updated.POM.Testcases.WomenTest -->
+      </class> <!-- Updated.POM.Testcases.abc -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Testng Automation] -->

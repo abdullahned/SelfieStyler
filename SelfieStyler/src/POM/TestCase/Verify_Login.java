@@ -9,7 +9,7 @@ import PageObjectModel.Login;
 
 public class Verify_Login {
 
-	@Test (priority =4,enabled=false)  
+	@Test (priority =4,enabled=true)  
 	
 	public void checkValidCredentials() throws Exception
 	{
@@ -17,6 +17,9 @@ public class Verify_Login {
 		// This will launch browser and specific url 
 		WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
 		
+		String titile = driver.getTitle();
+		
+		System.out.println(titile);
 		 
 		// Created Page Object using Page Factory
 		

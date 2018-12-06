@@ -1,4 +1,4 @@
-package Updated.POM.Testcases;
+package POM.TestCase;
 
 import java.util.Random;
 
@@ -24,7 +24,7 @@ public class WomenTest  {
 	
 		Women womenobj;
 		
-		@Test (priority=1,enabled=true)
+		@Test (priority=0,enabled=true)
 		public void validate_women() throws Exception
 		{
 			// This will launch browser and specific url 

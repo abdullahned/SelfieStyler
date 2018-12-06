@@ -17,12 +17,12 @@ public class Verify_favourite {
 	
 	Favourite Favourite_obj;
 	
-	@Test(priority=23, enabled=false)
+	@Test(priority=23, enabled=true)
 	public void validate_favourite() throws Exception
 	{
 		
 	   // This will launch browser and specific url 
-	    WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com");  // live Environment
+	    WebDriver driver=BrowserFactory.startBrowser("chrome", "https://selfiestyler.com/login_deactivate");  // live Environment
 		   
 		Login_obj = new Login(driver); // create the object of login class
 		

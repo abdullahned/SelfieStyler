@@ -22,7 +22,7 @@ public class Verify_Contactus {
 		
 		Contactus contactusobj;
 		
-		@Test(priority =11,enabled=false)  
+		@Test(priority =11,enabled=true)  
 		public void validate_contactus() throws Exception
 		{
 			

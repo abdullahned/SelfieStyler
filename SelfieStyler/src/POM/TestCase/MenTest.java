@@ -1,4 +1,4 @@
-package Updated.POM.Testcases;
+package POM.TestCase;
 
 import java.util.Random;
 
@@ -25,7 +25,7 @@ public class MenTest  {
 		
 	//	WebDriver driver;
 		
-		@Test (priority=2, enabled=true)
+		@Test (priority=1, enabled=true)
 		public void validate_men() throws Exception
 		{
 			//This will launch browser and specific url 

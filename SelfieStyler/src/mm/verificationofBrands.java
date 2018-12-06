@@ -45,17 +45,17 @@ public class verificationofBrands {
 		 
 		 Thread.sleep(5000);
 		 
-		 driver.findElement(By.id("email")).sendKeys("rikotest@mailinator.com");
+		 driver.findElement(By.id("email")).sendKeys("qa-women@mailinator.com");
 		 
 		 Thread.sleep(1000);
 		 
-		 driver.findElement(By.id("password")).sendKeys("Sindhi0!");
+		 driver.findElement(By.id("password")).sendKeys("Germany0!");
 		 
 		 Thread.sleep(1000);
 	 
 	     driver.findElement(By.id("customer_login")).click();
 		 
-		 Thread.sleep(5000);
+		 Thread.sleep(8000);
 		 
 		// driver.findElement(By.xpath("//input[@id='password']")).sendKeys("tausto"); // comment code
 		 
@@ -63,15 +63,19 @@ public class verificationofBrands {
 		 
 		// driver.findElement(By.xpath("//input[@name='commit']")).click();
 		 
-		 driver.findElement(By.linkText("Brands")).click();
+		// driver.findElement(By.xpath("//a[@href='https://shop.selfiestyler.com/pages/list-of-brands']")).click();
 		 
 		 Thread.sleep(5000);
+		 
+		 driver.get("https://shop.selfiestyler.com/pages/list-of-brands");
 		 
 		   JavascriptExecutor jex = (JavascriptExecutor)driver;
 			 
 		   jex.executeScript("window.scrollBy(0,900)", "");
+		   
+		
 		     
-		 
+		   Thread.sleep(5000);
 		
 	     WebElement linkElement = driver.findElement(By.xpath("//*[@class='container brands-list']"));
 	            

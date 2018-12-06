@@ -3,15 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Updated.POM.Testcases.WomenTest">
+      <class name="POM.TestCase.Product_verification">
         <methods>
-          <include name="startTest"/>
-          <include name="startbrowser"/>
-          <include name="setTestResult"/>
-          <include name="validate_women"/>
-          <include name="endTest"/>
+          <include name="validate_product"/>
         </methods>
-      </class> <!-- Updated.POM.Testcases.WomenTest -->
+      </class> <!-- POM.TestCase.Product_verification -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

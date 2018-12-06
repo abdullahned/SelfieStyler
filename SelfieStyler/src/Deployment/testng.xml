@@ -1,0 +1,57 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Testng Automation Suite"  >
+
+  <test name="Regression suite 1">
+ 
+  <classes>
+       
+       <class name="Deployment.WomenTest"  />
+       
+       <class name="Deployment.MenTest"  />
+       
+       <class name="Deployment.SignUpErrorHandling" />
+       
+       <class name="Deployment.Verify_Login" />
+       
+       <class name="Deployment.Verify_Forgot_Password" /> 
+            
+       <class name="Deployment.Signin_Errorhandling" />
+       
+       <class name="Deployment.Verify_Contactus" />
+       
+       <class name="Deployment.Contactus_Errorhandling" />
+       
+       <class name="Deployment.Verify_Cancelsignup" />
+       
+       <class name="Deployment.Verify_Shop_Checkout" />
+       
+       <class name="Deployment.Verify_Fitting_Room_Popup" />
+       
+       <class name="Deployment.Verify_Fitting_Room_Hanger" />
+       
+       <class name="Deployment.Verify_Fitting_Room_Edit_Look" />
+        
+       <class name="Deployment.Verify_Fitting_Room_Buy_Look" />
+        
+       <class name="Deployment.Verify_FittingRoom_ProductDetail" />
+        
+       <class name="Deployment.Verify_favourite" />
+        
+       <class name="Deployment.Favorite_FittingRoom" />
+         
+       <class name="Deployment.Verify_Badge_Number" />
+       
+        <class name="Deployment.Verify_Fitting_Room_SearchPage" />
+         
+   
+    </classes>
+  
+  
+
+
+    
+  </test>
+ 
+</suite>
+ 
