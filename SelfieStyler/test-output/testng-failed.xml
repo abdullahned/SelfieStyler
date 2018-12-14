@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Testng Automation Suite]">
+  <test thread-count="5" name="Regression suite 1(failed)">
     <classes>
-      <class name="POM.TestCase.Product_verification">
+      <class name="Deployment.Verify_Fitting_Room_Buy_Look">
         <methods>
-          <include name="validate_product"/>
+          <include name="validate_fitting_room_buylook"/>
         </methods>
-      </class> <!-- POM.TestCase.Product_verification -->
+      </class> <!-- Deployment.Verify_Fitting_Room_Buy_Look -->
+      <class name="Deployment.Favorite_FittingRoom">
+        <methods>
+          <include name="validate_Favorite_FittingRoom"/>
+        </methods>
+      </class> <!-- Deployment.Favorite_FittingRoom -->
+      <class name="Deployment.Verify_Fitting_Room_Edit_Look">
+        <methods>
+          <include name="validate_calibrated_user"/>
+          <include name="validate_fitting_room_editlook"/>
+        </methods>
+      </class> <!-- Deployment.Verify_Fitting_Room_Edit_Look -->
+      <class name="Deployment.Verify_favourite">
+        <methods>
+          <include name="validate_favourite"/>
+        </methods>
+      </class> <!-- Deployment.Verify_favourite -->
+      <class name="Deployment.Verify_FittingRoom_ProductDetail">
+        <methods>
+          <include name="validate_fittingRoom_ProductDetail"/>
+        </methods>
+      </class> <!-- Deployment.Verify_FittingRoom_ProductDetail -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Regression suite 1(failed) -->
+</suite> <!-- Failed suite [Testng Automation Suite] -->

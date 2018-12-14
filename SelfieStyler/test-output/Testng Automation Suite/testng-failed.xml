@@ -3,21 +3,32 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Testng Automation Suite]">
   <test thread-count="5" name="Regression suite 1(failed)">
     <classes>
-      <class name="Deployment.Verify_Fitting_Room_SearchPage">
+      <class name="Deployment.Verify_Fitting_Room_Buy_Look">
         <methods>
-          <include name="validate_fitting_searchpage"/>
+          <include name="validate_fitting_room_buylook"/>
         </methods>
-      </class> <!-- Deployment.Verify_Fitting_Room_SearchPage -->
-      <class name="Deployment.Verify_Shop_Checkout">
-        <methods>
-          <include name="validate_shop_checkout"/>
-        </methods>
-      </class> <!-- Deployment.Verify_Shop_Checkout -->
+      </class> <!-- Deployment.Verify_Fitting_Room_Buy_Look -->
       <class name="Deployment.Favorite_FittingRoom">
         <methods>
           <include name="validate_Favorite_FittingRoom"/>
         </methods>
       </class> <!-- Deployment.Favorite_FittingRoom -->
+      <class name="Deployment.Verify_Fitting_Room_Edit_Look">
+        <methods>
+          <include name="validate_calibrated_user"/>
+          <include name="validate_fitting_room_editlook"/>
+        </methods>
+      </class> <!-- Deployment.Verify_Fitting_Room_Edit_Look -->
+      <class name="Deployment.Verify_favourite">
+        <methods>
+          <include name="validate_favourite"/>
+        </methods>
+      </class> <!-- Deployment.Verify_favourite -->
+      <class name="Deployment.Verify_FittingRoom_ProductDetail">
+        <methods>
+          <include name="validate_fittingRoom_ProductDetail"/>
+        </methods>
+      </class> <!-- Deployment.Verify_FittingRoom_ProductDetail -->
     </classes>
   </test> <!-- Regression suite 1(failed) -->
 </suite> <!-- Failed suite [Testng Automation Suite] -->

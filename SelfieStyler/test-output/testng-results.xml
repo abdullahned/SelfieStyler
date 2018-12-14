@@ -2,16 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="18907" started-at="2018-12-06T16:30:58Z" finished-at="2018-12-06T16:31:17Z">
+  <suite name="Default suite" duration-ms="65752" started-at="2018-12-13T14:23:21Z" finished-at="2018-12-13T14:24:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="18907" started-at="2018-12-06T16:30:58Z" finished-at="2018-12-06T16:31:17Z">
-      <class name="POM.TestCase.Verify_Login">
-        <test-method status="PASS" signature="checkValidCredentials()[pri:4, instance:POM.TestCase.Verify_Login@59f99ea]" name="checkValidCredentials" duration-ms="18878" started-at="2018-12-06T16:30:58Z" finished-at="2018-12-06T16:31:17Z">
+    <test name="Default test" duration-ms="65752" started-at="2018-12-13T14:23:21Z" finished-at="2018-12-13T14:24:27Z">
+      <class name="library.FindBrokenLink">
+        <test-method status="PASS" signature="openBrowser()[pri:0, instance:library.FindBrokenLink@5622fdf]" name="openBrowser" is-config="true" duration-ms="10822" started-at="2018-12-13T14:23:21Z" finished-at="2018-12-13T14:23:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkValidCredentials -->
-      </class> <!-- POM.TestCase.Verify_Login -->
+        </test-method> <!-- openBrowser -->
+        <test-method status="PASS" signature="getBrokenLinks()[pri:0, instance:library.FindBrokenLink@5622fdf]" name="getBrokenLinks" duration-ms="54761" started-at="2018-12-13T14:23:32Z" finished-at="2018-12-13T14:24:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBrokenLinks -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:library.FindBrokenLink@5622fdf]" name="tearDown" is-config="true" duration-ms="135" started-at="2018-12-13T14:24:27Z" finished-at="2018-12-13T14:24:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- library.FindBrokenLink -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
